@@ -1,0 +1,82 @@
+/*MEDIAS QUERYS*/
+
+
+/*USO DEL INSPECTOR GOOGLE*/
+
+
+/* Extra Small devices (landscape phones, 576px and down)*/
+
+@media (max-width: 576px) {
+    body {
+        background-color: #78e0e5;
+    }
+    .display-1 {
+        font-size: 35px;
+        color: #fff;
+    }
+}
+
+
+/* Small devices (landscape phones, 576px and up)*/
+
+@media (min-width: 576px) {
+    body {
+        background-color: #bfeb2b;
+    }
+    .display-1 {
+        font-size: 40px;
+        color: #000;
+    }
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+    body {
+        background-color: #c894cf;
+    }
+    .display-1 {
+        font-size: 45px;
+        color: #000;
+    }
+}
+
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+    body {
+        background-color: #c12855;
+    }
+    .display-1 {
+        font-size: 50px;
+        color: #fff;
+    }
+}
+
+
+/* X-Large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {
+    body {
+        background-color: #cc7220;
+    }
+    .display-1 {
+        font-size: 50px;
+        color: #000;
+    }
+}
+
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+
+@media (min-width: 1400px) {
+    body {
+        background-color: #ffffff;
+    }
+    .display-1 {
+        font-size: 70px;
+        color: #7d12f9;
+    }
+}

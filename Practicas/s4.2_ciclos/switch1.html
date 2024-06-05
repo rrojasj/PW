@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+        
+     <title>CENFOTEC-PROFEFRANK</title>
+    <link href="favicon.png"  rel="icon">
+
+
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h3>Curso JavaScript</h3>
+    <h3>Ciclo Switch</h3>
+
+    <script>
+        var numero = 0;
+        var num1 = 0;
+        var num2 = 0;
+
+        //realice las operaciones mientras que la variable numero sea distinto a 5
+        while (numero != 5) {
+            //	\n en un prompt permit bajar un renglon
+            numero = parseInt(prompt("Elegir la opción deseada:\n\n 1- Suma\n 2- Resta\n 3- Mutiplicación\n 4- Dividir\n 5- Salir"));
+
+            //la expresion es la variable que captura el # escrito por el usuario o puede ser un ID de un combo dinamico.
+            switch (numero) {
+                //cada caso va a cargar una función
+                case 1:
+                    suma();
+                    break;
+                case 2:
+                    resta();
+                    break;
+                case 3:
+                    multiplica();
+                    break;
+                case 4:
+                    dividir();
+                    break;
+                case 5:
+                    alert("Hasta pronto!");
+                    break;
+                    //parte incorrecta del ciclo
+                default:
+                    alert("El numero ingresado es incorrecto");
+                    break;
+            }
+        }
+
+        //cargas de las funciones
+
+        function datos() {
+            //parseInt permite obtener un valor numérico...
+            num1 = parseInt(prompt("Escriba el valor #1: "));
+            num2 = parseInt(prompt("Escriba el valor #2: "));
+        }
+
+        function suma() {
+            var resultado = 0;
+            datos();
+            resultado = num1 + num2;
+            alert("La suma de los numeros es:" + resultado);
+        }
+
+        function resta() {
+            var resultado = 0;
+            datos();
+            resultado = num1 - num2;
+            alert("La resta de los numeros es:" + resultado);
+        }
+
+        function multiplica() {
+            var resultado = 0;
+            datos();
+            resultado = num1 * num2;
+            alert("La multiplicacion de los numeros es:" + resultado);
+        }
+
+        function dividir() {
+            var resultado = 0;
+            datos();
+            resultado = num1 / num2;
+            alert("La division de los numeros es:" + resultado);
+        }
+    </script>
+</body>
+
+</html>

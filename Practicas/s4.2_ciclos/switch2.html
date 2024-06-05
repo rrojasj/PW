@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+<title>CENFOTEC-PROFEFRANK</title>
+    <link href="favicon.png"  rel="icon">
+
+
+</head>
+
+<body>
+    <h1>CICLO SWITCH CONDICIONAL</h1>
+    <p>
+        El ciclo se usa cuando se requiera categorizar resultados por rangos numericos...
+    </p>
+
+    <script>
+        var mes = prompt("Escriba su mes del año");
+        mes = parseInt(mes);
+        //ciclo switch condicional
+        switch (true) {
+            case (mes >= 1 && mes <= 4):
+                estacion = "Verano";
+                document.write(estacion);
+                alert("Verano");
+                break;
+
+            case (mes >= 5 && mes <= 8):
+                estacion = "Invierno";
+                document.write(estacion);
+                break;
+
+            case (mes >= 9 && mes <= 12):
+                estacion = "Primavera";
+                document.write(estacion);
+                break;
+            default:
+                alert("Ese valor NO corresponde a ninguna estación del año");
+                document.write("Debe digitar un valor entre [1-12]");
+        }
+    </script>
+</body>
+
+</html>

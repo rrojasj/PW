@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>CENFOTEC</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="favicon.png" rel="icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- libreria de animacion -->
+    <link href="css/animate.css" rel="stylesheet">
+    <style>
+        .formato1 {
+            font-size: 24px;
+        }
+        
+        #resultado {
+            font-size: 30px;
+            font-weight: bolder;
+            color: #008cff;
+        }
+        
+        p {
+            font-size: 18px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <section class="container">
+        <!-- FILA -->
+        <div class="row">
+            <h1 class="text-dark pt-5">Escala de puntos</h1>
+
+            <!-- bootstrap tiene 12 columnas -->
+
+            <!-- COLUMNA1-->
+            <div class="col-sm-6">
+                <div class="pt-5"></div>
+                <div class="pt-5"></div>
+                <h3>Digite el valor de la escala:</h3> <br>
+                <p>
+                    El puntaje debe estar dentro del siguiente rango: [1-10]
+                </p>
+                <div class="formato1">
+                    <input type="text" id="escala_txt" maxlength="2" size="2" /> <br><br>
+                    <input type="button" class="btn btn-primary" value="Evaluar" onclick="evalua();">
+                    <input type="button" class="btn btn-primary" id="limpiar" value="Limpiar" onclick="limpiar();">
+
+                    <!-- escribir el ID para abrir el desplegable deseado del r0 al r5 (desplegables.js) -->
+                    <input type="button" class="btn btn-primary" value="Mensaje">
+
+                    <br><br>
+
+                    <!-- ID que permite agregar un resultado en la pagina web -->
+                    <p id="resultado"></p>
+
+                </div>
+                <div class="pt-3"></div>
+            </div>
+
+
+            <!-- COLUMNA2-->
+            <div class="col-sm-6 d-flex align-items-center">
+                <!-- imagen inicial que se carga al inicio de la pagina web -->
+                <div id="ima0" class="img-fluid">
+                    <img src="imagenes/empresa.jpg" alt="empresa" class="img-fluid">
+                </div>
+
+                <!--  cargar imagenes y ocultarlas para que NO se miren al inicio (display:none)-->
+                <div id="ima1" style="display: none">
+                    <img src="imagenes/excelente.jpg" alt="excelente">
+                </div>
+                <div id="ima2" style="display: none">
+                    <img src="imagenes/muybueno.jpg" alt="muy bueno">
+                </div>
+                <div id="ima3" style="display: none">
+                    <img src="imagenes/bueno.jpg" alt="bueno">
+                </div>
+                <div id="ima4" style="display: none">
+                    <img src="imagenes/regular.jpg" alt="regular">
+                </div>
+                <div id="ima5" style="display: none">
+                    <img src="imagenes/malo.jpg" alt="malo">
+                </div>
+                <div id="ima6" style="display: none">
+                    <img src="imagenes/muymalo.jpg" alt="muy malo">
+                </div>
+            </div>
+            <!-- cierre del row-->
+        </div>
+
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <!-- liberia JQUERY (desplegables)-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+    <!-- libreria Sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+    <!-- programacion JS -->
+    <script src="js/escala.js"></script>
+
+
+
+</body>
+</html>
