@@ -1,0 +1,50 @@
+        /*importacion CSS secundarios*/
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .cursor {
+            cursor: pointer;
+        }
+        
+        h1 {
+            color: red;
+        }
+        
+        p {
+            font-size: 18px;
+        }
+        
+        .fondo {
+            background-color: #006aea;
+        }
+        
+        header {
+            padding: 20px;
+        }
+        
+        footer {
+            /*si se quita la posicion fija el pie de pagina dejara de estar al final de la pagina*/
+            position: fixed;
+            padding: 20px;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+        
+        img {
+            width: 100%;
+        }
+        
+        map {
+            max-width: 100%;
+        }
+        /*
+        @media screen and (max-width: 768px) {
+            map {
+
+            }
+        }
+        */
