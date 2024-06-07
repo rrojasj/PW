@@ -1,0 +1,4 @@
+// Enundiado
+/* Un profesor desea ingresar el nombre, apellidos y las 3 notas de los estudiantes y conocer cual fue el promedio final
+Cada estudiante tiene un nombre y tres notas, y se debe calcular el promedio de estas notas. La aplicación debe permitir ingresar la información de tantos estudiantes como sea necesario. Además, el profesor quiere que cada vez que ingrese un nuevo estudiante, este se añada a una lista desplegable (select). 
+También, desea un botón que le permita seleccionar un estudiante de la lista y calcular su promedio*/

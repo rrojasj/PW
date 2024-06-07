@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.20/sweetalert2.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Registro de Notas</title>
+</head>
+
+<body>
+
+
+    <h1>Registro de notas</h1>
+
+    <label for="nombre">Nombre del estudiante:</label>
+    <input type="text" id="nombre">
+
+    <label for="apellidos">Apellidos del estudiante:</label>
+    <input type="text" id="apellidos">
+
+    <label for="nota1">Nota 1:</label>
+    <input type="number" id="nota1">
+
+    <label for="nota2">Nota 2:</label>
+    <input type="number" id="nota2">
+
+    <label for="nota3">Nota 3:</label>
+    <input type="number" id="nota3">
+
+    <button onclick="agregarEstudiante();">Agregar</button>
+
+    <hr>
+
+
+    <label for="seleccionarEstudiante">Seleccionar estudiante:</label>
+    <!-- Se hace un select vacio sin option para agregar dinamicamente -->
+    <select id="seleccionarEstudiante" onchange="calcularPromedioSeleccionado();">
+        <option>Seleccione un estudiante</option>
+    </select>
+
+    <button onclick="calcularPromedioSeleccionado();">Calcular promedio</button>
+
+    <p id="resultado"></p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.20/sweetalert2.min.js"></script>
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>
