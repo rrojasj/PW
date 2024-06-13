@@ -1,0 +1,37 @@
+form div {
+    margin-bottom: 15px;
+}
+
+body {
+    font-size: 20px;
+    font-family: arial;
+}
+
+.negrita {
+    font-weight: bolder;
+}
+
+input[type=number] {
+    border: 0px;
+    border-bottom: 2px #c02929 solid;
+    width: 100px;
+    outline: none;
+}
+
+select {
+    font-size: 20px;
+    border: 0px;
+    border-bottom: 2px #c02929 solid;
+    width: 235px;
+    outline: none;
+}
+
+input[type=button] {
+    background: #c02929;
+    color: white;
+    border: 2px solid #34495e;
+}
+
+#txtResultadoMontoFinal {
+    color: #c02929;
+}

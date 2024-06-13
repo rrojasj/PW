@@ -1,0 +1,19 @@
+header {
+  background-color: #781e38;
+}
+
+p{
+  font-size: 18px;
+}
+
+header img {
+  width: 80px;
+}
+
+input, select {
+  cursor: pointer;
+}
+
+.error {
+  border: red solid 1px;
+}

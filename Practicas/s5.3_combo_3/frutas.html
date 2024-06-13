@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CENFOTEC-PROFEFRANK</title>
+    <link rel="icon" href="favicon.png">
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        .resultado {
+            width: 557px;
+            height: 335px;
+            /*text-align: center;
+            display: block;*/
+        }
+        
+        .formato1 {
+            font-size: 20px;
+            text-align: left;
+        }
+        /*apariencia del control SELECT*/
+        
+        select {
+            color: #fff;
+            background-color: cadetblue;
+            font-size: 20px;
+            border: 2px solid green;
+            padding: 8px 10px;
+        }
+        /*apariencia de los textos que estan dentro del SELECT*/
+        
+        option {
+            background-color: #e4e4e4;
+            font-size: 20px;
+            color: #000;
+        }
+        
+        @media (max-width: 576px) {
+            #resultado {
+                /*por mostrar la imagen usando style backgroundImage se deben usar estas instrucciones*/
+                background-position: center center !important;
+                background-size: 80% !important;
+                background-repeat: no-repeat !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container text-center">
+        <h1 class="display-2 text-info">Frutas Favoritas</h1>
+        <div class="text-center pt-3">
+            <img src="imagenes/frutas.jpg" alt="logo" class="img-fluid">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-6 d-flex align-items-center">
+                    <p class="container text-left pt-5 formato1">
+                        Las frutas compone uno de los grupos de alimentos más saludables y con mayor impacto positivo sobre la salud. Al consumirlas crudas, refuerzan las defensas del organismo, aportan vitaminas y antioxidantes, favorecen la desintoxicación, contribuyen a regular
+                        el sistema digestivo y refuerzan la fibra muscular, entre muchos otros beneficios. Al tener pocas calorías, son aliadas a la hora de cuidar el peso y bajar el colesterol.
+                    </p>
+                </div>
+                <div class="col-md-12 col-lg-6">
+
+                    <select id="foto" class="mt-5">  
+    <!-- El mensaje solo aparece una vez cuando ingresa a la pagina web -->
+        <option disabled hidden selected>Seleccione una opción</option>
+        <option value="1">Fresa</option>
+        <option value="2">Naranja</option>
+        <option value="3">Mango</option>
+        <option value="4">Uvas</option>
+        <option value="5">Kiwi</option>
+      </select>
+                    <div id="resultado" class="resultado img-fluid"></div>
+                    <p id="descripcion" class="text-left formato1"></p>
+                </div>
+            </div>
+        </div>
+        <!--cierre del contenedor -->
+    </div>
+
+
+
+    <!-- programacion para buscar las imagenes de las frutas -->
+
+    <script>
+        //activa la funcion al cargar la pagina web
+        window.onload = function() {
+            //funcion que permite elegir la foto
+            document.getElementById('foto').onchange = function(e) {
+                //guarda el destino o valor de la foto en una variable 
+                n = e.target.value;
+                //expresion en variable que busca las fotos dentro de la carpeta imagenes JPG
+                var archivo = "url('imagenes/img" + n + ".jpg')";
+                //envia la foto al lugar respectivo (id llamado resultado)
+                //la variable archivo almaceno la imagen elegida por el usuario
+                document.getElementById("resultado").style.backgroundImage = archivo;
+            }
+        }
+    </script>
+
+    <script src="js/frutas.js"></script>
+
+
+</body>
+
+</html>
