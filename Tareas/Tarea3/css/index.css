@@ -1,0 +1,49 @@
+.banner-index {
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../imgs/pw_t3_index_banner1.png');
+}
+
+.espacio {
+    padding: 400px 0;
+}
+
+
+.banner-index h1 {
+    font-size: 50px;
+    color: aliceblue;
+}
+
+.btn-general {
+    padding: 25px 0;
+}
+
+.btn-primary {
+    width: 200px;
+}
+
+.card-style {
+    width: 300px !important;
+    background-color: rgba(217, 211, 211, 0.5) !important;
+    
+}
+
+.btn-align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-style:hover {
+    background-color: #00469b;
+    margin-top: 5%;
+    z-index: 0;
+    transform: scale(1.1);
+    transition: all 0.2s ease-in;
+    border: none;
+    /* Buscar sombras generadas */
+    /*  */
+    box-shadow: rgba(127, 197, 207, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.5) 0px 30px 60px -30px;
+}
