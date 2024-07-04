@@ -1,52 +1,18 @@
 
 
+.card-style {
+    width: 300px !important;
+    background-color: rgba(217, 211, 211, 0.5) !important;
+    
+}
+
 .banner-index {
     display: flex;
     align-items: center;
     background-size: cover;
     background-position: center;
-    background-image: url('../imgs/pw_t3_index_banner1.png');
-}
-
-.header-style {
-    background-color: #aca4a4 !important;
-}
-
-.nav-logo img {
-    width: 60px;
-    height: 45px;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0 0px 0px; */
-}
-
-.bg-transparent-dark {
-    background-color: rgba(0, 0, 0, 0.5) !important; /* Adjust the alpha value for transparency */
-}
-
-.espacio {
-    padding: 400px 0;
-}
-
-
-.banner-index h1 {
-    font-size: 50px;
-    color: aliceblue;
-}
-
-.btn-general {
-    padding: 25px 0;
-}
-
-.btn-primary {
-    width: 200px;
-}
-
-.card-style {
-    width: 300px !important;
-    background-color: rgba(217, 211, 211, 0.5) !important;
-    
+    background-image: url('../imgs/pw_t3_banner_index.png');
+    min-height: 1920px;
 }
 
 .btn-align {
