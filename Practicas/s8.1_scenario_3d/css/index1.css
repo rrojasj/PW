@@ -1,0 +1,75 @@
+body {
+    overflow-y: hidden;
+}
+
+p {
+    font-size: 18px;
+}
+
+.fondo {
+    background-color: #006aea;
+}
+
+
+/*componente Model Viewer*/
+
+model-viewer {
+    width: 100%;
+    /*textura de fondo */
+    background-image: url("../assets/textura2.avif");
+    /*fondo de color*/
+    /*background-color: bisque;*/
+    background-size: cover;
+    /*altura especifica*/
+    /*height: 500px;*/
+    height: 100vh;
+}
+
+header {
+    padding: 20px;
+}
+
+footer {
+    /*si se quita la posicion fija el pie de pagina dejara de estar al final de la pagina*/
+    position: fixed;
+    padding: 20px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+
+/* Extra Small devices (landscape phones, 576px and down)*/
+
+@media (max-width: 576px) {
+    footer {
+        position: fixed;
+    }
+}
+
+
+/* Small devices (landscape phones, 576px and up)*/
+
+@media (min-width: 576px) {
+    footer {
+        position: relative;
+    }
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+    footer {
+        position: fixed;
+    }
+}
+
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+    footer {
+        position: fixed;
+    }
+}

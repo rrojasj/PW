@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    
+
+    <title>CENFOTEC-PROFEFRANK</title>
+    <link href="favicon.png" rel="icon">
+    <meta charset="utf-8">
+    <link href="favicon.png" rel="icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/radios.css" rel="stylesheet">
+</head>
+
+<body>
+    <section class="container text-center pt-3 bg-light">
+        <div class="pt-5 text-center">
+            <h1 class="display-2 negrita">Empresa XYZ</h1>
+            <div class="text-center tam1">
+                <img src="imagenes/vendedora.png" alt="vendedora" class="img-fluid" >
+            </div>
+        </div> 
+
+        <div class="row container pt-5">
+            <div class="col-md-12">
+
+
+                <!-- AQUI RADIOS DINAMICOS -->
+
+                <form>
+                    <!-- radios -->
+                    <label>
+                      <input type="radio" name="r" value="dato1"  onclick="contenido1()">Dato1
+                    </label>
+                    <label>
+                      <input type="radio" name="r" value="dato2" onclick="contenido2()">Dato2
+                    </label>
+                    <label>
+                        <input type="radio" name="r" value="dato3" onclick="contenido3()">Dato3
+                    </label>
+                    <label>
+                        <input type="radio" name="r" value="dato4" onclick="contenido4()">Dato4
+                      </label>
+                      <label>
+                          <input type="radio" name="r" value="dato5" onclick="contenido5()">Dato5
+                      </label>
+
+                    <!-- contenido del radio1  -->
+                    <div id="conte1" style="display: none">
+                        <div class="pt-3"></div>
+                        <label>
+                        <input type="text" name="producto" placeholder="Producto">
+                      </label>
+                        <label>
+                        <input type="number" name="cantidad" placeholder="Cantidad">
+                      </label>
+                        <br><br>
+                        <label for="comentario">Comentario:</label><br><br>
+                        <textarea id="comentario" name="comentario" rows="5" cols="40"></textarea>
+                        <br><br>
+                        <button type="submit">Enviar</button>
+                    </div>
+
+                    <!-- contenido del radio2 -->
+                    <div id="conte2" style="display: none">
+                        <div class="pt-3"></div>
+                        <img src="imagenes/logo.png" alt="logo" class="img-fluid">
+                        <div class="pt-3">
+                            <a href="https://ucenfotec.ac.cr" target="blank" class="btn btn-primary">Web de la U</a>
+                        </div>
+                    </div>
+
+                    <!-- contenido del radio3 -->
+                    <div id="conte3" style="display: none">
+                        <div class="pt-3"></div>
+                        <div class="embed-responsive-16by9">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/Di4UvF4c0RU" title="Suiza" allowfullscreen>
+                           
+                        </iframe>
+                        </div>
+                    </div>
+
+                    <!-- contenido del radio4  -->
+                    <div id="conte4" style="display: none">
+                        <div class="pt-3"></div>
+                        <label>
+                        <input type="text" name="producto" placeholder="Producto">
+                      </label>
+                        <label>
+                        <input type="number" name="cantidad" placeholder="Cantidad">
+                      </label>
+                        <br><br>
+                        <label for="comentario">Comentario:</label><br><br>
+                        <textarea id="comentario" name="comentario" rows="5" cols="40"></textarea>
+                        <br><br>
+                        <button type="submit">Enviar</button>
+                    </div>
+
+                    <!-- contenido del radio5 -->
+                    <div id="conte5" style="display: none">
+                        <div class="pt-3"></div>
+                        <div class="embed-responsive-16by9">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/_uQrJ0TkZlc?si=tYTd83fvb2MavZWo" title="Suiza" allowfullscreen>
+                           
+                        </iframe>
+                        </div>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+
+        <div class="pt-5"></div>
+
+
+
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    
+    <!-- programacion -->
+    <script src="js/radios2.js"></script>
+    
+
+</body>
+
+</html>

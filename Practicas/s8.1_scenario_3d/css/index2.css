@@ -1,0 +1,113 @@
+body {
+    overflow-x: hidden;
+}
+
+p {
+    font-size: 18px;
+}
+
+header h1 {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.fondo {
+    background-color: #006aea;
+}
+
+header {
+    width: 100%;
+    /*padding: 20px;*/
+}
+
+
+/*componente Model Viewer*/
+
+model-viewer {
+    width: 850px;
+    height: 600px;
+    display: block;
+    margin: 0 auto;
+    /*background-color: beige;*/
+    /*fondo textura */
+    background-image: url("../assets/textura4.jpeg");
+}
+
+footer {
+    position: fixed;
+    padding: 20px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+
+/* celulares viejos */
+
+@media (min-width:320px) and (max-width: 480px) {
+    model-viewer {
+        display: flex;
+        align-self: center;
+        width: 100% !important;
+    }
+    header {
+        background-color: rgb(79, 11, 98);
+    }
+    footer {
+        position: fixed;
+    }
+}
+
+
+/* Extra Small devices (landscape phones, 576px and down)*/
+
+@media (max-width: 576px) {
+    model-viewer {
+        display: flex;
+        align-self: center;
+    }
+    header {
+        width: 100%;
+        display: block;
+        justify-self: center;
+    }
+    footer {
+        position: fixed;
+    }
+}
+
+
+/* Small devices (landscape phones, 576px and up)*/
+
+@media (min-width: 576px) {
+    header h1 {
+        text-align: center;
+    }
+    header {
+        width: 200%;
+        display: block;
+        justify-self: center;
+    }
+    footer {
+        position: fixed;
+    }
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+    footer {
+        position: relative;
+    }
+}
+
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+    footer {
+        position: fixed;
+    }
+}

@@ -1,0 +1,66 @@
+body {
+    background-image: url("bg.jpg");
+}
+
+.fuente1 {
+    font-size: 20px;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.negrita {
+    font-weight: bolder;
+}
+
+.tam1 img{
+    width: 30%;
+}
+
+label {
+    font-size: 20px;
+}
+
+
+/* tamaño del radio*/
+
+input[name="r"][value="dato1"],
+[value="dato2"],
+[value="dato3"],
+[value="dato4"],
+[value="dato5"] {
+    margin: 12px 10px;
+    transform: scale(0.8);
+}
+
+
+/*colores del radio con pseudoclases = mascara*/
+
+input[type="radio"]:after {
+    width: 24px;
+    height: 24px;
+    top: -3px;
+    left: -1px;
+    border-radius: 15px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid #000;
+}
+
+input[type="radio"]:checked:after {
+    width: 24px;
+    height: 24px;
+    top: -3px;
+    left: -1px;
+    border-radius: 15px;
+    position: relative;
+    background-color: #910f96;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid #000;
+}

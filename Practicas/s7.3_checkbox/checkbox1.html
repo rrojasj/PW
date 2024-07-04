@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>CENFOTEC-PROFEFRANK</title>
+    <link rel="icon" href="favicon.png">
+	<style>
+	.cursor{
+		cursor:pointer;
+	}
+</style>
+  </head>
+  <body>
+
+
+<section class="container pt-5 text-center">
+<div class="pt-5 text-center">
+	<img src="logos.png" class="img-fluid">
+</div>
+Observar la descripción: <input type="checkbox" id="myCheck" onclick="check()" class="cursor">
+
+	<button onclick="check()">Activar Checkbox</button>
+	<div class="pt-3"></div>
+	<button onclick="uncheck()">Desactivar Checkbox</button>
+</section>
+
+
+<!-- AQUI VA LA PROGRAMACION -->
+<script>
+  function check(){
+    document.getElementById("myCheck").checked = true;
+    Swal.fire({
+      title: 'Mensaje Sr. Usuario',
+      text: 'JavaScript es un lenguaje de programación o de secuencias de comandos que te permite implementar funciones complejas en páginas web, cada vez que una página web hace algo más que sentarse allí y mostrar información estática para que la veas, muestra oportunas actualizaciones de contenido, mapas interactivos, animación de Gráficos 2D/3D, desplazamiento de máquinas reproductoras de vídeo, etc., puedes apostar que probablemente JavaScript está involucrado. Es la tercera capa del pastel de las tecnologías web standard, dos de las cuales (HTML y CSS) hemos cubierto con mucho más detalle en otras partes del Área de aprendizaje.',
+      confirmButtonText: "Aceptar",
+    })
+  }
+
+  function uncheck(){
+    // Cuando el usuario lo desactivó
+    document.getElementById("myCheck").checked = false;
+  }
+</script>
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+  </body>
+</html>

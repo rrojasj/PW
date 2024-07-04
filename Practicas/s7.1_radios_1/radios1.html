@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>CENFOTEC-PROFEFRANK</title>
+    <link href="favicon.png" rel="icon">
+    <link href="favicon.png" rel="icon">
+
+    <style>
+        body {
+            background-image: url("bg.jpg");
+        }
+        
+        .fuente1 {
+            font-size: 20px;
+        }
+        
+        .cursor {
+            cursor: pointer;
+        }
+        
+        .negrita {
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container text-center pt-3 bg-light">
+        <div class="pt-5 text-center">
+            <h1 class="display-2 negrita">Empresa XYZ</h1>
+        </div>
+
+        <div class="row container pt-5">
+            <div class="col-md-6">
+                <form class="fuente1">
+                    <!-- radios con interaccion de usuario -->
+                    <input type="radio" id="radio1" name="r1" class="cursor"> Cliente1
+                    <br>
+                    <input type="radio" id="radio2" name="r1" class="cursor"> Cliente2
+                    <br>
+                    <input type="radio" id="radio3" name="r1" class="cursor"> Cliente3
+                    <br>
+                    <input type="radio" id="radio4" name="r1" class="cursor"> Cliente4
+                    <br>
+                    <input type="radio" id="radio5" name="r1" class="cursor"> Cliente5
+                    <br>
+                    <input type="radio" id="radio6" name="r1" class="cursor"> Cliente6
+                    <br>
+                    <input type="radio" id="radio7" name="r1" class="cursor"> Cliente7
+                    <br>
+                    <div class="pt-5"></div>
+                    <input type="button" value="Mostrar" onClick="mostrar()">
+                    <input type="button" value="Limpiar" onClick="limpiar()">
+                </form>
+            </div>
+
+            <div class="col-md-6">
+                <div class="text-center">
+                    <img src="desarrollo.png" alt="desarrollo web" class="img-fluid">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="pt-5"></div>
+
+    </section>
+
+
+    <!-- cargar sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <!-- cargar programacion JS -->
+    <script src="js/desplegables.js"></script>
+    <script src="js/radios1.js"></script>
+    
+    
+
+
+
+</body>
+
+</html>

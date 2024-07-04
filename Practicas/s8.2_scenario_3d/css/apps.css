@@ -1,0 +1,38 @@
+    body {
+        overflow-x: hidden;
+    }
+    /*width: 2500px;
+        height: 790px;
+        height: 100vh
+    */
+    
+    #container_principal {
+        width: 4000px !important;
+        height: 650px;
+    }
+    
+    .cursor {
+        cursor: pointer;
+    }
+    
+    header {
+        padding: 30px;
+        width: 100%;
+    }
+    
+    footer {
+        padding: 45px;
+        background-color: #006aea;
+    }
+    
+    header h1 {
+        text-align: center;
+    }
+    
+    footer h2 {
+        text-align: center;
+    }
+    
+    .fondo {
+        background-color: #006aea;
+    }

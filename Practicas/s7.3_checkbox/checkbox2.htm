@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>CENFOTEC-PROFEFRANK</title>
+    <link rel="icon" href="favicon.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <style>
+        p {
+            font-size: 22px;
+        }
+        .tam1{
+            font-size: 24px;
+        }
+       input[type=checkbox] {
+           transform: scale(2);    
+            margin: 18px 18px;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container text-center bg-light">
+        <h4 class="display-4">Matricula de cursos</h4>
+        <div class="text-center">
+            <img src="matricula.png" class="img-fluid shadow rounded" alt="matricula">
+        </div>
+        <div id="ima1" class="text-center" style="display: none;">
+            <img src="logos.png" alt="logo" class="img-fluid">
+        </div>
+        <hr>     
+        <form method="post" id="form1" name="form1" class="tam1">
+            <input type="checkbox" name="c1"> Requisito #1<br><br>
+            <input type="checkbox" name="c2"> Requisito #2<br><br>
+            <hr><hr>
+            <!-- al dar clic al checkbox Requisitos carga la funcion comprobar() -->
+            <input type="checkbox" name="c3" onclick="comprobar()"> Verificar<br>
+            <p id="demo"></p>
+        </form>
+    </div>
+
+
+<!-- AQUI VA LA PROGRAMACION -->
+<script src="js/checkbox2.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+</body>
+
+</html>

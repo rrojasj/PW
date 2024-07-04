@@ -1,0 +1,68 @@
+body {
+    background-color: #d7f3f8;
+}
+
+p {
+    font-size: 18px;
+}
+
+.fondo {
+    background-color: #006aea;
+}
+
+model-viewer {
+    width: 100%;
+    height: 100vh;
+    background-color: #d7f3f8;
+    /*textura de fondo */
+    /*background-image: url("../assets/textura3.avif");*/
+    /* background-size: cover;*/
+}
+
+header {
+    padding: 20px;
+}
+
+footer {
+    position: fixed;
+    padding: 20px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+
+/* Extra Small devices (landscape phones, 576px and down)*/
+
+@media (max-width: 576px) {
+    footer {
+        position: fixed;
+    }
+}
+
+
+/* Small devices (landscape phones, 576px and up)*/
+
+@media (min-width: 576px) {
+    footer {
+        position: relative;
+    }
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+    footer {
+        position: fixed;
+    }
+}
+
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+    footer {
+        position: fixed;
+    }
+}
