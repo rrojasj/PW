@@ -6,7 +6,7 @@
         <title>Reto No.1</title>
         <link rel="stylesheet" href="css/reto1.css">
         <link rel="stylesheet" href="css/general.css">
-        <link href="favicon.png" rel="icon">
+        <link href="imgs/favicon.png" rel="icon">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -57,7 +57,204 @@
     </div>
     
     <section class="banner banner-retos container-fluid pt-5 d-flex justify-content-center espacio">
-        
+        <section class="container">
+
+            <div class="pt-5"></div>
+            <h1 class="text-center display-3">Video Juegos CR</h1>
+    
+            <div class="pt-4"></div>
+
+            <p><strong>Instrucciones: </strong> Crear una página web programada que tenga una factura digital que capture los siguientes datos, ver pantalla.</p>
+    
+            <br><br>
+
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    
+                    <h2>Información general:</h2>
+                    <div class="pb-3"></div>
+                    <!-- clase input-group se usa  para agrupar campos de texto -->
+                    <!-- clase form-control se usa para dimensionar la anchura de los campos -->
+
+                    <div class="input-group mb-3">
+                        <label for="nombre">Nombre cliente:</label>
+                        <input id="nombre" type="text" class="form-control">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <label for="apellido">Apellido cliente:</label>
+                        <input id="apellido" type="text" class="form-control">
+                    </div>
+
+                    <div class="mb-3 input-group">
+                        <label for="txtConsola">Consola:</label>
+                        <select id="sltConsola" class="form-control">
+                            <option value = ""></option>
+                            <option value='PlayStation®4'>PlayStation®4</option>
+                            <option value='PlayStation®5'>PlayStation®5</option>
+                            <option value='Xbox Series X'>Xbox Series X</option>
+                            <option value='Xbox Series S'>Xbox Series S</option>
+                            <option value='Nintendo Switch'>Nintendo Switch</option>
+                            <option value='Nintendo Switch OLED'>Nintendo Switch OLED</option>
+                        </select>
+                    </div>
+            
+                    <div class="input-group mb-3">
+                        <label for="cantidad">Cantidad</label>
+                        <!-- validity.valid significa "esto es correcto"-->
+                        <input id="cantidad" type="number"  size="2" maxlength="2" onkeyup="obtenerTotal()" oninput="obtenerTotal()" class="form-control">
+                    </div>
+                    
+            
+                    <div class="input-group mb-3">            
+                        <label for="totalPorConsolas">Total:</label>
+                        <!-- validity.valid significa "esto es correcto"-->
+                        <!-- API validacion de elementos -->
+                        <input id="totalPorConsolas" type="number"  oninput="validity.valid||(value='')" class="form-control" disabled>
+                    </div>
+                </div>
+                    
+                <div class="col-sm-12 col-md-6 col-lg-4 active d-none">
+                    <div>
+
+                    </div>
+                    <h2>Detalles de factura</h2>
+                        <div class="border-top border-gray-200 pt-4 mt-4">
+                            <div id="print-area">
+                                <div class="text-muted mb-2" id="primerNombre"></div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="text-muted mb-2">Factura No.</div>
+                                        <strong>#<span id="numFactura"></span></strong>
+                                    </div>
+                                    <div class="col-md-6 text-md-end">
+                                        <div class="text-muted mb-2">Fecha</div>
+                                        <strong><span id="diaCompra"></span></strong>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="text-muted mb-2">Cliente</div>
+                                        <strong><span id="nombreCompleto"></span></strong>
+                                    </div>
+                                    <div class="col-md-6 text-md-end">
+                                        <div class="text-muted mb-2">Motivo</div>
+                                        <strong>Compra</strong>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row border-top">
+                                    <div class="pt-3"></div>
+                                    <div class="col-sm-12 col-md-6 col-lg-4">
+                                        <div class="text-muted mb-2">Artículo</div>
+                                        <strong><span id="articuloCompra"></span></strong>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6 col-lg-4 text-md-center">
+                                        <div class="text-muted mb-2">Cantidad</div>
+                                        <strong><span id="cantidadConsolas"></span></strong>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6 col-lg-4 text-md-end">
+                                        <div class="text-muted mb-2">Precio ud.</div>
+                                        <strong><span id="precioUnidad"></span></strong>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pt-3 border-top"></div>
+                                <div class="row border-bottom">
+                                    <div class="col-md-6">
+                                        <div class="text-muted mb-2">Subtotal</div>
+                                    </div>
+                                    <div class="col-md-6 text-md-end">
+                                        <strong><span id="subtotal"></span></strong>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row border-bottom">
+                                    <div class="col-md-6">
+                                        <div class="text-muted mb-2">IVA 13%</div>
+                                    </div>
+                                    <div class="col-md-6 text-md-end">
+                                        <strong><span id="iva"></span></strong>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row border-bottom">
+                                    <div class="col-md-6">
+                                        <div class="text-muted mb-2">Servicio</div>
+                                    </div>
+                                    <div class="col-md-6 text-md-end">
+                                        <strong><span id="servicio"></span></strong>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row border-bottom">
+                                    <div class="col-md-6">
+                                        <div class="text-muted mb-2">Total a pagar</div>
+                                    </div>
+                                    <div class="col-md-6 text-md-end">
+                                        <strong><span id="totalFactura"></span></strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="text-md-end pt-3">
+                                    <button type="button" class="btn btn-outline-secondary" onclick="imprimirFactura('print-area')"><i class="fa-solid fa-print" style="color: #9cb7cd;"></i>Imprimir</button>
+                                </div>
+                            </div>
+                        </div>
+                    <br>
+                    
+                </div>
+            </div>
+            
+    
+            <!-- (d-flex justify-content-end) = Es una instruccion de Flexbox que pone a la derecha los botones  -->
+            <div class="pt-3 d-flex justify-content-center">
+                <button class="mx-1" id="nuevaCompraBtn" onclick="crearNuevaCompra()"><i class="fa-solid fa-cart-shopping"></i>Nueva compra</button>
+                <button class="mx-1" id="facturaBtn" onclick="generarFactura()"><i class="fa-solid fa-receipt"></i> Generar factura</button>
+                <button class="mx-1" id="limpiarBtn" onclick="limpiarDatos()"><i class="fas fa-trash"></i>Limpiar datos</button>
+            </div>
+            <br><br>
+    
+            <div class="container text-center">
+                <!-- la clase table-info es para darle una apariencia grafica a la tabla -->
+                <table class="table table-hover table-light">
+                    <!-- seccion de encabezado de tabla -->
+                    <thead>
+                        <!-- <tr> es fila de tabla-->
+                        <tr>
+                            <!-- <th> es celda de tabla-->
+                            <th>No. Factura</th>
+                            <th>Fecha</th>
+                            <th>Cliente</th>
+                            <th>Consola</th>
+                            <th>Cantidad</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <!-- cuerpo de tabla -->
+                    <tbody id="tablaCompras"></tbody>
+                </table>
+            </div>
+
+            <!-- Bloque para ser trabajado más adelante -->
+            <!-- <div class="container">
+                <div class="row border-bottom">
+                    <div class="col-md-6">
+                        <div class="text-muted mb-2"><strong>Total de ventas</strong></div>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <strong><span id="totalVentas"></span></strong>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="pt-3 d-flex text-md-end">
+                <button class="mx-3 btn btn-outline-secondary" id="limpiarTablaBtn" onclick="limpiarTabla()"><i class="fa-solid fa-trash"></i>Limpiar tabla</button>
+            </div>
+
+        </section>
         
     </section>
 
@@ -69,7 +266,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="js/index.js"></script>
+    <script src="js/reto1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     
   </body>

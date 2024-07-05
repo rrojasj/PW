@@ -1,0 +1,87 @@
+h1 {
+    background-color:  rgba(156, 183, 205, 0.5);
+    color: #fff;
+    font-size: 40px;
+    font-weight: 700;
+    padding: 25px;
+}
+
+h2 {
+    color: #9cb7cd !important;
+}
+
+p {
+    font-size: 20px;
+}
+
+
+/*iconos web*/
+
+i {
+    font-size: 20px;
+    color: #fff;
+    margin-right: 10px;
+}
+
+
+/*botones*/
+
+button {
+    border: none;
+    margin-left: 10px;
+    padding: 12px 22px;
+    border-radius: 100px;
+    color: #fff;
+}
+
+#agregarBtn {
+    background-color:  #9cb7cd;
+    color: #fff;
+    border-radius: 3px;
+}
+
+#limpiarBtn,
+#facturaBtn, 
+#nuevaCompraBtn {
+    background-color: #9cb7cd;
+    color: #fff;
+    border-radius: 3px;
+}
+
+#limpiarTablaBtn:hover {
+    color: #fff !important;
+}
+
+/*tabla*/
+
+th {
+    font-size: 18px;
+    color: #000;
+}
+
+input {
+    font-size: 20px;
+}
+
+input:hover {
+    background-color: #e4e4e4;
+    border: 2px solid #3a7aa5;
+}
+
+label {
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    width: 250px;
+    margin-right: 10px;
+}
+
+.dropdown-menu{
+padding: 5px 10px;
+}
+
+.dropdown-menu {
+font-size: 20px;
+padding: 10px;
+}
+
