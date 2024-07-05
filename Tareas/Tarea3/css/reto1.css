@@ -1,38 +1,4 @@
-h1 {
-    background-color:  rgba(156, 183, 205, 0.5);
-    color: #fff;
-    font-size: 40px;
-    font-weight: 700;
-    padding: 25px;
-}
 
-h2 {
-    color: #9cb7cd !important;
-}
-
-p {
-    font-size: 20px;
-}
-
-
-/*iconos web*/
-
-i {
-    font-size: 20px;
-    color: #fff;
-    margin-right: 10px;
-}
-
-
-/*botones*/
-
-button {
-    border: none;
-    margin-left: 10px;
-    padding: 12px 22px;
-    border-radius: 100px;
-    color: #fff;
-}
 
 #agregarBtn {
     background-color:  #9cb7cd;
