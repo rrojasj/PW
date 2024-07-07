@@ -1,0 +1,95 @@
+.h3-azul {
+    color: #1c3d5b !important;
+}
+
+.h3-blanco {
+    color: #d0c0c0 !important;
+}
+
+.h3-gris {
+    color: #909293 !important;
+}
+
+.h3-hueso {
+    color: #d0c0c0 !important;
+}
+
+.h3-negro {
+    color: #010101 !important;
+}
+
+.h3-rojo {
+    color: #97001a !important;
+}
+
+.radioCirculos {
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+.radioCirculos:checked {
+    box-shadow: 0 0 0 3px #555;
+}
+
+.bannerAuto {
+    background-image: url("../imgs/pw_t3_reto6_banner_auto.png");
+    height: 1000px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-autos {
+    display: flex;
+    /* align-items: center; */
+    background-size: cover;
+    background-position: center;
+    background-image: url('../imgs/pw_t3_banner_retos.png');
+    height: 1200px !important;
+}
+
+/* Azul #1c3d5b */
+/* Hueso: #ededed */
+/* Blanco: #f5f6f6 */
+/* Gris: #909293 */
+/* Negro: #010101 */
+/* Rojo: #97001a */
+
+/* input[name="r"][value="dato1"],
+[value="dato2"],
+[value="dato3"],
+[value="dato4"] {
+    margin: 12px 5px;
+    transform: scale(1);
+}
+
+input[type="radio"]:after {
+    width: 24px;
+    height: 24px;
+    top: -3px;
+    left: -1px;
+    border-radius: 15px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid #000;
+}
+
+input[type="radio"]:checked:after {
+    width: 24px;
+    height: 24px;
+    top: -3px;
+    left: -1px;
+    border-radius: 15px;
+    position: relative;
+    background-color: #910f96;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid #000;
+} */
