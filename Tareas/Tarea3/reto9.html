@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Reto No.1</title>
-        <link rel="stylesheet" href="css/reto1.css">
+        <title>Reto No.9</title>
+        <link rel="stylesheet" href="css/reto9.css">
         <link rel="stylesheet" href="css/general.css">
         <link href="imgs/favicon.png" rel="icon">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -48,37 +48,265 @@
                     </ul>
                 </div>
             </div>
-          </nav>
-    
+        </nav>
+
     </div>
-    
-    <section class="banner banner-retos container-fluid pt-5 d-flex justify-content-center espacio">
-        <section class="container">
 
-            <div class="pt-5"></div>
-            <h1 class="text-center display-3">Video Juegos CR</h1>
-    
-            <div class="pt-4"></div>
-
-            <p><strong>Instrucciones: </strong> Crear una página web programada que tenga una factura digital que capture los siguientes datos, ver pantalla.</p>
-    
-            <br><br>
-
-        </section>
+        <section class="bannerAuto container-fluid"></section>
         
-    </section>
-
-    <footer class="bg-transparent-dark py-3 fixed-bottom">
-        <div class="container text-light text-center">
-            <p class="display-5">Roberto Rojas</p>
-            <small class="text-white-50">&copy; 2024 - Todos los derechos reservados</small>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="js/reto2.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
+        <section class="banner-autos container-fluid d-flex justify-content-center">
     
-  </body>
-</html>
+            <section class="container">
+    
+                <div class="pt-5"></div>
+    
+                <h1 class="text-center display-3">Venta de carros</h1>
+        
+                <div class="pt-4"></div>
+    
+                <p><strong>Instrucciones:</strong> Crear una página web programada que tenga una demostración programada usando los controles dinámicos radio y checkbox de un formulario. La misma debe brindar un resultado al usuario al ser ejecutadas.</p>
+        
+                <br><br>
+    
+                <div class="border-top">
+                    <h2 class="pt-3">Seleccione un color de auto:</h2>
+                    <div class="pb-3"></div>
+                </div>
+    
+                <div>
+                    <form>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="azul" onclick="mostrarAzul()">
+                            <label class="form-check-label" for="inlineRadio1">Azul</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="blanca" onclick="mostrarBlanca()">
+                            <label class="form-check-label" for="inlineRadio2">Blanca</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="gris" onclick="mostrarGris()">
+                            <label class="form-check-label" for="inlineRadio3">Gris</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="hueso" onclick="mostrarHueso()">
+                            <label class="form-check-label" for="inlineRadio4">Hueso</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="negra" onclick="mostrarNegra()">
+                            <label class="form-check-label" for="inlineRadio5">Negra</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="roja" onclick="mostrarRoja()">
+                            <label class="form-check-label" for="inlineRadio6">Roja</label>
+                        </div>
+    
+                        <!-- contenido del radio1  -->
+                        <div id="conteAzul" style="display: none">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="pt-5">
+                                        <img src="imgs/pw_t3_reto6_color_Azul.png" alt="Blanco">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <h3 class="pt-5 h3-azul">Montero Sport Azul</h3>
+                                    <p>Fresca y moderna, perfecta para destacar en cualquier lugar.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- contenido del radio2  -->
+                        <div id="conteBlanco" style="display: none">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="pt-5">
+                                        <img src="imgs/pw_t3_reto6_color_blanco.png" alt="Blanco">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <h3 class="pt-5 h3-blanco">Montero Sport Blanca</h3>
+                                    <p>Elegante y sofisticada para cualquier ocasión..</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- contenido del radio3  -->
+                        <div id="conteGris" style="display: none">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="pt-5">
+                                        <img src="imgs/pw_t3_reto6_color_gris.png" alt="Gris">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <h3 class="pt-5 h3-gris">Montero Sport Gris</h3>
+                                    <p>Combina modernidad y estilo en cada viaje.</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- contenido del radio4  -->
+                        <div id="conteHueso" style="display: none">                    
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="pt-5">
+                                        <img src="imgs/pw_t3_reto6_color_hueso.png" alt="Hueso">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <h3 class="pt-5 h3-hueso">Montero Sport Hueso</h3>
+                                    <p>Refinada y única, destaca en la carretera.</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- contenido del radio5  -->
+                        <div id="conteNegro" style="display: none">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="pt-5">
+                                        <img src="imgs/pw_t3_reto6_color_negro.png" alt="Negro">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <h3 class="pt-5 h3-negro">Montero Sport Negra</h3>
+                                    <p>Imponente y con un diseño clásico atemporal.</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- contenido del radio6  -->
+                        <div id="conteRojo" style="display: none">                        
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="pt-5">
+                                        <img src="imgs/pw_t3_reto6_color_rojo.png" alt="Azul">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <h3 class="pt-5 h3-rojo">Montero Sport Roja</h3>
+                                    <p>Vibrante y dinámica, llama la atención inmediatamente.</p>
+                                </div>
+                            </div>                    
+                        </div>
+    
+                    </form>
+                </div>
+
+                <!-- Sección: Checkbox -->
+                <div class="pb-5"></div>
+                <div class="border-top">
+                    <h2 class="pt-3">Seleccione las opciones Full Extras</h2>
+                    <div class="pb-3"></div>
+                </div>
+
+                <div>
+                    <div class="row">
+                        <!-- Card: Full extras - Exterior -->
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="card">
+                                <div class="card-header text-center"><h4>Full Extras: Exterior</h4></div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item" style="list-style-type: none">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="interior-check1">
+                                            <label class="form-check-label" for="interior-check1">Faros LED completos</label>
+                                        </div>
+                                        <p class="text fs-5x">Para una mejor visibilidad y un aspecto moderno.</p>
+                                        <p class="text fs-5x"><strong>Valor:</strong> $700</p>
+                                    </li>
+                                    <li class="list-group-item" style="list-style-type: none">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="interior-check2">
+                                            <label class="form-check-label" for="interior-check2">Luces diurnas LED</label>
+                                        </div>
+                                        <p class="text fs-5x">Mejoran la visibilidad durante el día y añaden un toque estilizado.</p>
+                                        <p class="text fs-5x"><strong>Valor:</strong> $350</p>
+                                    </li>
+                                    <li class="list-group-item" style="list-style-type: none">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="interior-check3">
+                                            <label class="form-check-label" for="interior-check3">Techo solar panorámico</label>
+                                        </div>
+                                        <p class="text fs-5x">Para una experiencia de conducción más abierta y aireada.</p>
+                                        <p class="text fs-5x"><strong>Valor:</strong> $1250</p>
+                                    </li>
+                                    <li class="list-group-item" style="list-style-type: none">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="interior-check4">
+                                            <label class="form-check-label" for="interior-check4">Barras de techo</label>
+                                        </div>
+                                        <p class="text fs-5x">Para transporte adicional de carga o equipo deportivo.</p>
+                                        <p class="text fs-5x"><strong>Valor:</strong> $975</p>
+                                    </li>
+                                </ul>
+                              </div>
+                        </div>
+                        
+                        <!-- Card: Full extras - Interior -->
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="card">
+                                <div class="card-header text-center"><h4>Full Extras: Interior</h4></div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item" style="list-style-type: none">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="exterior-check1">
+                                            <label class="form-check-label" for="exterior-check1">Asientos de cuero premium</label>
+                                        </div>
+                                        <p class="text fs-5x">Para mayor confort y un acabado de lujo.</p>
+                                        <p class="text fs-5x"><strong>Valor:</strong> $2300</p>
+                                    </li>
+                                    <li class="list-group-item" style="list-style-type: none">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="exterior-check2">
+                                            <label class="form-check-label" for="exterior-check2">Sistema de sonido premium</label>
+                                        </div>
+                                        <p class="text fs-5x">Como un sistema de sonido Rockford Fosgate o similar.</p>
+                                        <p class="text fs-5x"><strong>Valor:</strong> $1650</p>
+                                    </li>
+                                    <li class="list-group-item" style="list-style-type: none">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="exterior-check3">
+                                            <label class="form-check-label" for="exterior-check3">Pantalla de visualización frontal (HUD)</label>
+                                        </div>
+                                        <p class="text fs-5x">Para mostrar información importante sin desviar la vista del camino.</p>
+                                        <p class="text fs-5x"><strong>Valor:</strong> $825</p>
+                                    </li>
+                                    <li class="list-group-item" style="list-style-type: none">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="exterior-check4">
+                                            <label class="form-check-label" for="exterior-check4">Iluminación ambiental interior</label>
+                                        </div>
+                                        <p class="text fs-5x">Para un ambiente interior más acogedor.</p>
+                                        <p class="text fs-5x"><strong>Valor:</strong> $1100</p>
+                                    </li>
+                                </ul>
+                              </div>
+                        </div>    
+                    </div>
+
+                    <!-- Sección: Botón para calcular total Full Extras -->
+                     <div class="pt-5 d-flex justify-content-center">
+                        <button id="feBtn" type="button" class="btn btn-outline-primary" onclick="obtenerTotalFE()">Total Full Extras</button>
+                     </div>
+                </div>
+    
+            </section>
+    
+            
+        </section>
+    
+        <footer class="bg-transparent-dark py-3 fixed-bottom">
+            <div class="container text-light text-center">
+                <p class="display-5">Roberto Rojas</p>
+                <small class="text-white-50">&copy; 2024 - Todos los derechos reservados</small>
+            </div>
+        </footer>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="js/reto9.js"></script>
+        <script src="js/reto6.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    
+        
+      </body>
+    </html>
