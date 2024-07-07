@@ -40,11 +40,11 @@ button {
 
 .banner-retos {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     background-size: cover;
     background-position: center;
     background-image: url('../imgs/pw_t3_banner_retos.png');
-    min-height: 1920px;
+    min-height: 1500px;
 }
 
 .nav-logo img {

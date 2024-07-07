@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Reto No.1</title>
+        <title>Reto No.7</title>
         <link rel="stylesheet" href="css/reto1.css">
         <link rel="stylesheet" href="css/general.css">
         <link href="imgs/favicon.png" rel="icon">
@@ -56,15 +56,48 @@
         <section class="container">
 
             <div class="pt-5"></div>
-            <h1 class="text-center display-3">Video Juegos CR</h1>
+            <h1 class="text-center display-3">Maravillas del Mundo</h1>
     
             <div class="pt-4"></div>
 
-            <p><strong>Instrucciones: </strong> Crear una página web programada que tenga una factura digital que capture los siguientes datos, ver pantalla.</p>
+            <p><strong>Instrucciones: </strong> Crear una página web programada que tenga un mapa de imagen interactivo con 5 números o letras para que el usuario visite. Al dar clic debe aparecer un desplegable con una descripción general del objeto seleccionado. Puede utilizar cualquier tema para lograr el objetivo.</p>
     
             <br><br>
 
+            <div class="pt-5"></div>
+
+            <div class="row">
+
+                <div class="col-md-6 col-lg-6">
+    
+                    <div class="text-center pt-5">
+                        <!-- carga de la imagen mapeada con ID del mapa -->
+                        <img src="imgs/pw_t3_reto7_maravillas.png" usemap="#image-map" class="img-fluid shadow" alt="7 Maravillas del Mundo">
+                    </div>
+                </div>
+    
+    
+                <div class="col-md-6 col-lg-6">
+                    <p class="pt-5">
+                        Las Siete Maravillas del Mundo Antiguo incluyen la Gran Pirámide de Giza, los Jardines Colgantes de Babilonia, el Templo de Artemisa en Éfeso, la Estatua de Zeus en Olimpia, el Mausoleo de Halicarnaso, el Coloso de Rodas y el Faro de Alejandría. Estas maravillas fueron obras arquitectónicas y artísticas impresionantes que representaron el ingenio y la habilidad de las civilizaciones antiguas.
+                    </p>
+                    <p class="">
+                        Las Siete Maravillas del Mundo Moderno, elegidas en 2007, incluyen la Gran Muralla China, Petra en Jordania, el Cristo Redentor en Brasil, Machu Picchu en Perú, el Coliseo en Italia, el Taj Mahal en India y Chichén Itzá en México. Estas estructuras modernas son reconocidas por su belleza arquitectónica y su profundo significado cultural e histórico.
+                    </p>
+                </div>
+            </div>
+
         </section>
+
+        <map name="image-map">
+            <area target="" alt="Click para más información" title="Click para más información" coords="200,64,44" id="r1" shape="circle">
+            <area target="" alt="Click para más información" title="Click para más información" coords="341,826,47" id="r2" shape="circle">
+            <area target="" alt="Click para más información" title="Click para más información" coords="772,298,43" id="r3" shape="circle">
+            <area target="" alt="Click para más información" title="Click para más información" coords="1036,785,46" id="r4" shape="circle">
+            <area target="" alt="Click para más información" title="Click para más información" coords="1155,400,45" id="r5" shape="circle">
+            <area target="" alt="Click para más información" title="Click para más información" coords="1420,219,47" id="r6" shape="circle">
+            <area target="" alt="Click para más información" title="Click para más información" coords="1864,80,49" id="r7" shape="circle">
+        </map>
         
     </section>
 
@@ -75,8 +108,21 @@
         </div>
     </footer>
 
+    <!-- permite la interactividad del mapeo interactivo-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Permite cargar las coordenadas -->
+    <script src="js/jquery.rwdImageMaps.min.js"></script>
+
+    <!-- Permite inicializar el script rwdImageMaps -->
+    <script>
+        $(document).ready(function() {
+            $('img[usemap]').rwdImageMaps();
+        });
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="js/reto2.js"></script>
+    <script src="js/reto7.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     
