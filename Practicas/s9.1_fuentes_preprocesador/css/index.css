@@ -1,0 +1,47 @@
+/*importacion CSS secundarios*/
+
+@import url("../css/index2.css");
+@import url("../css/reglas.css");
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.avatars img {
+    width: 15%;
+}
+
+.logo img {
+    width: 80%;
+}
+
+.izquierda {
+    display: flex;
+    justify-content: start;
+}
+
+.derecha {
+    display: flex;
+    justify-content: end;
+}
+
+.justificar {
+    text-align: justify;
+}
+
+header {
+    padding: 20px;
+}
+
+footer {
+    /*si se quita la posicion fija el pie de pagina dejara de estar al final de la pagina*/
+    /*position: fixed;*/
+    padding: 20px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
