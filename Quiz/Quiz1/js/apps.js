@@ -75,13 +75,21 @@ infospot7.element.innerHTML = '<div style="background-color: rgba(64, 64, 64, 0.
 
 panorama. add (infospot7);
 
-/* ***************** Zona Interacción #7 ***************** */
-var infospot8 = new PANOLENS. Infospot(35, 'imgs/pw_q1_360_icon_info.png');
+/* ***************** Zona Interacción #8 ***************** */
+var     infospot8 = new PANOLENS. Infospot(35, 'imgs/pw_q1_360_icon_info.png');
 infospot8.position.set(500 ,-18 , 75);
 infospot8.addHoverText('Nissan: Rally Paris Dakar 2024', -60);
 infospot8.element.innerHTML = '<div style="background-color: rgba(64, 64, 64, 0.8); color:#fff; border-radius: 5px; padding: 10px; font-size: 14px; width: 200px;">Nissan: Rally Paris Dakar 2024</div>';
 
 panorama. add (infospot8);
+
+/* ***************** Zona Interacción #9 ***************** */
+var infospot9 = new PANOLENS. Infospot(35, 'imgs/pw_q1_360_icon_info.png');
+infospot9.position.set(500 ,-65 , 137);
+infospot9.addHoverText('', -60);
+infospot9.element.innerHTML = '<div style="color: #000; border-radius: 5px; padding: 10px; font-size: 14px; width: 200px;"><audio controls><source src="audios/pw_q1_audio_rally.mp3"></div>';
+
+panorama. add (infospot9);
 
 
 // Agregar la panorámica al visor
