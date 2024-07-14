@@ -36,3 +36,19 @@
     .fondo {
         background-color: #006aea;
     }
+
+    .bg-egyptian-blue {
+        background-color: #0F4557 !important;
+    }
+    
+    .navbar-nav li a {
+        color: #E4FDE1;
+    }
+    
+    .navbar-nav li a:hover {
+        color: #FFFF63;
+    }
+    
+    .navbar-nav li a:active {
+        color: #FAFAFA;
+    }
