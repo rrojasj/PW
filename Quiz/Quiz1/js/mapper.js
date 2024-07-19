@@ -5,7 +5,7 @@ function getPosition() {
   };
   
   //list of all info spots on panorama
-  var infospotsall = [infospot1, infospot2, infospot3];
+  var infospotsall = [infospot1];
   
   function isHovering() { 
     for (let i = 0; i < infospotsall.length; i++) { 
