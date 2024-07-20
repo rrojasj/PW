@@ -1,0 +1,94 @@
+body {
+    font-family: "Poppins", Arial sans-serif;
+    background-color: #ffffff;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+.titulos {
+    font-size: 40px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 20px;
+    color: #000;
+    text-align: center;
+}
+
+p {
+    font-size: 20px;
+    color: #000;
+    text-align: left;
+}
+
+.objetivo {
+    font-size: 24px;
+    color: #000;
+}
+
+textarea {
+    resize: none;
+}
+
+
+/************ CONTADOR NUMERICO  ***************/
+
+#section-counter {
+    position: relative;
+    z-index: 0;
+}
+
+.ftco-counter {
+    overflow-x: hidden;
+    position: relative;
+    padding: 4em 0;
+    background: #fff;
+}
+
+@media (max-width: 1199.98px) {
+    .ftco-counter {
+        background-position: center center !important;
+    }
+}
+
+.ftco-counter .block-18 {
+    display: block;
+    width: 100%;
+}
+
+@media (max-width: 991.98px) {
+    .ftco-counter .block-18 {
+        margin-bottom: 2em;
+    }
+}
+
+.ftco-counter .text {
+    position: relative;
+}
+
+@media (max-width: 767.98px) {
+    .ftco-counter .text {
+        width: 100%;
+    }
+}
+
+.ftco-counter .text .number {
+    line-height: 1;
+    font-weight: 700;
+    font-size: 38px;
+    color: #104ca5;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.ftco-counter .text span {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 767.98px) {
+    .ftco-counter .counter-wrap {
+        margin-bottom: 20px;
+    }
+}

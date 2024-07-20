@@ -1,0 +1,31 @@
+    h1,
+    h2 {
+        text-align: center;
+    }
+    
+    #contenido {
+        margin-top: 30px;
+    }
+    /*clases alusivas a borrar comentarios*/
+    
+    .borrar-tweet,
+    .borrar-tweet:hover {
+        float: right;
+        cursor: pointer;
+        color: red;
+        font-weight: bold;
+        /*background-color: #e4e4e4;*/
+    }
+    /*clase alusiva a mensaje de error*/
+    
+    .error {
+        background-color: red;
+        color: #000;
+        text-align: center;
+        padding: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        max-width: 400px;
+        margin: 0 auto;
+        display: block;
+    }
