@@ -1,0 +1,312 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    scroll-behavior: smooth;
+    transition: all ease-in 0.5s;
+}
+
+.seccion {
+    background-image: url("../img/banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 650px;
+}
+
+.seccion h1 {
+    padding-top: 260px;
+    font-size: 85px;
+    color: #000;
+    text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
+    font-weight: bold;
+}
+
+header {
+    background-color: #e4e4e4;
+}
+
+.nav-item a {
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #000;
+    transition: all 0.5s ease-out;
+}
+
+.nav-item a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.navigation-wrap .nav-item {
+    padding: 10px;
+    transition: all 200ms linear;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler i {
+    color: #000;
+    font-size: 27px;
+}
+
+.navbar-nav {
+    text-align: center;
+}
+
+.dropdown a:focus {
+    color: #000;
+}
+
+.dropdown-menu {
+    background-color: #cfcfcf;
+    border: none;
+}
+
+.botonScrollTop {
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background-color: #ffd433;
+    right: 30px;
+    bottom: 30px;
+    text-align: center;
+    line-height: 45px;
+    color: #000;
+    font-size: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.seccion1 {
+    background-color: #ffd433;
+}
+
+.seccion1 h2 {
+    color: #fff;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.seccion2 .tituloSeccion2 {
+    padding-top: 25px;
+    padding-bottom: 45px;
+    font-size: 45px;
+}
+
+.seccion2 .icon {
+    clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+    background-color: #ffd433;
+    width: 110px;
+    padding: 25px;
+    color: #fff;
+}
+
+.seccion3 {
+    background-image: url("../img/banner2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 450px;
+    background-attachment: fixed;
+}
+
+.seccion3 h2 {
+    color: #fff;
+    font-weight: bold;
+    font-size: 45px;
+    padding-top: 100px;
+}
+
+.seccion4 .tituloSeccion4 {
+    padding-top: 25px;
+    padding-bottom: 45px;
+    font-size: 45px;
+}
+
+.seccion4 .card {
+    border: none;
+}
+
+footer {
+    background-color: #ffd433;
+}
+
+footer p {
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+    padding-top: 15px;
+}
+
+
+/* estilos para el modo oscuro */
+
+
+/* cuando se le da clic al boton del modo oscuro, el body cambia de color y 
+la mayoria de los hijos del body heredan el color blanco y el transition para suavidad al pasarlo al modo oscuro*/
+
+.modoOscuroBody {
+    background-color: #121212;
+    color: #fff;
+    transition: all ease-in 0.5s;
+}
+
+
+/* cuando se aplique el modo oscuro que todo el nav aplique esa transition para suavidad al pasarlo al modo oscuro
+que se agregue ese fondo */
+
+.modoOscuroBody .navbar {
+    background-color: #121212;
+    transition: all ease-in 0.5s;
+}
+
+
+/* cuando se aplique el modo oscuro que las opciones del menu sea color blanco */
+
+.modoOscuroBody .navbar-nav .nav-link {
+    color: #fff;
+}
+
+
+/* cuando se aplique el modo oscuro que los p de las cards se coloquen en color negro */
+
+.modoOscuroBody .seccion4 .card-body {
+    color: #000000;
+}
+
+
+/* estilos btn modo oscuro */
+
+.modoOscuroIconBtn {
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background-color: #ffd433;
+    left: 30px;
+    bottom: 30px;
+    text-align: center;
+    line-height: 45px;
+    color: #000;
+    font-size: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-content: center;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(234, 167, 23, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler .navbar-toggler-icon:hover {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(234, 167, 23, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+
+/* estilos toggle switch  */
+
+
+/* Estilos para el toggle switch */
+
+.checkbox {
+    display: none;
+}
+
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 34px;
+}
+
+/* Controla el color de fondo del toggle o switch */
+.toggle::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 17px;
+    background-color: #dbcdc1;
+    transition: background-color 0.3s;
+}
+
+.toggle::after {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    top: 10%;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.checkbox:checked+.toggle::before {
+    /* color de fondo cuando esta activado */
+    background-color: #eaa717;
+}
+
+.checkbox:checked+.toggle::after {
+    transform: translateX(50px);
+    /* color del círculo cuando esta activado */
+    background-color: #fff;
+}
+
+
+/* icono */
+
+.modoOscuroIcon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fa0303;
+    left: 44px;
+    font-size: 17px;
+    z-index: 99;
+    transition: opacity 0.3s;
+}
+
+.checkbox:checked+.toggle .fa-sun {
+    /* Oculta el icono del sol cuando esta activado */
+    opacity: 0;
+}
+
+.checkbox:checked+.toggle .fa-moon {
+    /* muestra el icono de la luna cuando esta activado */
+    opacity: 1;
+    left: 98px;
+}
+
+
+/*http://hex2rgba.devoth.com*/
+
+
+/*colores lineas menu hamburguesa*/
+
+@media (max-width: 576px) {
+    .custom-toggler .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(234, 167, 23, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+    .custom-toggler .navbar-toggler-icon:hover {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(234, 167, 23, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+}
+
+
+/* Small devices (landscape phones, 576px and up)*/
+
+@media (min-width: 576px) {
+    .custom-toggler .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+    }
+    .custom-toggler .navbar-toggler-icon:hover {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+    }
+}

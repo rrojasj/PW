@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/****************************** Importación de Fuentes Web ******************************/
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+/****************************** Variables ******************************/
+$login-banner-bg-img-url: "../imgs/pw_e1_login_1.png";
+$login-banner-window-height: 100vh; /* Covers 100% of window's height */
+$login-banner-box-shadow: inset 0 0 0 1000px rgba(0, 0, 0 , 0.4);
+
+
+
+.banner-login {
+    background-image: url(#{$login-banner-bg-img-url});
+    height: $login-banner-window-height;
+    box-shadow: $login-banner-box-shadow;
+}

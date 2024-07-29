@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AutoSpot - Inicio</title>
+    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="icon" href="imgs/logo/logo_title.png" type="image/x-con">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+
+    <header>
+      <nav class="navbar bg-black navbar-dark-hover-color">
+        <div class="container">
+          <a class="justify-content-start" href="#">
+            <img src="imgs/logo/logo_main_500x187_transp.png" alt="AutoSpot Logo" width="200" height="65" onclick="navigateToIndex()">
+          </a>
+          <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Nosotros">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Contáctenos">Contáctenos</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <section class="container-fld-banner1 banner1 d-flex justify-content-end">
+      <div>
+        <img src="imgs/logo/logo_main_500x187_transp.png" alt="AutoSpot" class="img-fluid banner1-logo">
+        <div class="pt-4 banner1-text">
+          <p>¡La mejor opción para un nuevo viaje!</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container-fld-servicios">
+      <h2 class="text-center">Servicios</h2>
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="text-center">
+              <div class="d-flex justify-content-center animation-box">
+                <div class="mgr-servicios1 cursor"></div>
+              </div>
+              <div class="d-flex justify-content-center">
+                <h5 class="title-line">Venta de Autos</h5>
+              </div>
+            </div>
+            <p class="pt-3">
+              Venta de vehículos nuevos de diversas marcas y modelos y venta de autos usados certificados con garantía.
+            </p>
+          </div>
+
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="text-center">
+              <div class="d-flex justify-content-center animation-box">
+                <div class="mgr-servicios2 cursor"></div>
+              </div>
+              <div class="d-flex justify-content-center">
+                <h5 class="title-line">Financiamiento</h5>
+              </div>
+            </div>
+            <p class="pt-3">
+              Opciones de financiamiento a través de bancos y financieras y planes de leasing (arrendamiento) para clientes individuales y empresas.
+            </p>
+          </div>
+
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="text-center">
+              <div class="d-flex justify-content-center animation-box">
+                <div class="mgr-servicios3 cursor"></div>  
+              </div>
+              <div class="d-flex justify-content-center">
+                <h5 class="title-line">Mantenimiento</h5>
+              </div>
+            </div>
+            <p class="pt-3">
+              Servicios de mantenimiento preventivo y correctivo. Reparaciones mecánicas y eléctricas, además de, cambio de aceite, filtros y otros fluidos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container-fld-nosotros">
+
+      <h2 class="text-center pt-5">Nosotros</h2>
+
+      <div class="container pt-5">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <div>
+              <div class="container-fld-nosotros banner-nosotros banner-nosotros-text justify-content-start">
+                <h1><span>AutoSpot</span></h1>
+                <p><span>La Mejor Selección de Autos</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-6 col-2-nosotros">
+            <div >
+              <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                  <div class="mgr-nosotros1 cursor"></div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                  <div>
+                    <div class="row pb-3">
+                      <div class="col-sm-12 col-md-6 col-lg-6 d-flex justify-content-end">
+                        <button type="button" class="btn-close item" id="closeBtn" aria-label="Close" onclick="hideCerts()"></button>
+                      </div>
+                    </div>
+                    <div class="card card-nosotros" id="myCertsList" style="width: 18rem;">
+                      <ul class="list-group list-group-flush card-list-nosotros">
+                        <li class="list-group-item">Master en Sistemas Electrónicos</li>
+                        <li class="list-group-item">Especialista Electricidad Automotriz</li>
+                        <li class="list-group-item">Especialista Aceleración Electrónico</li>
+                      </ul>
+                    </div>
+                    <p id="resultado"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pb-5"></div>
+        <div class="pb-5"></div>
+      </div>
+    </section>
+
+    <section class="container-fld-cu-form banner-cu-form d-flex justify-content-end pt-5">
+      <div class="container">
+        <h2 class="text-center">Contáctenos</h2>
+        <div class="row pt-5">
+          <div class="col-sm-12 col-md-12 col-lg-6">
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-6">
+
+            <div class="mb-3 row pt-5">
+              <div class="col-sm-4"><span>Tipo de automóvil</span></div>
+              <div class="col-sm-8">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="tipoAuto" id="tipoAuto2" value="Manual" checked>
+                      <label class="form-check-label" for="tipoAuto">Manual</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="tipoAuto" id="tipoAuto2" value="Automático">
+                      <label class="form-check-label" for="tipoAuto2">Automático</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3 row">
+              <div class="col-sm-4"><span>Tipo de servicio</span></div>
+              <div class="col-sm-8">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="tipoServicio" id="tipoServicioRadios1" value="Reparación" checked>
+                      <label class="form-check-label" for="tipoServicioRadios1">Compra</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="tipoServicio" id="tipoServicioRadios2" value="Diagnóstico">
+                      <label class="form-check-label" for="tipoServicioRadios2">Mantenimiento</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <form class="row g-3 needs-validation pt-3" novalidate>
+              <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="validationCustom01" required>
+              </div>
+              <div class="col-md-6">
+                <label for="validationCustom02" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="validationCustom02" required>
+              </div>
+              
+              <div class="col-md-12">
+                <label for="validationCustom03" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="validationCustom03" required>
+              </div>
+              
+              <div class="col-md-12">
+                <label for="validationCustom03" class="form-label">Información</label>
+                <textarea class="form-control" placeholder="¿En qué podemos ayudarle?" id="validationCustom03" style="height: 100px" required></textarea>
+              </div>
+              
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                  <label class="form-check-label" for="invalidCheck">
+                    Aceptar términos y condiciones
+                  </label>
+                  <div class="invalid-feedback">
+                    Debe aceptar los términos y condiciones antes de enviar.
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary" type="submit">Enviar formulario</button>
+              </div>
+            </form>
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="container-fld-footer">
+      <div class="bg-black">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center pt-4 pb-4">
+              <h5>&copy 2024 AutoSpot - Derechos reservados</h5>
+            </div>
+            <div class="footer-icons col-sm-12 col-md-6 col-lg-6 text-center">
+                <a href="https://www.whatsapp.com"><i class="fa-brands fa-whatsapp fa-rotate-by fa-2x" style="color: #f0f0f0; --fa-rotate-angle: 000deg;" target="_blank" rel="noopener noreferrer"></i></a>
+                <a href="https://www.linkedin.com"><i class="fa-brands fa-linkedin fa-rotate-by fa-2x" style="color: #f0f0f0; --fa-rotate-angle: 000deg;" target="_blank" rel="noopener noreferrer"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <script src="js/inicio.js"></script>
+    
+    <!-- libreria SWEETALERT-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- interactividad Lottie JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.13/lottie.min.js"></script>
+
+    <!-- libreria Lottie JS-->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@0.3.0/dist/lottie-player.js"></script>
+    
+
+
+
+<!--  *************************** *************************** *************************** ***************************  -->    
+
+    <!-- Programacion de Animación - MRG Servicios 1 -->
+
+    <script>
+        // Selecciona un elemento del DOM con la clase CSS "animacion2" y lo almacena en la variable anima
+        let animacion1 = document.querySelector(".mgr-servicios1");
+        // Carga la animación utilizando la función loadAnimation de la biblioteca bodymMvin
+        let animation1 = bodymovin.loadAnimation({
+            // Es el contenedor donde se muestra la animación, que en este caso es el elemento llamado anima
+            container: animacion1,
+            path: "https://lottie.host/1fd11b69-4a61-4b60-9c58-f8e56f5bc877/6WGsY8SNcA.json",
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            name: "MGR-Servicios1",
+        });
+        // En la función click se llama al método playSegments() en la animación.
+        // Este método reproduce la animación desde el fotograma 0 hasta el fotograma 150, y el segundo argumento (true) indica si la animación debe reproducirse en bucle.
+        animacion1.addEventListener("click", function() {
+          animation1.playSegments([0, 91], true);
+        });
+        animacion1.style.height = "150px";
+    </script>
+
+    <!-- Programacion de Animación - MRG Servicios 2 -->
+
+    <script>
+      // Selecciona un elemento del DOM con la clase CSS "animacion2" y lo almacena en la variable anima
+      let animacion2 = document.querySelector(".mgr-servicios2");
+      // Carga la animación utilizando la función loadAnimation de la biblioteca bodymMvin
+      let animation2 = bodymovin.loadAnimation({
+          // Es el contenedor donde se muestra la animación, que en este caso es el elemento llamado anima
+          container: animacion2,
+          path: "https://lottie.host/28ff37fe-fb1f-477d-ab5f-be02151205f2/lcqUb62sna.json",
+          renderer: "svg",
+          loop: true,
+          autoplay: true,
+          name: "MGR-Servicios2",
+      });
+      // En la función click se llama al método playSegments() en la animación.
+      // Este método reproduce la animación desde el fotograma 0 hasta el fotograma 150, y el segundo argumento (true) indica si la animación debe reproducirse en bucle.
+      animacion2.addEventListener("click", function() {
+          animation2.playSegments([0, 91], true);
+      });
+      animacion2.style.height = "150px";
+    </script>
+
+    <!-- Programacion de Animación - MRG Servicios 3 -->
+
+    <script>
+      // Selecciona un elemento del DOM con la clase CSS "animacion2" y lo almacena en la variable anima
+      let animacion3 = document.querySelector(".mgr-servicios3");
+      // Carga la animación utilizando la función loadAnimation de la biblioteca bodymMvin
+      let animation3 = bodymovin.loadAnimation({
+          // Es el contenedor donde se muestra la animación, que en este caso es el elemento llamado anima
+          container: animacion3,
+          path: "https://lottie.host/413b5629-9911-43e1-9d55-0d17ba30e741/rx6qMQDE89.json",
+          renderer: "svg",
+          loop: true,
+          autoplay: true,
+          name: "MGR-Servicios3",
+      });
+      // En la función click se llama al método playSegments() en la animación.
+      // Este método reproduce la animación desde el fotograma 0 hasta el fotograma 150, y el segundo argumento (true) indica si la animación debe reproducirse en bucle.
+      animacion3.addEventListener("click", function() {
+          animation3.playSegments([0, 91], true);
+      });
+      animacion3.style.height = "150px";
+    </script>
+
+    <!-- Programacion de Animación - MRG Servicios 3 -->
+
+    <script>
+      // Selecciona un elemento del DOM con la clase CSS "animacion2" y lo almacena en la variable anima
+      let animacion4 = document.querySelector(".mgr-nosotros1");
+      // Carga la animación utilizando la función loadAnimation de la biblioteca bodymMvin
+      let animation4 = bodymovin.loadAnimation({
+          // Es el contenedor donde se muestra la animación, que en este caso es el elemento llamado anima
+          container: animacion4,
+          path: "https://lottie.host/832bf7b1-c78e-438f-a2b6-4918260af140/VDqtosGz9r.json",
+          renderer: "svg",
+          loop: true,
+          autoplay: true,
+          name: "MGR-Servicios3",
+      });
+      // En la función click se llama al método playSegments() en la animación.
+      // Este método reproduce la animación desde el fotograma 0 hasta el fotograma 150, y el segundo argumento (true) indica si la animación debe reproducirse en bucle.
+      animacion4.addEventListener("click", function() {
+          animation4.playSegments([0, 91], true);
+      });
+      animacion4.style.height = "200px";
+    </script>
+    
+  </body>
+</html>
