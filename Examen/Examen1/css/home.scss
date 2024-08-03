@@ -1,0 +1,208 @@
+@charset "UTF-8";
+/****************************** Importación de Fuentes Web ******************************/
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "general.scss";
+
+/****************************** Estilos Globales ******************************/
+html {
+    font-size: $font-size-base;
+}
+
+h2 {
+    color: $color-palette-1-2 !important;
+}
+
+h5 {
+    font-size: $px-20 !important;
+    font-family: $font-family-bona-nova-sc !important;
+    color: $color-primary-grey !important;
+}
+
+p {
+    font-family: $font-family-roboto;
+}
+
+/****************************** Línea separadora ******************************/
+.separator-line {
+    padding-top: $px-5;
+    padding-bottom: $px-5;
+    background-color: $color-palette-1-1;
+  }
+
+/****************************** Estilos carrusel ******************************/
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: $px-50;
+  height: $px-50;
+  background-size: $perc-100, $perc-100;
+  background-color: $color-palette-1-1;
+  border-radius: $px-5;
+}
+
+.carousel-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el contenido verticalmente */
+    background-size: cover;
+    background-position: center;
+    background-color: aliceblue !important;
+    background-blend-mode: luminosity !important;
+}
+
+.carousel-item img {
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-indicators button {
+    background-color: $color-palette-6-1 !important;
+}
+
+/****************************** Estilos Switch de lenguaje ******************************/
+
+.language-switch {
+    position: relative;
+    display: inline-block;
+    width: $px-40;  /* Ajusta el ancho */
+    height: $px-20;  /* Ajusta la altura */
+}
+
+.language-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $color-palette-1-2;
+    transition: .4s;
+    border-radius: $px-20;  /* Ajusta el radio de borde */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: $rem-1;  /* Ajusta la altura */
+    width: $rem-1;  /* Ajusta el ancho */
+    left: $px-2;
+    bottom: $px-2;
+    background-color: $color-palette-3-1;
+    transition: .4s;
+    border-radius: $perc-50;  /* Ajusta el radio de borde */
+}
+
+input:checked + .slider {
+    background-color: $color-palette-4-2;
+}
+
+input:checked + .slider:before {
+    transform: translateX($px-20);  /* Ajusta la traducción */
+}
+
+/* Texto de idioma */
+.language-text {
+    position: relative;
+    top: -$px-4;  /* Ajusta la posición */
+    display: inline-block;
+    margin-left: $px-5;
+    font-size: 0.688rem;
+    color: $color-palette-2-2;
+}
+
+/****************************** Sección Opciones ******************************/
+
+.card-body a{
+    text-decoration: none;
+}
+
+.container-services {
+    padding: 0 100px;
+}
+
+.card-style {
+    background-color: #f8f9fc !important;
+    border: 0 !important;
+}
+
+.card-style:hover {
+    background-color: $color-palette-6-1 !important;
+}
+
+/****************************** Sección Oportunidades ******************************/
+
+.offers-bg {
+    background-color: $color-palette-2-2;
+    min-height: 38rem;
+}
+
+.offers-bg img {
+    padding: 0 $px-10;
+}
+
+p {
+    font-size: $px-20;
+}
+
+.card-text {
+    color: $color-palette-1-2;
+}
+
+.car-year-span {
+    // font-family: $font-family-roboto;
+    color: $color-palette-1-2;
+    font-size: medium;
+    font-weight: 500;
+    padding-left: $px-20;
+    padding-top: $px-3;
+}
+
+.sale-price-style {
+    padding-left: $px-20;
+    // color: $color-palette-4-1;
+    color: $color-primary-red;
+}
+
+/****************************** Sección Suscripción ******************************/
+
+input::placeholder {
+    color: #cec1c1 !important;
+}
+
+/* Added text */
+input:focus {
+    border-color: $color-palette-1-1;
+    outline: none;
+}
+  
+input:valid,
+input:not(:placeholder-shown) {
+font-family: $font-family-noto-sans;
+color: $color-palette-1-2 !important;
+}
+
+.green-alert-msg {
+    color: $color-primary-green !important;
+    font-size: small !important;
+    font-weight: lighter !important;
+}
+
+.red-alert-msg {
+    color: $color-primary-red !important;
+    font-size: small !important;
+    font-weight: lighter !important;
+}
+
+.subscribe-text {
+    font-size: $rem-1;
+    color: $color-primary-grey;
+}
+
+#emailHelp {
+    color: $color-palette-6-2;
+}

@@ -1,0 +1,333 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    scroll-behavior: smooth;
+}
+.seccion {
+    background-image: url("../img/banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 650px;
+}
+
+.seccion h1 {
+    padding-top: 260px;
+    font-size: 95px;
+    color: #000;
+    text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
+    font-weight: bold;
+}
+header {
+    background-color: #cfcfcf;
+}
+.nav-item a {
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #000;
+    transition: all 0.5s ease-out;
+}
+.nav-item a:hover {
+    background-color: #fff;
+    color: #000;
+}
+.navigation-wrap .nav-item {
+    padding: 10px;
+    transition: all 200ms linear;
+}
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+.navbar-toggler i {
+    color: #000;
+    font-size: 27px;
+}
+
+.navbar-nav {
+    text-align: center;
+}
+.dropdown a:focus {
+    color: #000;
+}
+
+.dropdown-menu {
+    background-color: #cfcfcf;
+    border: none;
+}
+.botonScrollTop {
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background-color: #ffd433;
+    right: 30px;
+    bottom: 30px;
+    text-align: center;
+    line-height: 45px;
+    color: #000;
+    font-size: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.seccion1 {
+    background-color: #ffd433;
+}
+
+.seccion1 h2 {
+    color: #fff;
+    font-weight: bold;
+    font-size: 60px;
+}
+
+.seccion2 .tituloSeccion2 {
+    padding-top: 25px;
+    padding-bottom: 45px;
+    font-size: 60px;
+}
+
+.seccion2 .icon {
+    clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+    background-color: #ffd433;
+    width: 110px;
+    padding: 25px;
+    color: #fff;
+}
+.seccion3 {
+    background-image: url("../img/banner2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 450px;
+    background-attachment: fixed;
+}
+
+.seccion3 h2 {
+    color: #fff;
+    font-weight: bold;
+    font-size: 60px;
+    padding-top: 100px;
+}
+
+.seccionInscripcion {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/banner3.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 450px;
+    background-attachment: fixed;
+}
+.seccionInscripcion h2 {
+    color: #fff;
+    font-weight: bold;
+    font-size: 60px;
+    padding-top: 100px;
+}
+.seccionInscripcion .email {
+    width: 200px;
+    padding: 8px;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+}
+.seccion4 .tituloSeccion4 {
+    padding-top: 25px;
+    padding-bottom: 45px;
+    font-size: 60px;
+}
+.seccion4 .card {
+    border: none;
+}
+.tituloSeccion5 {
+    padding-top: 25px;
+    padding-bottom: 45px;
+    font-size: 60px;
+}
+.accordion-button {
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+    background-color: #ffd433;
+}
+.accordion-item {
+    border: none;
+}
+.accordion-button:not(.collapsed) {
+    font-size: 20px;
+    color: #fff;
+    background-color: #ffd433;
+    font-weight: 400;
+}
+.accordion-button:focus {
+    border-color: none;
+    box-shadow: none;
+}
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+.accordion-body p {
+    text-align: initial;
+}
+.accordion-body img {
+    width: 250px;
+}
+.accordion-body video {
+    width: 590px;
+    border-radius: 5px;
+}
+.accordion-body iframe {
+    border-radius: 5px;
+}
+
+input[type="button"] {
+    border: none;
+    padding: 7px 35px;
+    cursor: pointer;
+    outline: none;
+    background-color: #ffd433;
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 2px;
+}
+.alertaRoja{
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    padding-top: 22px;
+}
+.alertaVerde{
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    padding-top: 22px;
+}
+footer {
+    background-color: #ffd433;
+}
+
+footer p {
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+    padding-top: 15px;
+}
+@media (min-width: 320px) and (max-width: 480px) {
+    .navbar-brand img {
+        width: 68px;
+    }
+    .nav-item a {
+        font-size: 17px;
+    }
+    .seccion h1 {
+        font-size: 55px;
+    }
+    .seccion1 h2 {
+        font-size: 27px;
+    }
+    .seccion2 .tituloSeccion2 {
+        font-size: 45px;
+    }
+    .seccion3 h2 {
+        font-size: 45px;
+    }
+    .seccionInscripcion h2{
+        font-size: 28px;
+    }
+    .seccion4 .tituloSeccion4 {
+        font-size: 45px;
+    }
+    .tituloSeccion5 {
+        font-size: 45px;
+    }
+    footer p {
+        font-size: 15px;
+    }
+    .botonScrollTop {
+        background-color: #fddb59;
+        right: 13px;
+    }
+    .accordion-body video {
+        width: 311px;
+    }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+    .navbar-brand img {
+        width: 90px;
+    }
+    .seccionInscripcion h2{
+        font-size: 35px;
+    }
+    .nav-item a {
+        font-size: 19px;
+    }
+    .seccion h1 {
+        font-size: 75px;
+    }
+    .seccion1 h2 {
+        font-size: 30px;
+    }
+    .seccion2 .tituloSeccion2 {
+        font-size: 50px;
+    }
+    .seccion3 h2 {
+        font-size: 50px;
+    }
+    .seccion4 .tituloSeccion4 {
+        font-size: 50px;
+    }
+    .tituloSeccion5 {
+        font-size: 50px;
+    }
+    footer p {
+        font-size: 18px;
+    }
+    .botonScrollTop {
+        background-color: #fddb59;
+        right: 13px;
+    }
+    .accordion-body video {
+        width: 396px;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+    .navbar-brand img {
+        width: 100px;
+    }
+    .nav-item a {
+        font-size: 25px;
+    }
+    .seccion h1 {
+        font-size: 85px;
+    }
+    .seccionInscripcion h2{
+        font-size: 40px;
+    }
+    .seccion1 h2 {
+        font-size: 55px;
+    }
+    .seccion2 .tituloSeccion2 {
+        font-size: 65px;
+    }
+    .seccion3 h2 {
+        font-size: 65px;
+    }
+    .seccion4 .tituloSeccion4 {
+        font-size: 65px;
+    }
+    .tituloSeccion5 {
+        font-size: 65px;
+    }
+    footer p {
+        font-size: 18px;
+    }
+    .botonScrollTop {
+        background-color: #fddb59;
+        right: 13px;
+    }
+}

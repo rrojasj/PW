@@ -1,5 +1,5 @@
 `use strict`;
 
 function continueHomepage() {
-    window.location.href = "inicio.html";
+    window.location.href = "home.html";
 }

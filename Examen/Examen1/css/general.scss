@@ -1,10 +1,14 @@
 @charset "UTF-8";
 /****************************** Importación de Fuentes Web ******************************/
 @import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "../node_modules/bootstrap/scss/bootstrap";
 
 /****************************** Variables ******************************/
 
+$px-1: 0.063rem;
+$px-2: 0.125rem;
 $px-3: 0.188rem;
+$px-4: 0.25rem;
 $px-5: 0.313rem;
 $px-10: 0.625rem;
 $px-20: 1.25rem;
@@ -16,6 +20,12 @@ $px-70: 4.375rem;
 $px-80: 5rem;
 $px-90: 5.625rem;
 $px-100: 6.25rem;
+
+$rem-1: 16px;
+$rem-2: 32px;
+$rem-3: 48px;
+$rem-4: 64px;
+$rem-5: 80px;
 
 $perc-25: 25%;
 $perc-50: 50%;
@@ -40,18 +50,26 @@ $color-primary-black: #121212;
 $color-primary-red: #f61515;
 $color-primary-green: #088408;
 $color-primary-blue: #0707f1;
+$color-primary-grey: #818488;
+$color-secondary-black: #4c4848;
 $color-palette-1-1: #0F4557;
 $color-palette-1-2: #186F8C;
 $color-palette-2-1: #FAFAFA;
-$color-palette-2-2: #E0E0E0;
-$color-palette-3-1: #E4FDE1;
+$color-palette-2-2: #f8f9fc;
+$color-palette-3-1: #E3FCE0;
 $color-palette-3-2: #B9FAB2;
-$color-palette-4-1: #103194;
-$color-palette-4-2: #1643CA;
+$color-palette-4-1: #305873;
+$color-palette-4-2: #42799E;
 $color-palette-5-1: #FFFF63;
 $color-palette-5-2: #FFFFAD;
 $color-palette-6-1: #EAEAEA;
 $color-palette-6-2: #CCCCCC;
+$color-contact-whatsapp: #22BF5B;
+$color-contact-whatsapp-hover: #15793A;
+$color-contact-instagram: #D61F5C;
+$color-contact-instagram-hover: #8F143D;
+$color-contact-linkedin: #0AA9FF;
+$color-contact-linkedin-hover: #0077B5;
 
 $border-radius-btn: 3.125rem;
 $border-radius-circle: 100%;
@@ -62,6 +80,17 @@ $box-shadow: 0 0.375rem 0.938rem rgba(0, 0, 0, 0.2);
 $transition-duration: 0.5s;
 $transition-ease: ease;
 
+/****************************** Mixins ******************************/
+@mixin transition($properties, $duration, $timing-function: ease) {
+    transition: $properties $duration $timing-function;
+}
+
+@mixin center-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /****************************** Estilos Globales ******************************/
 html {
     font-size: $font-size-base;
@@ -70,11 +99,12 @@ html {
 h1 {
     font-size: $px-50 !important;
     font-family: $font-family-fairplay-display;
+    color: $color-palette-1-1 !important;
 }
 
 h2 {
     font-size: $px-40 !important;
-    font-family: $font-family-noto-sans;
+    font-family: $font-family-fairplay-display;
 }
 
 h3 {
@@ -87,6 +117,20 @@ h4 {
     font-family: $font-family-noto-sans;
 }
 
+li {
+    font-family: $font-family-noto-sans;
+    color: $color-palette-4-2 !important;
+}
+
+p {
+    color: $color-secondary-black;
+}
+
+/****************************** Animation ******************************/
+
+.custom-animation-duration {
+    animation-duration: 2s !important;
+}
 
 
 /****************************** Base banner ******************************/
@@ -160,4 +204,117 @@ input:not(:placeholder-shown) {
     font-family: $font-family-noto-sans;
     color: $color-palette-1-2;
     text-align: center;
+}
+
+/****************************** Estilos del Nav ******************************/
+.nav-style {
+    background-color: $color-palette-1-1;
+    box-shadow: 0 0 $px-10 $color-palette-5-2;
+}
+  
+.navbar {
+    padding: $px-10;
+    letter-spacing: $px-2;
+    font-family: $font-family-noto-sans;
+    font-size: $rem-1;
+}
+
+.option-menu {
+    font-family: $font-family-noto-sans;
+    font-size: $rem-1;
+    @include transition(all, 1s);
+}
+
+.option-menu:hover {
+    color: $color-palette-5-1;
+    border-radius: $px-5;
+    background-color: $color-palette-1-2;
+    @include transition(all, 1s);
+}
+
+.option-menu:active {
+    background-color: $color-palette-4-2;
+}
+
+.dropdown-menu a {
+    color: $color-palette-1-1;
+}
+
+.dropdown-menu a:hover {
+    background-color: $color-palette-3-1;
+}
+
+/****************************** Menu Hamburguesa ******************************/
+.navbar-toggler {
+    background-color: $color-palette-3-1;
+    border: $px-1 solid $color-palette-1-2;
+}
+
+.navbar-toggler:hover {
+    background-color: $color-palette-1-2;
+}
+
+.custom-toggler:active {
+    $navbar-toggler-focus-width: 0 !default;
+}
+
+.custom-toggler.navbar-toggler {
+border-color: $color-palette-3-1;
+border-width: $px-1;
+}
+
+
+/* Líneas */
+.custom-toggler .navbar-toggler-icon {
+background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(156, 160, 187, 0.866)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler .navbar-toggler-icon:hover {
+background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(228, 253, 225)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+/****************************** Estilos Íconos RRSS ******************************/
+.lk-contact-icon {
+    color: $color-primary-grey;
+}
+
+.wa-contact-icon {
+    color: $color-primary-grey;
+}
+
+.ig-contact-icon {
+    color: $color-primary-grey;
+}
+
+.lk-contact-icon:hover {
+    color: $color-contact-linkedin-hover;
+    @include transition(all, 1s);
+}
+
+.wa-contact-icon:hover {
+    color: $color-contact-whatsapp-hover;
+    @include transition(all, 1s);
+}
+
+.ig-contact-icon:hover {
+    color: $color-contact-instagram-hover;
+    @include transition(all, 1s);
+}
+
+
+
+/****************************** Estilos Footer ******************************/
+.footer-style {
+    height: $px-100;
+    padding: $px-10;
+    letter-spacing: $px-2;
+    @include transition(all, 1s);
+    background-color: $color-palette-2-2 !important;
+    box-shadow: 0 -2px 4px $color-palette-5-2;
+}
+
+p.footer-text {
+    font-family: $font-family-noto-sans;
+    font-size: $rem-1;
+    color: $color-palette-1-1 !important;
 }
