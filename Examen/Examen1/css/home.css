@@ -24210,62 +24210,6 @@ p {
   background-color: #EAEAEA !important;
 }
 
-/****************************** Estilos Switch de lenguaje ******************************/
-.language-switch {
-  position: relative;
-  display: inline-block;
-  width: 2.5rem; /* Ajusta el ancho */
-  height: 1.25rem; /* Ajusta la altura */
-}
-
-.language-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #186F8C;
-  transition: 0.4s;
-  border-radius: 1.25rem; /* Ajusta el radio de borde */
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 16px; /* Ajusta la altura */
-  width: 16px; /* Ajusta el ancho */
-  left: 0.125rem;
-  bottom: 0.125rem;
-  background-color: #E3FCE0;
-  transition: 0.4s;
-  border-radius: 50%; /* Ajusta el radio de borde */
-}
-
-input:checked + .slider {
-  background-color: #42799E;
-}
-
-input:checked + .slider:before {
-  transform: translateX(1.25rem); /* Ajusta la traducción */
-}
-
-/* Texto de idioma */
-.language-text {
-  position: relative;
-  top: -0.25rem; /* Ajusta la posición */
-  display: inline-block;
-  margin-left: 0.313rem;
-  font-size: 0.688rem;
-  color: #f8f9fc;
-}
-
 /****************************** Sección Opciones ******************************/
 .card-body a {
   text-decoration: none;
@@ -24278,6 +24222,7 @@ input:checked + .slider:before {
 .card-style {
   background-color: #f8f9fc !important;
   border: 0 !important;
+  transition: all 1s;
 }
 
 .card-style:hover {

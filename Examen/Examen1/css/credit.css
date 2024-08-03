@@ -1,6 +1,8 @@
 @charset "UTF-8";
 /****************************** Importación de Fuentes Web ******************************/
 @import url("https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+/****************************** Importación de Fuentes Web ******************************/
+@import url("https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 /****************************** Variables ******************************/
 /****************************** Mixins ******************************/
 /****************************** Estilos Globales ******************************/
@@ -277,4 +279,49 @@ p.footer-text {
   font-family: "Noto Sans", sans-serif;
   font-size: 16px;
   color: #0F4557 !important;
-}/*# sourceMappingURL=general.css.map */
+}
+
+/****************************** Variables Globales ******************************/
+h2 {
+  color: #186F8C !important;
+}
+
+p {
+  font-family: "Noto Sans", sans-serif;
+  color: #121212;
+}
+
+li {
+  color: #818488 !important;
+}
+
+/****************************** Sección: Banner ******************************/
+.text1 {
+  padding-left: 6.25rem;
+  padding-top: 6.25rem;
+  font-family: "Playfair Display", serif;
+}
+
+.select-format {
+  font-size: 18px;
+  font-family: "Noto Sans", sans-serif;
+  color: #0F4557;
+  z-index: 10; /* Adjust the z-index as needed */
+  position: relative; /* Ensure the z-index takes effect */
+}
+
+.credit-banner {
+  background-image: url("../imgs/pw_e1_credit_banner_1920x400.png");
+  background-size: cover;
+  height: 600px;
+  animation: efect 5s ease-in-out infinite alternate;
+}
+
+@keyframes efect {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -100px 0;
+  }
+}/*# sourceMappingURL=credit.css.map */
