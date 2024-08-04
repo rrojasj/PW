@@ -12,11 +12,29 @@ h2 {
 
 p.credit-text {
     font-family: $font-family-noto-sans;
-    color: $color-primary-gray !important;
+    color: $color-primary-grey !important;
 }
 
 li {
     color: $color-primary-grey !important;
+}
+
+select {
+    color: $color-palette-1-1;
+    background-color: $color-palette-6-1;
+    font-size: 20px;
+    border: 1px solid $color-palette-1-2;
+    padding: 8px 10px;
+}
+/*apariencia de los textos que estan dentro del SELECT*/
+
+option {
+    font-size: $px-12;
+}
+
+option:hover {
+    background-color: $color-palette-3-1 !important;
+    color: red !important;
 }
 
 /****************************** Sección: Banner ******************************/
@@ -50,3 +68,36 @@ li {
         background-position: -100px 0;
     }
 }
+
+/****************************** Sección: Lista ******************************/
+
+.list-style:hover {
+    background-color: $color-palette-3-1;
+    // border-color: $color-palette-1-1;
+    border-width: 1px;
+    @include transition(all, 1s);
+}
+
+/****************************** Sección: Select ******************************/
+.resultado {
+    width: $px-500 !important;
+    height: $px-300 !important;
+    /*text-align: center;
+    display: block;*/
+}
+
+@media (max-width: 576px) {
+    #resultado {
+        /*por mostrar la imagen usando style backgroundImage se deben usar estas instrucciones*/
+        background-position: center center !important;
+        background-size: 80% !important;
+        background-repeat: no-repeat !important;
+    }
+}
+
+.formato1 {
+    font-family: $font-family-noto-sans;
+    font-size: $rem-1;
+    text-align: left;
+}
+
