@@ -54,7 +54,7 @@
                             <li class="nav-item dropdown">
                                 <a data-translate="optionMenu4" class="nav-link dropdown-toggle text-white option-menu" id="desplegable1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Autos</a>
                                 <div class="dropdown-menu text-left" aria-labelledby="desplegable1">
-                                    <a data-translate="optionMenu4_1" class="dropdown-item option-menu" href="#">Clásicos</a>
+                                    <a data-translate="optionMenu4_1" class="dropdown-item option-menu" href="classics.html">Clásicos</a>
                                     <a data-translate="optionMenu4_2" class="dropdown-item option-menu" href="#">Nuevos</a>
                                     <a data-translate="optionMenu4_3" class="dropdown-item option-menu" href="#">Usados</a>
                                 </div>
@@ -65,7 +65,7 @@
                                 <a data-translate="optionMenu5" class="nav-link dropdown-toggle text-white option-menu" id="desplegable1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Información</a>
                                 <div class="dropdown-menu text-left" aria-labelledby="desplegable1">
                                     <a data-translate="optionMenu5_2" class="dropdown-item option-menu" href="/">Galería</a>
-                                    <a data-translate="optionMenu5_3" class="dropdown-item option-menu" href="/">Nosotros</a>
+                                    <a data-translate="optionMenu5_3" class="dropdown-item option-menu" href="about.html">Nosotros</a>
                                     <a data-translate="optionMenu5_4" class="dropdown-item option-menu" href="/">Sucursales</a>
                                     <a data-translate="optionMenu5_5" class="dropdown-item option-menu" href="/">Contáctenos</a>
                                     <a data-translate="optionMenu5_6" class="dropdown-item option-menu" href="showroom.html">Showroom virtual</a>
@@ -199,22 +199,6 @@
             new WOW().init();
         </script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-        <script>
-            //activa la funcion al cargar la pagina web
-            window.onload = function() {
-                //funcion que permite elegir la foto
-                document.getElementById('foto').onchange = function(e) {
-                    //guarda el destino o valor de la foto en una variable 
-                    n = e.target.value;
-                    //expresion en variable que busca las fotos dentro de la carpeta imagenes JPG
-                    var archivo = "url('../imgs/pw_e1_credit_" + n + ".png')";
-                    //envia la foto al lugar respectivo (id llamado resultado)
-                    //la variable archivo almaceno la imagen elegida por el usuario
-                    document.getElementById("resultado").style.backgroundImage = archivo;
-                }
-            }
-        </script>
             
         <script src="js/credit.js"></script>
     </body>

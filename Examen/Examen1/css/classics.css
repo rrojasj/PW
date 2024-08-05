@@ -11985,6 +11985,7 @@ h1, .h1 {
 h2, .h2 {
   font-size: 2.5rem !important;
   font-family: "Playfair Display", serif;
+  color: #4c4848 !important;
 }
 
 h3, .h3 {
@@ -12282,117 +12283,8 @@ p.footer-text {
   color: #0F4557 !important;
 }
 
-/****************************** Estilos Globales ******************************/
-html {
-  font-size: 16px;
-}
-
-h2, .h2 {
-  color: #186F8C !important;
-}
-
-h5, .h5 {
-  font-size: 1.25rem !important;
-  font-family: "Bona Nova SC", serif !important;
-  color: #818488 !important;
-}
-
-p {
-  font-family: "Roboto", sans-serif;
-}
-
-/****************************** Sección Opciones ******************************/
-.card-body a {
-  text-decoration: none;
-}
-
-.container-services {
-  padding: 0 100px;
-}
-
-.card-style {
-  background-color: #f8f9fc !important;
-  border: 0 !important;
-  transition: all 1s;
-}
-
-.card-style:hover {
-  background-color: #EAEAEA !important;
-}
-
-/****************************** Sección Oportunidades ******************************/
-.offers-bg {
-  background-color: #f8f9fc;
-  min-height: 38rem;
-}
-
-.offers-bg img {
-  padding: 0 0.625rem;
-}
-
-p {
-  font-size: 1.25rem;
-}
-
-.card-text {
-  color: #186F8C;
-}
-
-.car-year-span {
-  color: #186F8C;
-  font-size: medium;
-  font-weight: 500;
-  padding-left: 1.25rem;
-  padding-top: 0.188rem;
-}
-
-.sale-price-style {
-  padding-left: 1.25rem;
-  color: #f61515;
-}
-
-/****************************** Sección Suscripción ******************************/
-input::-moz-placeholder {
-  color: #cec1c1 !important;
-}
-input::placeholder {
-  color: #cec1c1 !important;
-}
-
-/* Added text */
-input:focus {
-  border-color: #0F4557;
-  outline: none;
-}
-
-input:not(:-moz-placeholder-shown) {
-  font-family: "Noto Sans", sans-serif;
-  color: #186F8C !important;
-}
-
-input:valid,
-input:not(:placeholder-shown) {
-  font-family: "Noto Sans", sans-serif;
-  color: #186F8C !important;
-}
-
-.green-alert-msg {
-  color: #088408 !important;
-  font-size: small !important;
-  font-weight: lighter !important;
-}
-
-.red-alert-msg {
-  color: #f61515 !important;
-  font-size: small !important;
-  font-weight: lighter !important;
-}
-
-.subscribe-text {
-  font-size: 16px;
-  color: #818488;
-}
-
-#emailHelp {
-  color: #CCCCCC;
-}/*# sourceMappingURL=home.css.map */
+/****************************** Estilo: Globales ******************************/
+/****************************** Estilo: Información Autos ******************************/
+.cars-info {
+  min-height: 43.75rem;
+}/*# sourceMappingURL=classics.css.map */

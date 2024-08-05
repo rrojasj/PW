@@ -1,3 +1,17 @@
+//activa la funcion al cargar la pagina web
+window.onload = function() {
+    //funcion que permite elegir la foto
+    document.getElementById('foto').onchange = function(e) {
+        //guarda el destino o valor de la foto en una variable 
+        n = e.target.value;
+        //expresion en variable que busca las fotos dentro de la carpeta imagenes JPG
+        var archivo = "url('../imgs/pw_e1_credit_" + n + ".png')";
+        //envia la foto al lugar respectivo (id llamado resultado)
+        //la variable archivo almaceno la imagen elegida por el usuario
+        document.getElementById("resultado").style.backgroundImage = archivo;
+    }
+}
+
 // querySelector permite elegir el selector llamado select del form
 let seleccionar = document.querySelector('select');
 
