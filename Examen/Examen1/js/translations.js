@@ -11,11 +11,14 @@ const translations = {
         optionMenu4_3: "Usados",
         optionMenu5: "Información",
         optionMenu5_1: "Crédito",
-        optionMenu5_2: "Galería",
-        optionMenu5_3: "Nosotros",
-        optionMenu5_4: "Sucursales",
-        optionMenu5_5: "Contáctenos",
-        optionMenu5_6: "Tour virtual",
+        optionMenu5_2: "Nosotros",
+        optionMenu5_3: "Sucursales",
+        optionMenu5_4: "Contáctenos",
+        optionMenu5_5: "Tour virtual",
+        optionMenu6: "Galería",
+        optionMenu6_1: "Autos Nuevos",
+        optionMenu6_2: "Autos Usados",
+        optionMenu6_3: "Autos Clásicos",
 
         /******************* Page: home.html *******************/
         // Cards de Opciones
@@ -27,6 +30,9 @@ const translations = {
         optionsSubTitle2: "Alternativas únicas",
         optionsSubTitle3: "Opciones flexibles",
         optionsSubTitle4: "Íconos del pasado",
+        // Combo de Galería
+        galleryTitle: "¡Visite nuestra galería de autos!",
+        galleryText: "Al seleccionar el origen y marca, accederás a nuestra galería exclusiva de autos clásicos. Cada imagen captura la elegancia de estos vehículos icónicos, ya sean muscle cars estadounidenses o deportivos europeos, permitiéndote explorar sus detalles.",
         // Stock de ofertas
         carModel1: "Modelo 2019",
         carModel2: "Modelo 2022",
@@ -44,7 +50,7 @@ const translations = {
         offersTypeGearbox1: "Automático",
         // Suscripción
         subscriptionTitle: "¡Suscríbete y recibe ofertas exclusivas!",
-        subscriptionText: "Al suscribirte, recibirás semanalmente las últimas noticias sobre la industria, reseñas de los modelos más destacados, información sobre promociones y eventos especiales de nuestra agencia.",
+        subscriptionText: "Al seleccionar el tipo de auto serás dirigido a la galería correspondiente, donde podrás explorar en detalle nuestra selecta colección. Cada imagen captura la elegancia y el carácter único de estos vehículos, transportándote a través de las épocas y dejándote inspirado por el diseño automotriz.",
         subscriptionEmailPH: "Ingresa tu correo",
         subscriptionNamePH: "Ingresa tu nombre",
         subscriptionBtn: "Suscribirse",
@@ -66,11 +72,14 @@ const translations = {
         optionMenu4_3: "Used",
         optionMenu5: "Information",
         optionMenu5_1: "Credit",
-        optionMenu5_2: "Gallery",
-        optionMenu5_3: "About us",
-        optionMenu5_4: "Offices",
-        optionMenu5_5: "Contact us",
-        optionMenu5_6: "Virtual showroom",
+        optionMenu5_2: "About us",
+        optionMenu5_3: "Offices",
+        optionMenu5_4: "Contact us",
+        optionMenu5_5: "Virtual showroom",
+        optionMenu6: "Gallery",
+        optionMenu6_1: "New cars",
+        optionMenu6_2: "Used cars",
+        optionMenu6_3: "Classic cars",
 
         /******************* Page: home.html *******************/
         // Option cards
@@ -82,6 +91,9 @@ const translations = {
         optionsSubTitle2: "Unique alternatives",
         optionsSubTitle3: "Flexible options",
         optionsSubTitle4: "Icons of the past",
+        // Visit Gallery
+        galleryTitle: "¡Visit our car gallery!",
+        galleryText: "By selecting the type of car you will be directed to the corresponding gallery, where you can explore our select collection in detail. Each image captures the elegance and unique character of these vehicles, transporting you through the ages and leaving you inspired by automotive design.",
         // Stock offers
         carModel1: "Model 2019",
         carModel2: "Model 2022",

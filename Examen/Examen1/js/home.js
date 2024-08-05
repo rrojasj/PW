@@ -3,6 +3,12 @@
 
 window.addEventListener('load', init, false);
 
+
+/********** Sección: Suscripción **********/
+/** 
+ * @name init
+ * @description Se encarga de validar y verificar que la información de suscripción esté correcta y envía el correo y las alertas correspondientes.
+ **/
 function init() {
     let name = document.getElementById('subscriptionName');
     let email = document.getElementById('subscriptionEmail');
@@ -50,9 +56,61 @@ function init() {
         }
 
     }
-
+    /** 
+     * @name cleanInputs
+     * @description Limpia la información previamente ingresada en los inputs.
+     **/
     function cleanInputs() {
         subscriptionEmail.value = '';
         subscriptionName.value = '';
+    }
+}
+
+/********** Sección: Visitar galería **********/
+/** 
+ * @name visitGallery
+ * @description Se encarga de validar y verificar que la información de suscripción esté correcta y envía el correo y las alertas correspondientes.
+ **/
+
+function visitGallery(){
+    var selectedGallery = document.getElementById('gallery-option').value;
+
+    switch(selectedGallery){
+        case 'classic':
+            Swal.fire({
+                icon: "success",
+                iconColor: '#0F4557',
+                title: "¡Autos Clásicos!",
+                text: "Un momento por favor...",
+                showConfirmButton : false,
+                timer: 2000,
+            }).then(() => {
+                window.location.href = "gallery-classics.html";
+            });
+            return;
+
+        case 'new':
+            Swal.fire({
+                icon: "success",
+                title: "¡Autos Nuevos!",
+                text: "Un momento por favor...",
+                showConfirmButton : false,
+                timer: 2000,
+            }).then(() => {
+                window.location.href = "gallery-new.html";
+            });
+            return;
+
+        case 'used':
+            Swal.fire({
+                icon: "success",
+                title: "¡Autos usados!",
+                text: "Un momento por favor...",
+                showConfirmButton : false,
+                timer: 2000,
+            }).then(() => {
+                window.location.href = "gallery-used.html";
+            });
+            return;
     }
 }
