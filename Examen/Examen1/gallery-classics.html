@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="imgs/pw_e1_favicon_wb_transp_300x200.png" type="image/x-con">
         <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/general-gallery.css">
+        <link rel="stylesheet" href="css/gallery-general.css">
         <link rel="stylesheet" href="css/rules.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
@@ -42,43 +42,45 @@
                     <!-- centrar opciones: text-center -->
                     <ul class="navbar-nav mx-auto mb-2 mb-md-0 text-center">
                         <li class="nav-item">
-                            <a data-translate="optionMenu1" data-scroll class="nav-link text-white option-menu" aria-current="page" href="home.html">Inicio</a>
+                            <a data-scroll class="nav-link text-white option-menu" aria-current="page" href="home.html">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a data-translate="optionMenu2" data-scroll class="nav-link text-white option-menu" aria-current="page" href="#comprar">Comprar</a>
+                            <a data-scroll class="nav-link text-white option-menu" aria-current="page" href="#comprar">Comprar</a>
                         </li>
                         <li class="nav-item">
-                            <a data-translate="optionMenu3" data-scroll class="nav-link text-white option-menu" aria-current="page" href="#vender">Vender</a>
+                            <a data-scroll class="nav-link text-white option-menu" aria-current="page" href="#vender">Vender</a>
                         </li>
 
                         <!-- Submenu Autos -->
                         <li class="nav-item dropdown">
-                            <a data-translate="optionMenu4" class="nav-link dropdown-toggle text-white option-menu" id="desplegable1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Autos</a>
+                            <a class="nav-link dropdown-toggle text-white option-menu" id="desplegable1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Autos</a>
                             <div class="dropdown-menu text-left" aria-labelledby="desplegable1">
-                                <a data-translate="optionMenu4_1" class="dropdown-item option-menu" href="classics.html">Clásicos</a>
-                                <a data-translate="optionMenu4_2" class="dropdown-item option-menu" href="#">Nuevos</a>
-                                <a data-translate="optionMenu4_3" class="dropdown-item option-menu" href="#">Usados</a>
+                                <a class="dropdown-item option-menu" href="classics.html">Clásicos</a>
+                                <a class="dropdown-item option-menu" href="#">Nuevos</a>
+                                <a class="dropdown-item option-menu" href="#">Usados</a>
                             </div>
                         </li>
                         
                         <!-- Submenu Información -->
                         <li class="nav-item dropdown">
-                            <a data-translate="optionMenu5" class="nav-link dropdown-toggle text-white option-menu" id="desplegable1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Información</a>
+                            <a class="nav-link dropdown-toggle text-white option-menu" id="desplegable1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Información</a>
                             <div class="dropdown-menu text-left" aria-labelledby="desplegable1">
-                                <a data-translate="optionMenu5_1" class="dropdown-item option-menu" href="credit.html">Crédito</a>
-                                <a data-translate="optionMenu5_2" class="dropdown-item option-menu" href="about.html">Nosotros</a>
-                                <a data-translate="optionMenu5_3" class="dropdown-item option-menu" href="/">Sucursales</a>
-                                <a data-translate="optionMenu5_4" class="dropdown-item option-menu" href="/">Contáctenos</a>
-                                <a data-translate="optionMenu5_5" class="dropdown-item option-menu" href="showroom.html">Showroom virtual</a>
+                                <a class="dropdown-item option-menu" href="credit.html">Crédito</a>
+                                <a class="dropdown-item option-menu" href="about.html">Nosotros</a>
+                                <a class="dropdown-item option-menu" href="offices.html">Sucursales</a>
+                                <a class="dropdown-item option-menu" href="/">Contáctenos</a>
+                                <a class="dropdown-item option-menu" href="showroom.html">Showroom virtual</a>
+                                <a class="dropdown-item option-menu" href="model-3d.html">Escenario 3D</a>
                             </div>
                         </li>
 
                         <!-- Submenu Galería -->
                         <li class="nav-item dropdown">
-                            <a data-translate="optionMenu6" class="nav-link dropdown-toggle text-white option-menu" id="desplegable1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Galería</a>
+                            <a class="nav-link dropdown-toggle text-white option-menu" id="desplegable1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Galería</a>
                             <div class="dropdown-menu text-left" aria-labelledby="desplegable1">
-                                <a data-translate="optionMenu6_1" class="dropdown-item option-menu" href="gallery-new.html">Autos Nuevos</a>
-                                <a data-translate="optionMenu6_2" class="dropdown-item option-menu" href="gallery-used.html">Autos Usados</a>
+                                <a class="dropdown-item option-menu" href="gallery-new.html">Autos Nuevos</a>
+                                <a class="dropdown-item option-menu" href="gallery-used.html">Autos Usados</a>
+                                <a class="dropdown-item option-menu" href="gallery-all.html">Galería General</a>
                             </div>
                         </li>
                     </ul>
@@ -94,14 +96,30 @@
     <section id="s2" class="container-fluid fondo2 text-center pt-5">
         <div class="row">
             <div class="col-12 pt-3">
-                <h1 class="tam1">Galería de Autos Clásicos</h1>
 
                 <div class="container">
+
+                    <div class="row">
+                        <div class="col-6">
+                            <h1 class="text-start">Galería de Autos Clásicos</h1>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end">
+                            <select id="brand-gallery-select" class="form-select form-select-sm" onchange="visitGallery()">
+                                <option selected>Filtre la marca de auto:</option>
+                                <option value="mb">Mercedes Benz</option>
+                                <option value="cadillac">Cadillac</option>
+                                <option value="vw">Volkswagen</option>
+                                <option value="ford">Ford</option>
+                                <option value="porsche">Porsche</option>
+                                <option value="jaguar">Jaguar</option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="container-fluid pt-5">
-                        <div class="tz-gallery">
+                        <div class="classic-gallery">
                             <div class="row">
                                 <div class="col-sm-4 col-md-6 col-lg-4 ">
-                                    <div class="">
+                                    <div class="cadillac-gallery">
                                         <a class="" href="imgs/pw_e1_classics_gallery_1.webp">
                                             <img src="imgs/pw_e1_classics_gallery_1.webp" alt="Clásico #1" class="img-fluid">
                                         </a>
@@ -112,7 +130,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-4 col-md-6 col-lg-4 ">
-                                    <div class="">
+                                    <div class="mb-gallery">
                                         <a class="" href="imgs/pw_e1_classics_gallery_2.webp">
                                             <img src="imgs/pw_e1_classics_gallery_2.webp" alt="Clásico #2" class="img-fluid">
                                         </a>
@@ -123,9 +141,9 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-4 col-md-6 col-lg-4">
-                                    <div class="">
+                                    <div class="jaguar-gallery">
                                         <a class="" href="imgs/pw_e1_classics_gallery_3.webp">
-                                            <img src="imgs/pw_e1_classics_gallery_3.webp" alt="Clásico #2" class="img-fluid">
+                                            <img src="imgs/pw_e1_classics_gallery_3.webp" alt="Clásico #3" class="img-fluid">
                                         </a>
                                         <div class=" ">
                                             <h3 class="pt-3">Auto Clásico #3</h3>
@@ -135,9 +153,9 @@
                             </div>
                             <div class="row">
                                 <div class="col-sm-4 col-md-6 col-lg-4">
-                                    <div class="">
+                                    <div class="cadillac-gallery">
                                         <a class="" href="imgs/pw_e1_classics_gallery_4.webp">
-                                            <img src="imgs/pw_e1_classics_gallery_4.webp" alt="Clásico #1" class="img-fluid">
+                                            <img src="imgs/pw_e1_classics_gallery_4.webp" alt="Clásico #4" class="img-fluid">
                                         </a>
                                         <div class=" ">
                                             <h3 class="pt-3">Auto Clásico #4</h3>
@@ -146,9 +164,9 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-4 col-md-6 col-lg-4">
-                                    <div class="">
+                                    <div class="mb-gallery">
                                         <a class="" href="imgs/pw_e1_classics_gallery_5.webp">
-                                            <img src="imgs/pw_e1_classics_gallery_5.webp" alt="Clásico #2" class="img-fluid">
+                                            <img src="imgs/pw_e1_classics_gallery_5.webp" alt="Clásico #5" class="img-fluid">
                                         </a>
                                         <div class=" ">
                                             <h3 class="pt-3">Auto Clásico #5</h3>
@@ -157,11 +175,11 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-4 col-md-6 col-lg-4">
-                                    <div class="">
+                                    <div class="porsche-gallery">
                                         <a class="" href="imgs/pw_e1_classics_gallery_6.webp">
-                                            <img src="imgs/pw_e1_classics_gallery_6.webp" alt="Clásico #2" class="img-fluid">
+                                            <img src="imgs/pw_e1_classics_gallery_6.webp" alt="Clásico #6" class="img-fluid">
                                         </a>
-                                        <div class=" ">
+                                        <div class="">
                                             <h3 class="pt-3">Auto Clásico #6</h3>
                                         </div>
                                     </div>
@@ -169,9 +187,9 @@
                             </div>
                             <div class="row">
                                 <div class="col-sm-4 col-md-6 col-lg-4 ">
-                                    <div class="">
+                                    <div class="vw-gallery">
                                         <a class="" href="imgs/pw_e1_classics_gallery_7.webp">
-                                            <img src="imgs/pw_e1_classics_gallery_7.webp" alt="Clásico #1" class="img-fluid">
+                                            <img src="imgs/pw_e1_classics_gallery_7.webp" alt="Clásico #7" class="img-fluid">
                                         </a>
                                         <div class=" ">
                                             <h3 class="pt-3">Auto Clásico #7</h3>
@@ -180,9 +198,9 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-4 col-md-6 col-lg-4 ">
-                                    <div class="">
+                                    <div class="cadillac-gallery">
                                         <a class="" href="imgs/pw_e1_classics_gallery_8.webp">
-                                            <img src="imgs/pw_e1_classics_gallery_8.webp" alt="Clásico #2" class="img-fluid">
+                                            <img src="imgs/pw_e1_classics_gallery_8.webp" alt="Clásico #8" class="img-fluid">
                                         </a>
                                         <div class=" ">
                                             <h3 class="pt-3">Auto Clásico #8</h3>
@@ -191,9 +209,9 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-4 col-md-6 col-lg-4">
-                                    <div class="">
+                                    <div class="ford-gallery">
                                         <a class="" href="imgs/pw_e1_classics_gallery_9.webp">
-                                            <img src="imgs/pw_e1_classics_gallery_9.webp" alt="Clásico #2" class="img-fluid">
+                                            <img src="imgs/pw_e1_classics_gallery_9.webp" alt="Clásico #9" class="img-fluid">
                                         </a>
                                         <div class=" ">
                                             <h3 class="pt-3">Auto Clásico #9</h3>
@@ -248,8 +266,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js "></script>
     <script>
-        baguetteBox.run('.tz-gallery');
+        baguetteBox.run('.classic-gallery');
     </script>
+
+    <script src="js/gallery-classics.js"></script>
 
 </body>
 

@@ -1,0 +1,77 @@
+@charset "UTF-8";
+/****************************** Importación de Fuentes Web ******************************/
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "general.scss";
+
+
+.about-us-banner strong {
+    color: $color-palette-1-1;
+}
+
+.about-us-banner p {
+    // font-weight: lighter;
+    color: $color-secondary-black !important;
+}
+
+#canvas {
+    width: 100%;
+}
+
+.searchInput {
+    width: 80%;
+    background-color: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    padding: 5px 15px;
+    color: #fff;
+    border-radius: 5px;
+    border-right: none;
+}
+.searchInput::placeholder {
+    color: #fff;
+    font-size: 14px;
+}
+.searchIcon {
+    border-radius: 0 5px 5px 0;
+    border-left: none;
+    border-top: 2px solid $color-palette-6-2;
+    border-right: 2px solid $color-palette-6-2;
+    border-bottom: 2px solid $color-palette-6-2;
+    background-color: $color-palette-6-2;
+}
+.searchIcon i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    
+}
+.input-group {
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.form-control:focus {
+    color: #fff;
+    background-color: transparent;
+    border-color: #fff;
+    outline: 0;
+    box-shadow: none;
+}
+.resultado {
+    color: #fff;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.card-title {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.card-text {
+    color: #555;
+}

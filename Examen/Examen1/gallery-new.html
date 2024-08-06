@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="imgs/pw_e1_favicon_wb_transp_300x200.png" type="image/x-con">
         <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/general-gallery.css">
+        <link rel="stylesheet" href="css/gallery-general.css">
         <link rel="stylesheet" href="css/rules.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
@@ -42,43 +42,45 @@
                     <!-- centrar opciones: text-center -->
                     <ul class="navbar-nav mx-auto mb-2 mb-md-0 text-center">
                         <li class="nav-item">
-                            <a data-translate="optionMenu1" data-scroll class="nav-link text-white option-menu" aria-current="page" href="home.html">Inicio</a>
+                            <a data-scroll class="nav-link text-white option-menu" aria-current="page" href="home.html">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a data-translate="optionMenu2" data-scroll class="nav-link text-white option-menu" aria-current="page" href="#comprar">Comprar</a>
+                            <a data-scroll class="nav-link text-white option-menu" aria-current="page" href="#comprar">Comprar</a>
                         </li>
                         <li class="nav-item">
-                            <a data-translate="optionMenu3" data-scroll class="nav-link text-white option-menu" aria-current="page" href="#vender">Vender</a>
+                            <a data-scroll class="nav-link text-white option-menu" aria-current="page" href="#vender">Vender</a>
                         </li>
 
                         <!-- Submenu Autos -->
                         <li class="nav-item dropdown">
-                            <a data-translate="optionMenu4" class="nav-link dropdown-toggle text-white option-menu" id="desplegable1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Autos</a>
+                            <a class="nav-link dropdown-toggle text-white option-menu" id="desplegable1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Autos</a>
                             <div class="dropdown-menu text-left" aria-labelledby="desplegable1">
-                                <a data-translate="optionMenu4_1" class="dropdown-item option-menu" href="classics.html">Clásicos</a>
-                                <a data-translate="optionMenu4_2" class="dropdown-item option-menu" href="#">Nuevos</a>
-                                <a data-translate="optionMenu4_3" class="dropdown-item option-menu" href="#">Usados</a>
+                                <a class="dropdown-item option-menu" href="classics.html">Clásicos</a>
+                                <a class="dropdown-item option-menu" href="#">Nuevos</a>
+                                <a class="dropdown-item option-menu" href="#">Usados</a>
                             </div>
                         </li>
                         
                         <!-- Submenu Información -->
                         <li class="nav-item dropdown">
-                            <a data-translate="optionMenu5" class="nav-link dropdown-toggle text-white option-menu" id="desplegable1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Información</a>
+                            <a class="nav-link dropdown-toggle text-white option-menu" id="desplegable1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Información</a>
                             <div class="dropdown-menu text-left" aria-labelledby="desplegable1">
-                                <a data-translate="optionMenu5_1" class="dropdown-item option-menu" href="credit.html">Crédito</a>
-                                <a data-translate="optionMenu5_2" class="dropdown-item option-menu" href="about.html">Nosotros</a>
-                                <a data-translate="optionMenu5_3" class="dropdown-item option-menu" href="/">Sucursales</a>
-                                <a data-translate="optionMenu5_4" class="dropdown-item option-menu" href="/">Contáctenos</a>
-                                <a data-translate="optionMenu5_5" class="dropdown-item option-menu" href="showroom.html">Showroom virtual</a>
+                                <a class="dropdown-item option-menu" href="credit.html">Crédito</a>
+                                <a class="dropdown-item option-menu" href="about.html">Nosotros</a>
+                                <a class="dropdown-item option-menu" href="offices.html">Sucursales</a>
+                                <a class="dropdown-item option-menu" href="/">Contáctenos</a>
+                                <a class="dropdown-item option-menu" href="showroom.html">Showroom virtual</a>
+                                <a class="dropdown-item option-menu" href="model-3d.html">Escenario 3D</a>
                             </div>
                         </li>
 
                         <!-- Submenu Galería -->
                         <li class="nav-item dropdown">
-                            <a data-translate="optionMenu6" class="nav-link dropdown-toggle text-white option-menu" id="desplegable1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Galería</a>
+                            <a class="nav-link dropdown-toggle text-white option-menu" id="desplegable1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Galería</a>
                             <div class="dropdown-menu text-left" aria-labelledby="desplegable1">
-                                <a data-translate="optionMenu6_2" class="dropdown-item option-menu" href="gallery-used.html">Autos Usados</a>
-                                <a data-translate="optionMenu6_3" class="dropdown-item option-menu" href="gallery-classics.html">Autos Clásicos</a>
+                                <a class="dropdown-item option-menu" href="gallery-used.html">Autos Usados</a>
+                                <a class="dropdown-item option-menu" href="gallery-classics.html">Autos Clásicos</a>
+                                <a class="dropdown-item option-menu" href="gallery-all.html">Galería General</a>
                             </div>
                         </li>
                     </ul>
@@ -97,7 +99,7 @@
 
                 <div class="container">
                     <div class="container-fluid pt-5">
-                        <div class="tz-gallery">
+                        <div class="new-gallery">
                             <div class="row">
                                 <div class="col-sm-4 col-md-6 col-lg-4 ">
                                     <div class="">
@@ -243,7 +245,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js "></script>
     <script>
-        baguetteBox.run('.tz-gallery');
+        baguetteBox.run('.new-gallery');
     </script>
 
 </body>

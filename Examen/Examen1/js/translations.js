@@ -15,10 +15,12 @@ const translations = {
         optionMenu5_3: "Sucursales",
         optionMenu5_4: "Contáctenos",
         optionMenu5_5: "Tour virtual",
+        optionMenu5_6: "Escenario 3D",
         optionMenu6: "Galería",
         optionMenu6_1: "Autos Nuevos",
         optionMenu6_2: "Autos Usados",
         optionMenu6_3: "Autos Clásicos",
+        optionMenu6_4: "Galería General",
 
         /******************* Page: home.html *******************/
         // Cards de Opciones
@@ -76,10 +78,12 @@ const translations = {
         optionMenu5_3: "Offices",
         optionMenu5_4: "Contact us",
         optionMenu5_5: "Virtual showroom",
+        optionMenu5_6: "3D scenario",
         optionMenu6: "Gallery",
         optionMenu6_1: "New cars",
         optionMenu6_2: "Used cars",
         optionMenu6_3: "Classic cars",
+        optionMenu6_4: "General Gallery",
 
         /******************* Page: home.html *******************/
         // Option cards

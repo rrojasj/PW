@@ -66,9 +66,10 @@
                                 <div class="dropdown-menu text-left" aria-labelledby="desplegable1">
                                     <a data-translate="optionMenu5_1" class="dropdown-item option-menu" href="credit.html">Crédito</a>
                                     <a data-translate="optionMenu5_2" class="dropdown-item option-menu" href="about.html">Nosotros</a>
-                                    <a data-translate="optionMenu5_3" class="dropdown-item option-menu" href="/">Sucursales</a>
+                                    <a data-translate="optionMenu5_3" class="dropdown-item option-menu" href="offices.html">Sucursales</a>
                                     <a data-translate="optionMenu5_4" class="dropdown-item option-menu" href="/">Contáctenos</a>
                                     <a data-translate="optionMenu5_5" class="dropdown-item option-menu" href="showroom.html">Showroom virtual</a>
+                                    <a data-translate="optionMenu5_6" class="dropdown-item option-menu" href="model-3d.html">Escenario 3D</a>
                                 </div>
                             </li>
 
@@ -76,9 +77,10 @@
                             <li class="nav-item dropdown">
                                 <a data-translate="optionMenu6" class="nav-link dropdown-toggle text-white option-menu" id="desplegable1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Galería</a>
                                 <div class="dropdown-menu text-left" aria-labelledby="desplegable1">
-                                    <a data-translate="optionMenu6_1" class="dropdown-item option-menu" href="#">Autos Nuevos</a>
-                                    <a data-translate="optionMenu6_2" class="dropdown-item option-menu" href="#">Autos Usados</a>
-                                    <a data-translate="optionMenu6_3" class="dropdown-item option-menu" href="classics.html">Autos Clásicos</a>
+                                    <a data-translate="optionMenu6_1" class="dropdown-item option-menu" href="gallery-new.html">Autos Nuevos</a>
+                                    <a data-translate="optionMenu6_2" class="dropdown-item option-menu" href="gallery-used.html">Autos Usados</a>
+                                    <a data-translate="optionMenu6_3" class="dropdown-item option-menu" href="gallery-classics.html">Autos Clásicos</a>
+                                    <a data-translate="optionMenu6_4" class="dropdown-item option-menu" href="gallery-all.html">Galería General</a>
                                 </div>
                             </li>
 
@@ -229,6 +231,7 @@
                         <option value="classic">Galería de autos clásicos</option>
                         <option value="new">Galería de autos nuevos</option>
                         <option value="used">Galería de autos usados</option>
+                        <option value="all">Galería general de autos</option>
                     </select>
                 </div>
             </div>
@@ -239,10 +242,76 @@
             <div class="pt-2"></div>
             <div class="container text-center pt-5 pb-5">
                 <h2 data-translate="offersTitle" class="text-uppercase">Stock Ofertas</h2>
-                <div class="pt-5">
+                <!-- <div class="pt-5">
                     <img src="imgs/pw_e1_brand_logo_bmw_125x125.png" alt="BMW logo">
                     <img src="imgs/pw_e1_brand_logo_mb_125x125.png" alt="Mercedes Benz logo">
                     <img src="imgs/pw_e1_brand_logo_vw_125x125.png" alt="Volkswagen logo">
+                </div> -->
+
+                <div id="owl-demo" class="owl-carousel text-center">
+                    <div class="item">
+                        <div class="">
+                            <img class="lazyOwl img-fluid rounded-circle" data-src="imgs/pw_e1_photo_strip_b_logo_ar.webp" alt="Alpha Romeo">
+                        </div>
+                        <div class="">
+                            <h4 class="">Alpha Romeo</h4>
+                            <p class="p1 text-center">La pasión se convierte en automóvil</p>
+                        </div>
+                    </div>
+    
+    
+                    <div class="item">
+                        <div class="">
+                            <img class="lazyOwl img-fluid rounded-circle" data-src="imgs/pw_e1_photo_strip_b_logo_mb.webp" alt="Mercedes-Benz">
+                        </div>
+                        <div class="">
+                            <h4 class="">Mercedes-Benz</h4>
+                            <p class="p1 text-center">Lo mejor o nada</p>
+                        </div>
+                    </div>
+    
+    
+                    <div class="item">
+                        <div class="">
+                            <img class="lazyOwl img-fluid rounded-circle" data-src="imgs/pw_e1_photo_strip_b_logo_cd.webp" alt="Cadillac">
+                        </div>
+                        <div class="">
+                            <h4 class="">Cadillac</h4>
+                            <p class="p1 text-center">Atrévete a ser grande</p>
+                        </div>
+                    </div>
+    
+    
+                    <div class="item">
+                        <div class="">
+                            <img class="lazyOwl img-fluid rounded-circle" data-src="imgs/pw_e1_photo_strip_b_logo_bmw.webp" alt="BMW">
+                        </div>
+                        <div class="">
+                            <h4 class="">BMW</h4>
+                            <p class="p1 text-center">El placer de conducir</p>
+                        </div>
+                    </div>
+    
+    
+                    <div class="item">
+                        <div class="">
+                            <img class="lazyOwl img-fluid rounded-circle" data-src="imgs/pw_e1_photo_strip_b_logo_vw.webp" alt="Volkswagen">
+                        </div>
+                        <div class="">
+                            <h4 class="">Volkswagen</h4>
+                            <p class="p1 text-center">El automóvil</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="">
+                            <img class="lazyOwl img-fluid rounded-circle" data-src="imgs/pw_e1_photo_strip_b_logo_vv.webp" alt="Volvo">
+                        </div>
+                        <div class="">
+                            <h4 class="">Volvo</h4>
+                            <p class="p1 text-center">Diseñado en torno a ti</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Fila de BMW -->
@@ -474,7 +543,37 @@
             new WOW().init();
         </script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+        <script src="js/jquery.min.js"></script>
         <script src="js/home.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $("#owl-demo").owlCarousel({
+                    // Columnas de fotos
+                    items: 3,
+    
+                    // Carga rápida de fotos
+                    lazyLoad: true,
+    
+                    // Carga automática de la tira
+                    autoplay: true,
+                    navigation: true,
+    
+                    // Permitir ocultar los textos prev y next
+                    navigationText: ["", ""],
+    
+                    // Permitir ir del final al inicio
+                    rewindNav: true,
+    
+                    // Valores por defecto. Si le ponen los 3 en valor true aparecen los números 1 2 3 para navegar
+                    // Sería como un elemento web de paginación
+                    scrollPerPage: false,
+                    pagination: false,
+                    paginationNumbers: false,
+                });
+            });
+        </script>
 
         <!-- libreria desplegables  js -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
