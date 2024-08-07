@@ -1,0 +1,51 @@
+body {
+    font-family: 'Krub', sans-serif;
+    background-color: var(--bg);
+}
+
+h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+h3 {
+    font-weight: 400;
+}
+
+
+/*tamaño de la foto principal*/
+
+.fp img {
+    width: 620px;
+    height: 240px;
+}
+
+p {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.fondo {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+footer {
+    padding: 15px;
+}
+
+footer i {
+    font-size: 35px;
+    padding: 15px;
+}
+
+footer p {
+    font-size: 20px;
+    padding: 15px;
+}

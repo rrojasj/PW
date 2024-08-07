@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="icon" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Pollo Granjero</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <div class="text-center">
+        <h1 class="display-2 text-white pt-5">Lugares de Costa Rica</h1>
+        <img class="logo img-fluid" src="logo.PNG" alt="logo pollo granjero">
+    </div>
+
+    <div class="container mt-5">
+        <div class="input-group">
+            <input type="text" id="searchInput" class="searchInput form-control" placeholder="Buscar tiendas cercanas">
+            <div class="input-group-append">
+                <button class="searchInput searchIcon" type="button" onclick="searchStores()">
+                    <i class="ri-search-line"></i>
+                </button>
+            </div>
+        </div>
+
+        <p id="pResult" class="resultado mt-4"></p>
+    </div>
+
+
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!-- libreria SWEETALERT-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>

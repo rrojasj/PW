@@ -1,0 +1,73 @@
+body {
+    font-size: 22px;
+}
+
+p {
+    font-size: 22px;
+}
+
+.formatos1 {
+    color: brown;
+}
+
+header {
+    background-color: #000;
+    height: 60px;
+}
+
+.inicio {
+    border-bottom: 1px solid rgb(143, 50, 50);
+}
+
+.logo {
+    padding: 30px 100px;
+}
+
+.logo img {
+    width: 70%;
+}
+
+.logo2 img {
+    width: 70%;
+}
+
+.nissan {
+    padding: 80px 100px;
+}
+
+.nissan h1 {
+    letter-spacing: 3px;
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+h4 {
+    font-size: 17px;
+    letter-spacing: 2px;
+}
+
+select {
+    width: 100%;
+    padding: 3px 20px;
+}
+
+.imagen img {
+    width: 100%;
+}
+
+footer {
+    background-color: #000;
+    font-size: 30px;
+    padding: 40px 40px;
+    margin-top: 100px;
+}
+
+@media(max-width: 765px) {
+    .logo img {
+        width: 100%;
+    }
+}

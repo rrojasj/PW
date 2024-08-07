@@ -1,0 +1,68 @@
+.banner{
+    background-attachment: fixed;
+    background-size: cover;
+    /*control altura del banner*/
+    height: 500px;
+    object-fit: cover;
+    background-position: center;
+    background-image: url('../imagenes/banner1.jpg');
+    
+}
+
+.info{
+    padding: 100px 50px 80px 60px;
+    margin-top: 73px;
+    background-color: transparent;
+    background-blend-mode: multiply;
+    box-shadow: inset 0 0 0 1000px rgba(241, 233, 233, 0.8);
+}
+
+h3{
+    letter-spacing: 2px;
+    font-family: 'Hurricane', cursive;
+    padding-top: 20px;
+    font-size: 70px;
+    color: rgb(77, 128, 107);
+}
+.encuesta{
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+.colorLabel{
+    color: rgb(177, 71, 22);
+}
+.checkbox{
+    margin-left: 10px;
+}
+.inputs{
+    padding: 20px;
+} 
+.checks{
+    padding: 20px;
+}
+.radios{
+    padding: 20px;
+}
+footer{
+    height: 100px;
+    background-color: rgb(218, 218, 218);
+    margin-top: 70px;
+}
+.botonEnviar{
+    margin-top: 50px;
+    text-align: center;
+}
+.boton{
+    padding: 10px 30px;
+    border: none;
+    background-color: rgb(77, 128, 107);
+    color: white;
+    border-radius: 3px;
+}
+.Resultados{
+    margin-top: 50px;
+    text-align: center;
+}
+p{
+    font-size: 17px;
+}

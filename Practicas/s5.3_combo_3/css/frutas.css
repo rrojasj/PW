@@ -1,0 +1,36 @@
+.resultado {
+    width: 557px !important;
+    height: 335px !important;
+    /*text-align: center;
+    display: block;*/
+}
+
+.formato1 {
+    font-size: 20px;
+    text-align: left;
+}
+/*apariencia del control SELECT*/
+
+select {
+    color: #fff;
+    background-color: cadetblue;
+    font-size: 20px;
+    border: 2px solid green;
+    padding: 8px 10px;
+}
+/*apariencia de los textos que estan dentro del SELECT*/
+
+option {
+    background-color: #e4e4e4;
+    font-size: 20px;
+    color: #000;
+}
+
+@media (max-width: 576px) {
+    #resultado {
+        /*por mostrar la imagen usando style backgroundImage se deben usar estas instrucciones*/
+        background-position: center center !important;
+        background-size: 80% !important;
+        background-repeat: no-repeat !important;
+    }
+}
