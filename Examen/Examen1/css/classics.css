@@ -12267,6 +12267,7 @@ input:not(:placeholder-shown) {
   transition: all 1s ease;
 }
 
+/****************************** Estilos Select ******************************/
 /****************************** Estilos Footer ******************************/
 .footer-style {
   height: 6.25rem;
