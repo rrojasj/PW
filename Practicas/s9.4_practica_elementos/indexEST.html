@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>CENFOTEC-PROFEFRANK</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="favicon.png" rel="icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="css/index.css" rel="stylesheet">
+    <!-- cargar hoja de estilo del lightbox fotografico -->
+    <link href="css/lightbox1.css" rel="stylesheet">
+    <!-- cargar hoja de estilo del lightbox video -->
+    <link href="css/lightbox2.css" rel="stylesheet">
+    <!-- cargar hoja de estilo de las pestañas -->
+    <link href="css/tabs.css" rel="stylesheet">
+    <!-- cargar hoja de estilo del carousel pequeño de fotos -->
+    <link href="css/carousel.css" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="fondo">
+        <h1 class="text-white text-center izquierda">U.Cenfotec</h1>
+    </header>
+
+    <section>
+        <div class="container">
+            <p class="container pt-3">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur augue nibh, mollis in finibus id, mollis non dui. Praesent vel eleifend ante. Praesent vulputate turpis varius consequat luctus. Ut ut eros elementum, venenatis urna sit amet, mattis libero.
+                Praesent id vehicula felis. Suspendisse scelerisque vitae lectus et lobortis. Aenean auctor consectetur lorem non pretium. Aliquam leo turpis, varius id ligula nec, vehicula imperdiet lectus. Proin cursus nunc purus, at dictum purus dictum
+                in. Curabitur sit amet quam turpis. Vivamus facilisis eu odio quis tempor. Sed sit amet lectus vel diam ullamcorper faucibus in eu libero. Suspendisse sagittis vestibulum ante, vitae aliquet tortor tempor quis. Integer blandit vehicula
+                nunc eget convallis.
+            </p>
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <!-- lightbox de foto-->
+                    <div class="pt-5">
+                        <!-- Activar el modal -->
+                        <img id="myImg" src="imagenes/logo.png" alt="Logotipo X" style="max-width: 300px;">
+                        <!-- ID modal -->
+                        <div id="modal1" class="modal">
+                            <!-- Botón de cierre del modal -->
+                            <!-- &times es la X que aparece -->
+                            <div class="close">&times;</div>
+                            <!-- contenido del modal -->
+                            <img class="modal-content" id="img01">
+                            <!-- Título del modal -->
+                            <div id="caption"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <p class="container pt-5">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur augue nibh, mollis in finibus id, mollis non dui. Praesent vel eleifend ante. Praesent vulputate turpis varius consequat luctus. Ut ut eros elementum, venenatis urna sit amet, mattis libero.
+                        Praesent id vehicula felis. Suspendisse scelerisque vitae lectus et lobortis. Aenean auctor consectetur lorem non pretium. Aliquam leo turpis, varius id ligula nec, vehicula imperdiet lectus. Proin cursus nunc purus, at dictum
+                        purus dictum in. Curabitur sit amet quam turpis. Vivamus facilisis eu odio quis tempor. Sed sit amet lectus vel diam ullamcorper faucibus in eu libero. Suspendisse sagittis vestibulum ante, vitae aliquet tortor tempor quis. Integer
+                        blandit vehicula nunc eget convallis.
+                    </p>
+                    <div class="pt-3"></div>
+
+                    <!-- boton para activar el lightbox de vídeo -->
+                    <!-- permite cargar la funcion ejecutar JS -->
+               
+                                <!-- permite poner el vídeo responsivo -->
+                               
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="container pt-5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur augue nibh, mollis in finibus id, mollis non dui. Praesent vel eleifend ante. Praesent vulputate turpis varius consequat luctus. Ut ut eros elementum, venenatis urna sit amet, mattis libero.
+                Praesent id vehicula felis. Suspendisse scelerisque vitae lectus et lobortis. Aenean auctor consectetur lorem non pretium. Aliquam leo turpis, varius id ligula nec, vehicula imperdiet lectus. Proin cursus nunc purus, at dictum purus dictum
+                in. Curabitur sit amet quam turpis. Vivamus facilisis eu odio quis tempor. Sed sit amet lectus vel diam ullamcorper faucibus in eu libero. Suspendisse sagittis vestibulum ante, vitae aliquet tortor tempor quis. Integer blandit vehicula
+                nunc eget convallis.
+            </p>
+            <!-- tabs -->
+            <div class="container pt-5">
+                <div class="tab tam1">
+                    <!-- funcion que recibe un controlador de eventos (event) y un ID que representa cada pestaña -->
+                    <button class="tablinks" onclick="opciones(event, 'historia')">Historia</button>
+                    <button class="tablinks" onclick="opciones(event, 'mision')">Misión</button>
+                    <button class="tablinks" onclick="opciones(event, 'vision')">Visión</button>
+                </div>
+            </div>
+
+            <!-- contenido de las pestañas -->
+            <div id="historia" class="tabcontent">
+                <h3>Empresa XYZ</h3>
+                <p>
+                    En el mundo digital es muy importante que sepas redactar la historia de tu empresa de una forma atractiva. El objetivo es dar a conocer tu trayectoria profesional, así como los valores de tu negocio entre tus clientes potenciales para crear imagen de
+                    marca y diferenciarte de la competencia.
+                </p>
+                <img src="imagenes/historia.png" alt="historia" class="img-fluid">
+            </div>
+
+            <div id="mision" class="tabcontent">
+                <h3>Empresa XYZ</h3>
+                <p class="text-left ">
+                    La misión describe el motivo o la razón de ser de una organización, empresa o institución. Se enfoca en los objetivos a cumplir en el presente. Debe estar definida de manera precisa y concreta para guiar al grupo de trabajo en el día a día. Por ejemplo:
+                    La misión de la compañía es mejorar la calidad de los automóviles.
+                </p>
+                <img src="imagenes/mision.png" alt="mision" class="img-fluid">
+            </div>
+
+            <div id="vision" class="tabcontent">
+                <h3>Empresa XYZ</h3>
+                <p class="text-left ">
+                    La visión empresarial es la capacidad de proyectar el futuro de una empresa. En un concepto más terminado. Es una declaración que indica hacia dónde se dirige la empresa a largo plazo, o qué es aquello en lo que pretende convertirse en el futuro.
+                </p>
+                <img src="imagenes/vision.png" alt="vision" class="img-fluid">
+            </div>
+
+            <p class="container pt-5 ">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur augue nibh, mollis in finibus id, mollis non dui. Praesent vel eleifend ante. Praesent vulputate turpis varius consequat luctus. Ut ut eros elementum, venenatis urna sit amet, mattis libero.
+                Praesent id vehicula felis. Suspendisse scelerisque vitae lectus et lobortis. Aenean auctor consectetur lorem non pretium. Aliquam leo turpis, varius id ligula nec, vehicula imperdiet lectus. Proin cursus nunc purus, at dictum purus dictum
+                in. Curabitur sit amet quam turpis. Vivamus facilisis eu odio quis tempor. Sed sit amet lectus vel diam ullamcorper faucibus in eu libero. Suspendisse sagittis vestibulum ante, vitae aliquet tortor tempor quis. Integer blandit vehicula
+                nunc eget convallis.
+            </p>
+
+            <div class="pt-5"></div>
+            <!-- Botón para actibar el lightbox de video -->
+            <!-- Permite cargar la función ejecutar JS -->
+            <div class="container">
+                <button id="boton" onclick="ejecutar('video', 'youtube')" class="cursor">Video U</button>
+            </div>
+            
+            <!-- Permite cargar la función ocultar JS -->
+            <div id="video" class="lightbox" onclick="ocultar('video', 'youtube')">
+                <!-- Permite poner el tamaño del contenedor del Lightbox -->
+                <div class="lightbox-container">
+                    <!-- Permite poner transparente la pantalla -->
+                    <div class="lightbox-content">
+                        <button onclick="ocultar('video', 'youtube')" class="lightbox-close cursor">Cerrar| X</button>
+                        <!-- Permite poner el video responsivo -->
+                        <div class="video-container">
+                            <!-- Agregar la terminación ?showinfo=0 para ocultar los videos promocionales al final -->
+                            <!-- Si se activa no funciona los controles del video youtube accelerometer -->
+                            <iframe id="youtube" width="960" height="540" src="https://www.youtube.com/embed/UencYlTaARE?si=PO5g353GSE9m-hVf" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         
+
+
+            <div class="pt-5 "></div>
+
+            <!-- cierre del container -->
+        </div>
+        <!-- cierre de la sección -->
+    </section>
+
+
+    <footer class="fondo">
+        <h2 class="text-white derecha ">Profefrank-Cenfotec</h2>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL " crossorigin="anonymous "></script>
+
+    <!-- cargar la programación del lightbox fotografico -->
+    <script src="js/lightbox1.js "></script>
+    <!-- cargar la programación del lightbox de vídeo -->
+    <script src="js/lightbox2.js "></script>
+    <!-- cargar la programación de las pestañas-->
+    <script src="js/tabs.js "></script>
+    <!-- cargar la programación del carousel pequeño de fotos -->
+    <script src="js/carousel.js "></script>
+
+
+</body>
+
+</html>

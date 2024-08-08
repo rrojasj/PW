@@ -1,0 +1,75 @@
+/* propiedades de la caja del tabulador */
+
+.tab {
+    overflow: hidden;
+    border: 2px solid #ccc;
+    background-color: #e4e4e4;
+    /*color de la barra principal del tabulador*/
+    /*background-color: #f1f1f1;*/
+}
+
+p {
+    font-size: 20px;
+    text-align: left;
+}
+
+.tam1 {
+    font-size: 24px;
+}
+
+
+/* controla propiedades de los TABS */
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    color: #000;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+
+/* controla el color sobre los TABS */
+
+.tab button:hover {
+    background-color: green;
+    color: #fff;
+}
+
+
+/* controla el color activo de los TABS */
+
+.tab button.active {
+    background-color: brown;
+    color: #fff;
+}
+
+
+/* controla el contenido de cada pestaña tab */
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 2px solid #ccc;
+    border-top: none;
+    background: #eee;
+}
+
+
+/* El efecto de animación desvanecimiento tarda 2 segundos al entrar a cada pestaña */
+
+.tabcontent {
+    animation: efect1 2s;
+}
+
+@keyframes efect1 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
