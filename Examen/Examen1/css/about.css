@@ -12026,8 +12026,9 @@ p {
 
 /****************************** Base button ******************************/
 .primary-btn {
-  border-radius: 0.625rem;
-  color: #fefefe;
+  border-radius: 0.313rem;
+  background-color: #186F8C !important;
+  color: #CCCCCC;
   cursor: pointer;
   font-size: 1.5 rem;
   padding: 0.2rem 1.3rem;
@@ -12035,13 +12036,20 @@ p {
   width: fit-content;
   font-family: "Noto Sans", sans-serif;
   transition: background-color 0.5s ease-in, color 0.5s ease-in;
-  background-color: #0F4557;
-  color: #fefefe;
 }
 
 .primary-btn:hover {
-  background-color: #186F8C;
-  color: #121212;
+  border-radius: 0.313rem;
+  background-color: #0F4557 !important;
+  color: #CCCCCC;
+  cursor: pointer;
+  font-size: 1.5 rem;
+  padding: 0.2rem 1.3rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "Noto Sans", sans-serif;
+  transition: background-color 0.5s ease-in, color 0.5s ease-in;
+  color: #EAEAEA;
 }
 
 /****************************** Estilos Switch de lenguaje ******************************/
@@ -12267,7 +12275,36 @@ input:not(:placeholder-shown) {
   transition: all 1s ease;
 }
 
-/****************************** Estilos Select ******************************/
+/****************************** Estilos Search input ******************************/
+.searchIcon {
+  border-radius: 0 5px 5px 0;
+  border-left: none;
+  border-top: 2px solid #CCCCCC;
+  border-right: 2px solid #CCCCCC;
+  border-bottom: 2px solid #CCCCCC;
+  background-color: #CCCCCC;
+}
+
+.searchIcon i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.form-control:focus {
+  color: #fff;
+  background-color: transparent;
+  border-color: #fff;
+  outline: 0;
+  box-shadow: none;
+}
+
 /****************************** Estilos Footer ******************************/
 .footer-style {
   height: 6.25rem;
@@ -12284,6 +12321,22 @@ p.footer-text {
   color: #0F4557 !important;
 }
 
+/****************************** Variables globales ******************************/
+.clip-section-one h1, .clip-section-one .h1 {
+  padding-top: 0.938rem;
+  padding-left: 0.938rem;
+}
+
+.clip-section-two h1, .clip-section-two .h1 {
+  padding-top: 0.938rem;
+  padding-right: 0.938rem;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+}
+
+/****************************** Banner ******************************/
 .about-us-banner {
   display: flex;
   align-items: center;
@@ -12295,7 +12348,7 @@ p.footer-text {
   background-blend-mode: luminosity;
   /* profundidad */
   box-shadow: inset 0 0 0 1000px rgba(226, 221, 221, 0.4);
-  padding: 12.5rem;
+  padding: 6.25rem;
 }
 
 .about-us-banner strong {
@@ -12310,13 +12363,140 @@ p.footer-text {
   padding: 500px 0;
 }
 
+/****************************** Section 1 - Clip-path ******************************/
+.clip-section-one {
+  -webkit-clip-path: polygon(0% 10%, 95.2% 10%, 0% 100%);
+          clip-path: polygon(0% 10%, 95.2% 10%, 0% 100%);
+  background-color: #E3FCE0; /* Replace $color-palette-6-1 with actual color */
+  min-height: 6.25rem; /* Replace $px-600 with actual pixel value */
+  z-index: 1; /* Ensure this is lower than the about-us-banner if necessary */
+  position: relative;
+}
+
+/****************************** Section 2 - Clip-path ******************************/
+.clip-section-two {
+  -webkit-clip-path: polygon(100% 2.5%, 4.8% 2.5%, 100% 100%);
+          clip-path: polygon(100% 2.5%, 4.8% 2.5%, 100% 100%);
+  background-color: #E3FCE0; /* Replace $color-palette-6-1 with actual color */
+  min-height: 6.25rem; /* Replace $px-600 with actual pixel value */
+  z-index: 1; /* Ensure this is lower than the about-us-banner if necessary */
+  position: relative;
+}
+
+/****************************** Video Lightbox ******************************/
+.cursor {
+  cursor: pointer;
+}
+
+/* botón ver video*/
+#boton {
+  background-color: purple;
+  font-weight: bolder;
+  border: #fff;
+  color: #fff;
+  padding: 7px 15px;
+  display: inline-block;
+  font-size: 30px;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+/* clases lightbox */
+.lightbox {
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: scroll;
+  position: fixed;
+  display: none;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+.lightbox-container {
+  position: relative;
+  max-width: 960px;
+  margin: 10% auto;
+  padding: 0 3%;
+  height: auto;
+  z-index: 10;
+}
+
+/*transparencia*/
+.lightbox-content {
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+.lightbox-close {
+  background: transparent;
+  background-color: purple;
+  position: absolute;
+  /* alinear al centro el boton cerrar:  */
+  /*left:40%; */
+  padding-right: 0.625rem;
+  right: 8%;
+  max-width: 960px;
+  font-weight: 300;
+  font-size: 20px;
+  border: none;
+  color: #fff;
+  /*altura del boton X*/
+  top: -40px;
+  /*display: block;*/
+}
+
+@media (max-width: 575px) {
+  .lightbox-container {
+    margin-top: 150px !important;
+  }
+}
+/* controla las clases responsivas del vídeo */
+.video-container {
+  padding-bottom: 56.25%;
+  position: relative;
+  padding-top: 30px;
+  overflow: hidden;
+  height: 0;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+@media (max-width: 575px) {
+  .video-container {
+    width: 100% !important;
+    margin: 0 auto;
+  }
+}
 .titulajes {
   color: #003c5e;
   font-weight: bolder;
   font-size: 40px;
 }
 
-footer {
-  color: #fff;
-  background-color: #003c5e;
+/****************************** Section Visión ******************************/
+.vision-img img {
+  width: 100%;
+  height: 280px;
+}
+
+/****************************** Section Carrusel de servicios ******************************/
+.style-carousel p {
+  font-size: 20px;
+}
+
+.services-section {
+  background-color: #EAEAEA;
+}
+
+.services-img-style {
+  border-radius: 0.625rem !important;
 }/*# sourceMappingURL=about.css.map */

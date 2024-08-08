@@ -54,7 +54,7 @@ function searchStores() {
 
     var officesImgs = {
         'lindora': '../imgs/pw_e1_agency_location_lindora.webp',
-        'tibas': '../imgs/pw_e1_agency_location_sabana.webp',
+        'la sabana': '../imgs/pw_e1_agency_location_sabana.webp',
         'puriscal': '../imgs/pw_e1_agency_location_puriscal.webp',
         'nicoya': '../imgs/pw_e1_agency_location_nicoya.webp',
         'liberia': '../imgs/pw_e1_agency_location_liberia.webp',
@@ -116,16 +116,20 @@ function displayResults (officeImgs, officesFound) {
             card.style.maxWidth = "100%";
 
             card.innerHTML = `
-                <div class="row g-0">
+                <div class="row g-0" style="box-shadow: 0 0 5px rgba(15, 69, 87, 0.5), 5px 0 5px rgba(15, 69, 87, 0.5), 0 5px 5px rgba(15, 69, 87, 0.5), -5px 0 5px rgba(15, 69, 87, 0.5);">
                     <div class="col-md-4">
                         <img src="${officeImgSrc}" class="img-fluid rounded-start" alt="Tienda ${officesFound[i]}">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title">Tienda ${officesFound[i]}</h5>
+                            <h5 class="card-title">Agencia ${officesFound[i]}</h5>
                             <p>En AutoSpot, nuestras sucursales reflejan nuestro compromiso con la excelencia y la satisfacción del cliente. Cada ubicación está diseñada para proporcionar un entorno acogedor y profesional donde puedas explorar nuestra amplia gama de vehículos y recibir servicios de mantenimiento de alta calidad. Nuestro personal capacitado está siempre disponible para ayudarte a encontrar el automóvil perfecto y asegurarse de que tu experiencia con nosotros sea excepcional. Ven a visitar cualquiera de nuestras sucursales y descubre por qué AutoSpot es sinónimo de confianza y calidad en el mundo automotriz.</p>
                             <p class="card-text"><small class="text-body-secondary">Última actualización 6 de Agosto 2024</small></p>
                         </div>
+                    </div>
+                    <div class="card-footer">
+                        <h5 class="card-title fw-light">Mapa sede ${officesFound[i]}</h5>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1277.9279483448565!2d-84.05324399411033!3d9.90885607269196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2scr!4v1722997609429!5m2!1ses-419!2scr" width="1260" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             `;

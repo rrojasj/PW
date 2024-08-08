@@ -164,9 +164,10 @@ p {
 }
 
 /****************************** Base button ******************************/
-@mixin base_button {
-    border-radius: 0.625rem;
-    color: $color-primary-white;
+@mixin base_button($bg-color) {
+    border-radius: $px-5;
+    background-color: $bg-color !important;
+    color: $color-palette-6-2;
     cursor: pointer;
     font-size: 1.5 rem;
     padding: 0.2rem 1.3rem;
@@ -176,14 +177,12 @@ p {
 }
 
 .primary-btn {
-    @include base_button;
-    background-color: $color-palette-1-1;
-    color: $color-primary-white;
+    @include base_button($color-palette-1-2);
 }
 
 .primary-btn:hover {
-    background-color: $color-palette-1-2;
-    color: $color-primary-black;
+    @include base_button($color-palette-1-1);
+    color: $color-palette-6-1;
 }
 
 /****************************** Estilos Switch de lenguaje ******************************/
@@ -284,7 +283,7 @@ label {
     font-size: 0.938rem;
     font-weight: bolder;
     font-family: $font-family-noto-sans;
-    color: $color-palette-3-1;
+    color: $color-palette-6-1;
 }
 
 
@@ -408,8 +407,33 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32
     @include transition(all, 1s);
 }
 
-/****************************** Estilos Select ******************************/
-
+/****************************** Estilos Search input ******************************/
+.searchIcon {
+    border-radius: 0 5px 5px 0;
+    border-left: none;
+    border-top: 2px solid $color-palette-6-2;
+    border-right: 2px solid $color-palette-6-2;
+    border-bottom: 2px solid $color-palette-6-2;
+    background-color: $color-palette-6-2;
+}
+.searchIcon i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    
+}
+.input-group {
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.form-control:focus {
+    color: #fff;
+    background-color: transparent;
+    border-color: #fff;
+    outline: 0;
+    box-shadow: none;
+}
 
 /****************************** Estilos Footer ******************************/
 .footer-style {

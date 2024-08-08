@@ -14,7 +14,7 @@ window.addEventListener('onload', () => {
     originSelect.selectedIndex = 0;
     originSelect.value = firstOption.value;
 
-    const brandSelect = document.getElementById('brand');
+    const brandSelect = document.getElementById('brandSelect');
     brandSelect.toggleAttribute('disabled');
 
 });
@@ -24,13 +24,14 @@ window.addEventListener('onload', () => {
  * @description Habilita el select necesario que tiene la propiedad disabled.
  * */
 function activateBrand() {
-    var selectedOption = originSelect.value;
-    if (selectedOption === 'europeo' || selectedOption === 'americano') {
-        brandSelect.removeAttribute('disabled');
-        showBrandData();
-    } else {
-        brandSelect.toggleAttribute('disabled');
-    }
+  var selectedOption = originSelect.value;
+  if (selectedOption === 'europeo' || selectedOption === 'americano') {
+      brandSelect.disabled = false;
+      showBrandData();
+  } else {
+      brandSelect.disabled = true;
+      brandSelect.selectedIndex = 0;
+  }
 }
 
 /********** Mostrar los datos correctos en el Select de Marca **********/

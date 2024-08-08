@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/****************************** Importación de Fuentes Web ******************************/
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import 'general';
+
+/****************************** Section 1 - Clip-path ******************************/
+.clip-section-one {
+    clip-path: polygon(0% 10%, 95.2% 10%, 0% 100%);
+    background-color: $color-palette-3-1; /* Replace $color-palette-6-1 with actual color */
+    min-height: $px-100; /* Replace $px-600 with actual pixel value */
+    // padding-top: $px-100; /* Replace $px-100 with actual pixel value */
+    z-index: 1; /* Ensure this is lower than the about-us-banner if necessary */
+    position: relative;
+}

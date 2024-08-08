@@ -27,3 +27,5 @@ function show3DModel(brand) {
     `
     viewerSection.appendChild(modelImg);
 }
+
+// class="wow animate__animated animate__zoomIn animate__delay-500ms" 

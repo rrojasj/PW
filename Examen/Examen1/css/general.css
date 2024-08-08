@@ -58,8 +58,9 @@ p {
 
 /****************************** Base button ******************************/
 .primary-btn {
-  border-radius: 0.625rem;
-  color: #fefefe;
+  border-radius: 0.313rem;
+  background-color: #186F8C !important;
+  color: #CCCCCC;
   cursor: pointer;
   font-size: 1.5 rem;
   padding: 0.2rem 1.3rem;
@@ -67,13 +68,20 @@ p {
   width: fit-content;
   font-family: "Noto Sans", sans-serif;
   transition: background-color 0.5s ease-in, color 0.5s ease-in;
-  background-color: #0F4557;
-  color: #fefefe;
 }
 
 .primary-btn:hover {
-  background-color: #186F8C;
-  color: #121212;
+  border-radius: 0.313rem;
+  background-color: #0F4557 !important;
+  color: #CCCCCC;
+  cursor: pointer;
+  font-size: 1.5 rem;
+  padding: 0.2rem 1.3rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "Noto Sans", sans-serif;
+  transition: background-color 0.5s ease-in, color 0.5s ease-in;
+  color: #EAEAEA;
 }
 
 /****************************** Estilos Switch de lenguaje ******************************/
@@ -172,7 +180,7 @@ label {
   font-size: 0.938rem;
   font-weight: bolder;
   font-family: "Noto Sans", sans-serif;
-  color: #E3FCE0;
+  color: #EAEAEA;
 }
 
 /****************************** Estilos de Input ******************************/
@@ -299,7 +307,36 @@ input:not(:placeholder-shown) {
   transition: all 1s ease;
 }
 
-/****************************** Estilos Select ******************************/
+/****************************** Estilos Search input ******************************/
+.searchIcon {
+  border-radius: 0 5px 5px 0;
+  border-left: none;
+  border-top: 2px solid #CCCCCC;
+  border-right: 2px solid #CCCCCC;
+  border-bottom: 2px solid #CCCCCC;
+  background-color: #CCCCCC;
+}
+
+.searchIcon i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.form-control:focus {
+  color: #fff;
+  background-color: transparent;
+  border-color: #fff;
+  outline: 0;
+  box-shadow: none;
+}
+
 /****************************** Estilos Footer ******************************/
 .footer-style {
   height: 6.25rem;
