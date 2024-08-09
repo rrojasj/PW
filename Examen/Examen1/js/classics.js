@@ -6,7 +6,7 @@ var originSelect = document.getElementById('originSelect');
  * @name 
  * @description Función que hace que al cargar la página los selects tengan valores y propiedades por defecto
  * */
-window.addEventListener('onload', () => {
+window.addEventListener('load', () => {
 
     const originSelect = document.getElementById('origin');
     const firstOption = originSelect.options[0];
