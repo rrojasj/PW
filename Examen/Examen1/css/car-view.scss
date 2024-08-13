@@ -4,13 +4,42 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "general.scss";
 
-.car-info-bg {
-    clip-path: polygon(0% 5%, 52.3% 5%, 39.8% 100%, 0% 100%);
-    background-color: $color-palette-6-1;
-    // background: #186f8c;
-    // background: -webkit-linear-gradient(0deg, #186f8c 0%, #e3fce0 100%);
-    // background: linear-gradient(0deg, #186f8c 0%, #e3fce0 100%);
-    min-height: $px-600;
-    padding-top: $px-100;
+
+.separator-line {
+    background-color: $color-palette-1-2 !important;
 }
 
+/****************************** Section: Image Column ******************************/
+
+.car-view-main-img {
+    border-radius: $px-20;
+}
+
+.car-view-section {
+    min-height: 600px;
+    overflow: hidden;
+}
+
+.car-info-bg {
+    background-image: url('../imgs/pw_e1_car_view_banner_bg.webp');
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+
+.car-view-strip img {
+    width: 5.625rem;
+    height: 5.625rem;
+    padding: $px-5;
+    border-radius: $px-10;
+}
+
+.car-view-strip img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.car-view-strip img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}

@@ -76,6 +76,7 @@ option:hover {
     // border-color: $color-palette-1-1;
     border-width: 1px;
     @include transition(all, 1s);
+    color: $color-palette-1-1;
 }
 
 /****************************** Sección: Select ******************************/

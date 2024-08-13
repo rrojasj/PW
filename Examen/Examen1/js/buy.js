@@ -215,4 +215,4 @@ export function goToCarView(id){
     var idAuto = "auto-"+id;
     
     location.href = "car-view.html?page=" + idAuto;
- }
+}

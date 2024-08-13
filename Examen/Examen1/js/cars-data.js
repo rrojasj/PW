@@ -38,4 +38,15 @@ export var newCars= [
         idAuto: "auto-2.6", idImg: 2.6, marca: "Mercedes-Benz", modelo: "GLE 350 4MATIC", annio: 2024, precio: 94375, millas: 0, color: "Blanco", tipo: "SUV", traccion: "4x4", transmision: "Automático", imgSrc: "pw_e1_new_car_buy_6_mb.webp",
     },
 ]
-export var allCars = usedCars.concat(newCars);
+export var upcomingCars = [
+    {
+        idAuto: "auto-3.1", idImg: 3.1, marca: "Dodge", modelo: "Journey SE", annio: 2019, precio: 8865,millas: 88051, color: "Negro", tipo: "SUV", traccion: "4x2", transmision: "Automático", imgSrc: "pw_e1_upcoming_car_reserve_1_dodge.webp",
+    },
+    {
+        idAuto: "auto-3.4", idImg: 3.4, marca: "Nissan", modelo: "Sentra SE", annio: 2021, precio: 11869, millas: 68642, color: "Gris", tipo: "Sedan", traccion: "2x2", transmision: "Automático", imgSrc: "pw_e1_upcoming_car_reserve_4_nissan.webp",
+    },
+    {
+        idAuto: "auto-3.3", idImg: 3.3, marca: "Buick", modelo: "Encore Preferred", annio: 2018, precio: 9473, millas: 94439, color: "Negro", tipo: "SUV", traccion: "4x2", transmision: "Automático", imgSrc: "pw_e1_upcoming_car_reserve_3_buick.webp",
+    },
+]
+export var allCars = usedCars.concat(newCars, upcomingCars);

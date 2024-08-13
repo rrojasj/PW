@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Required Fields Example</title>
+    <style>
+        input:required {
+            border: 2px solid #ff0000;
+            background-color: #fff4f4;
+        }
+
+        input:required:focus {
+            border-color: #cc0000;
+            background-color: #ffe6e6;
+            outline: none;
+        }
+
+        input:required:valid {
+            border-color: #00ff00;
+            background-color: #e6ffe6;
+        }
+
+        input:required:invalid {
+            border-color: #ff0000;
+            background-color: #fff4f4;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

@@ -12185,6 +12185,16 @@ input:not(:placeholder-shown) {
   text-align: center;
 }
 
+select {
+  font-family: "Noto Sans", sans-serif;
+  color: #186F8C !important;
+  text-align: center;
+  background-color: #f8f9fa; /* Optional: Adjust background color */
+  border: 1px solid #ced4da; /* Optional: Adjust border color */
+  padding: 0.375rem 0.75rem; /* Optional: Adjust padding */
+  border-radius: 0.25rem; /* Optional: Adjust border radius */
+}
+
 /****************************** Estilos del Nav ******************************/
 .nav-style {
   background-color: #0F4557;
@@ -12303,11 +12313,6 @@ input:not(:placeholder-shown) {
   border-color: #fff;
   outline: 0;
   box-shadow: none;
-}
-
-/****************************** Estilos Validación input ******************************/
-input.validation-true {
-  border-color: #ba0f0f;
 }
 
 /****************************** Estilos Footer ******************************/
@@ -12500,40 +12505,82 @@ p.footer-text {
   padding-right: 0.625rem;
 }
 
-.separator-line {
+/****************************** Section: Information Column ******************************/
+button.car-forms-btn {
+  padding-right: 1.25rem !important;
+  border-color: #186F8C !important;
+  color: #186F8C !important;
+}
+
+button.car-forms-btn:hover {
   background-color: #186F8C !important;
+  color: #fefefe !important;
 }
 
-/****************************** Section: Image Column ******************************/
-.car-view-main-img {
-  border-radius: 1.25rem;
+/* Add margin-right to the first button to create space between buttons */
+.d-flex .car-forms-btn {
+  margin-right: 10px; /* Adjust the value as needed */
 }
 
-.car-view-section {
-  min-height: 600px;
-  overflow: hidden;
+/* Optional: Remove margin from the last button to avoid extra space at the end */
+.d-flex .car-forms-btn:last-child {
+  margin-right: 0;
 }
 
-.car-info-bg {
-  background-image: url("../imgs/pw_e1_car_view_banner_bg.webp");
-  overflow: hidden;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  overflow: hidden;
+/****************************** Section: Form ******************************/
+body {
+  height: 100rem;
 }
 
-.car-view-strip img {
-  width: 5.625rem;
-  height: 5.625rem;
-  padding: 0.313rem;
-  border-radius: 0.625rem;
+input:disabled {
+  background-color: #f8f9fc !important;
 }
 
-.car-view-strip img {
-  transition: transform 0.3s ease-in-out;
+span.required-info {
+  color: #ba0f0f !important;
 }
 
-.car-view-strip img:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}/*# sourceMappingURL=car-view.css.map */
+.input-group-text {
+  color: #818488 !important;
+}
+
+.form-label {
+  color: #818488;
+}
+
+#quotation-img {
+  width: 18.75rem;
+  height: 12.5rem;
+}
+
+.box-properties {
+  margin: 0 0.5rem 0 0.5rem; /* Add some spacing between the elements */
+}
+
+.box-properties i,
+.box-properties span {
+  margin-right: 0.5rem; /* Add some spacing between the icon and the text */
+}
+
+.accordion-properties {
+  display: flex;
+  justify-content: center;
+}
+
+.quote-info-separator {
+  border-top: 0.063rem solid #186F8C;
+}
+
+.ls-info-text {
+  font-size: 0.875rem;
+}
+
+/****************************** Estilos Validación input ******************************/
+.missing-required {
+  border-color: #ba0f0f !important;
+  background-color: #f1eaea !important;
+}
+
+.custom-confirm-btn {
+  width: 150px !important; /* Set your desired width */
+}/*# sourceMappingURL=quotation.css.map */

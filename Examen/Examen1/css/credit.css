@@ -2,7 +2,7 @@
 /****************************** Importación de Fuentes Web ******************************/
 @import url("https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 /****************************** Importación de Fuentes Web ******************************/
-@import url("https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 /****************************** Variables ******************************/
 /****************************** Mixins ******************************/
 /****************************** Estilos Globales ******************************/
@@ -422,6 +422,7 @@ option:hover {
   background-color: #E3FCE0;
   border-width: 1px;
   transition: all 1s ease;
+  color: #0F4557;
 }
 
 /****************************** Sección: Select ******************************/
