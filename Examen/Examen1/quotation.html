@@ -105,6 +105,7 @@
             <p class="text-center fw-light">Complete los campos a continuación con la información solicitada. Recibirá una cotización detallada en su correo electrónico según sus preferencias y necesidades.</p>
         </div>
 
+        <!-- Información Personal -->
         <div class="pt-5">
             <div class="row">
                 <div class="col-sm-12 col-md-6 col-lg-6">
@@ -148,7 +149,7 @@
                         </select>
 
                         <!-- Sección: Leasing -->
-                        <div id="section-leasing" class="pt-5">
+                        <div id="section-leasing" class="pt-5 d-none">
                             <div class="row">
                                 <p class="fs-5">Cálculo aproximado:</p>
                                 <p class="fw-light ls-info-text">Llene los campos en blanco *</p>
@@ -189,8 +190,87 @@
                             </div>
                             <div class="pt-5"></div>
                             <div class="d-flex justify-content-center align-items-center">
-                                <button id="quote-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" onclick="calculateMonthlyRate()">Calcular cuota</button>
+                                <button id="quote-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" onclick="calculateLsMonthlyRate()">Calcular cuota</button>
                                 <button id="send-data-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" disabled onclick="sendFormData()">Enviar datos</button>
+                            </div>
+                        </div>
+
+                        <!-- Sección: Contado -->
+                        <div id="section-cash-payment" class="pt-5">
+                            <div class="row">
+                                <p class="fw-light ls-info-text">Las compras de contado tienen promociones con descuentos según el monto.</p>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <p class="fw-light ls-info-text">Mayor a $10,000 - 5%</p>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <p class="fw-light ls-info-text">Mayor a $20,000 - 7.5%</p>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <p class="fw-light ls-info-text">Mayor a $30,000 - 11%</p>
+                                    </div>
+                                </div>
+                                <p class="fs-5">Cálculo aproximado:</p>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                <label for="cp-form-subtotal" class="form-label">Subtotal</label>
+                                    <input type="text" name="subtotal" class="form-control" id="cp-form-subtotal" aria-describedby="subtotal">
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <label for="cp-form-discount" class="form-label">Descuento aplicado<span class="required-info">*</span></label>
+                                    <input type="text" name="descuento" class="form-control" id="cp-form-discount" aria-describedby="Descuento" disabled>
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <label for="cp-form-total-amount" class="form-label">Monto total</label>
+                                    <input type="text" name="monto_total" class="form-control" id="cp-form-total-amount" aria-describedby="Monto total" disabled>
+                                </div>
+                            </div>
+                            <div class="pt-3"></div>
+                            <p class="fw-light ls-info-text text-center">Si deseas completar la compra solicita el formulario de negociación.</p>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <button id="quote-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" onclick="sendCPFormData()">Solicitar</button>
+                            </div>
+                        </div>
+
+                        <!-- Sección: Financiamiento -->
+                        <div id="section-financing" class="pt-5">
+                            <div class="row">
+                                <p class="fs-5">Cálculo aproximado:</p>
+                                <p class="fw-light ls-info-text">Llene los campos en blanco *</p>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                <label for="fn-form-precio" class="form-label">Precio</label>
+                                    <input type="text" name="precio_total" class="form-control" id="fn-form-precio" aria-describedby="precio">
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <label for="fn-form-cuota-inicial" class="form-label">Cuota inicial $<span class="required-info">*</span></label>
+                                    <input type="number" name="cuota_inicial" class="form-control" id="fn-form-cuota-inicial" aria-describedby="Cuota inicial">
+                                </div>
+                            </div>
+                            <div class="row pt-3">
+                                <h6 class="pt-3">Tasa de interés fijo</h6>
+                                <p class="fw-light ls-info-text">Entre 24 y 36 meses 11.8%. Entre 48 y 60 meses 13.2%</p>
+                                <div class="col-sm-12 col-md-6 col-lg-4">
+                                    <label for="ls-form-plazo" class="form-label">Plazo en meses<span class="required-info">*</span></label>
+                                    <select id="fn-form-plazo" name="plazo" class="form-select" aria-label="Default select example">
+                                        <option selected>Seleccione:</option>
+                                        <option value="24">24 meses</option>
+                                        <option value="36">36 meses</option>
+                                        <option value="48">48 meses</option>
+                                        <option value="60">60 meses</option>
+                                      </select>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-4">
+                                    <label for="fn-form-tasa-interes" class="form-label">Tasa de interés</label>
+                                    <input type="text" name="tasa_interes" class="form-control" id="fn-form-tasa-interes" aria-describedby="Tasa de interés" disabled>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-4">
+                                    <label for="fn-form-cuota-mensual" class="form-label">Cuota mensual</label>
+                                    <input type="text" name="cuota_mensual" class="form-control" id="fn-form-cuota-mensual" aria-describedby="Cuota mensual" disabled>
+                                </div>
+                            </div>
+                            <div class="pt-5"></div>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <button id="quote-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" onclick="calculateFnMonthlyRate()">Calcular cuota</button>
+                                <button id="send-data-fn-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" disabled onclick="sendFinancingFormData()">Enviar datos</button>
                             </div>
                         </div>
                     </form>
@@ -283,6 +363,7 @@
             </div>
             
         </div>
+         
     </section>
 
     <!-- Sección: Footer -->

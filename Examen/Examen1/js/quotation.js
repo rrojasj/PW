@@ -10,10 +10,15 @@ window.addEventListener('load', () => {
 
     getCarQuotationInfo(idAutoValue);
     getLeasingValues(idAutoValue);
+    getCashPaymentValues(idAutoValue);
+    getFinancingValues(idAutoValue);
     showBuyingOption(idAutoValue);
 
-    window.calculateMonthlyRate = calculateMonthlyRate;
-    window.sendFormData = sendFormData;
+    window.calculateLsMonthlyRate = calculateLsMonthlyRate;
+    window.calculateFnMonthlyRate = calculateFnMonthlyRate;
+    window.sendLeasingFormData = sendLeasingFormData;
+    window.sendCPFormData = sendCPFormData;
+    window.sendFinancingFormData = sendFinancingFormData;
 
 });
 
@@ -26,15 +31,54 @@ buyingOption.addEventListener('change', showBuyingOption);
 // Select: ls-form-plazo
 document.getElementById('ls-form-plazo').addEventListener('change', function() {
     var selectedTerm = document.getElementById('ls-form-plazo').value;
-    
-    var intRate = getInteresRate(selectedTerm);
 
     var interestInput = document.getElementById('ls-form-tasa-interes');
-    interestInput.value = intRate+"%";
+
+    if (selectedTerm != "Seleccione:"){
+        var intRate = getInteresRate(selectedTerm);    
+        interestInput.value = intRate+"%";
+    } else {
+        interestInput.value = ''
+    }
+    
 })
 
+// Select: fn-form-plazo
+document.getElementById('fn-form-plazo').addEventListener('change', function() {
+    var selectedTerm = document.getElementById('fn-form-plazo').value;
 
+    var interestInput = document.getElementById('fn-form-tasa-interes');
 
+    if (selectedTerm != "Seleccione:"){
+        var intRate = getInteresRate(selectedTerm);    
+        interestInput.value = intRate+"%";
+    } else {
+        interestInput.value = ''
+    }
+})
+
+/********** Función: Obtener los valores por defecto de Leasing **********/
+export function showBuyingOption(idAuto){
+    var option = buyingOption.value;
+    
+    var sectionLeasing = document.getElementById('section-leasing');
+    var sectionCashPayment = document.getElementById('section-cash-payment');
+    var sectionCredit = document.getElementById('section-financing');
+
+    if (option === 'leasing') {
+        sectionLeasing.classList.remove('d-none');
+        sectionCashPayment.classList.add('d-none');
+        sectionCredit.classList.add('d-none');
+    } else if (option === 'contado'){
+        sectionLeasing.classList.add('d-none');
+        sectionCashPayment.classList.remove('d-none');
+        sectionCredit.classList.add('d-none');
+    } else {
+        sectionLeasing.classList.add('d-none');
+        sectionCashPayment.classList.add('d-none');
+        sectionCredit.classList.remove('d-none');
+    }
+}
 
 /********** Función: Acordeón **********/
 document.querySelectorAll('.accordion-title').forEach(item => {
@@ -142,16 +186,10 @@ export function getCarQuotationInfo(idAuto){
     transmisionContainer.textContent = transmision;
 }
 
-/********** Función: Obtener los valores por defecto de Leasing **********/
-export function getLeasingValues(idAuto) {
+/********** Función: Obtener el precio del auto actual **********/
+function getCarprice(idAuto){
 
-    // Get all input element IDs
-    var totalPriceInput = document.getElementById('ls-form-precio');
-    var residualValueInput = document.getElementById('ls-form-valor-residual');
-
-    // Global variables - Required
     var totalPrice;
-    var residualValue;
 
     // Get the price value
     for (var i = 0; i < allCars.length; i++) {
@@ -160,37 +198,23 @@ export function getLeasingValues(idAuto) {
             break;
         }
     }
-
-    var formattedPrice = convertPrice(totalPrice);
-
-    // Get the residual value
-    residualValue = getResidualPerc();
-
-    totalPriceInput.value = formattedPrice;
-    residualValueInput.value = residualValue+"%";
+    return totalPrice;
 }
 
 /********** Función: Obtener los valores por defecto de Leasing **********/
-export function showBuyingOption(idAuto){
-    var option = buyingOption.value;
-    
-    var sectionLeasing = document.getElementById('section-leasing');
-    // var sectionCashPayment = document.getElementById('section-cash-payment');
-    // var sectionCredit = document.getElementById('section-credit');
+export function getLeasingValues(idAuto) {
 
-    if (option === 'leasing') {
-        sectionLeasing.classList.remove('d-none');
-        // sectionCashPayment.classList.add('d-none');
-        // sectionCredit.classList.add('d-none');
-    } else if (option === 'contado'){
-        sectionLeasing.classList.add('d-none');
-        // sectionCashPayment.classList.remove('d-none');
-        // sectionCredit.classList.add('d-none');
-    } else {
-        sectionLeasing.classList.add('d-none');
-        // sectionCashPayment.classList.add('d-none');
-        // sectionCredit.classList.Remove('d-none');
-    }
+    // Get all input element IDs
+    var totalPrice = getCarprice(idAuto);
+    var formattedPrice = convertPrice(totalPrice);
+    var totalPriceInput = document.getElementById('ls-form-precio');
+
+    // Get the residual value
+    var residualValueInput = document.getElementById('ls-form-valor-residual');
+    var residualValue = getResidualPerc();
+
+    totalPriceInput.value = formattedPrice;
+    residualValueInput.value = residualValue+"%";
 }
 
 /********** Función: Obtener la Tasa de interés de acuerdo al plazo seleccionado **********/
@@ -214,8 +238,8 @@ function getResidualPerc() {
     return randomValue;
 }
 
-/********** Función: Verificar que los campos requeridos estén completos **********/
-export function validateInputs() {
+/********** Función: Verificar que los campos de leasing requeridos estén completos **********/
+export function validateLeasingInputs() {
 
     var allValid = true; // Assume all fields are valid initially
 
@@ -282,8 +306,7 @@ document.querySelectorAll('input, select').forEach(element => {
 });
 
 /********** Función: Calcula la cuota mensual **********/
-
-export function calculateMonthlyRate() {
+export function calculateLsMonthlyRate() {
     var precioTotal = document.getElementById('ls-form-precio').value;
     var cuotaInicial = document.getElementById('ls-form-cuota-inicial').value;
     var plazo = document.getElementById('ls-form-plazo').value;
@@ -305,7 +328,7 @@ export function calculateMonthlyRate() {
     var numPlazo = parseFloat(plazo);
     var numCuotaInicial = parseFloat(cuotaInicial);
 
-    var valid = validateInputs();
+    var valid = validateLeasingInputs();
 
     if (valid) {
         // Monthly periodic rate
@@ -353,8 +376,8 @@ export function calculateMonthlyRate() {
     }
 }
 
-// Send form
-export function sendFormData() {
+/********** Función: Send Leasing form **********/
+export function sendLeasingFormData() {
     // Get form data
     var nombre = document.getElementById('form-name').value;
     var apellido1 = document.getElementById('form-lastname1').value;
@@ -408,7 +431,7 @@ export function sendFormData() {
         car_transmission: carTransmission
     }
 
-    emailjs.send('service_ycxgca3', 'template_6laresr', dataParameters, 'nNPY8_FeU2vhukBjB')
+    emailjs.send('service_g9qtbu8', 'template_6ibnq1k', dataParameters, 'IWfVemPdMsYaXb9cz')
     .then(function(response) {
         console.log('Success:', response);
         cleanInputs
@@ -430,6 +453,7 @@ export function sendFormData() {
     });
 }
 
+/********** Función: Limpiar los datos del formulario **********/
 function cleanInputs () {
     var nombre = document.getElementById('form-name');
     var apellido1 = document.getElementById('form-lastname1');
@@ -455,4 +479,313 @@ function cleanInputs () {
     // var valorResidual = document.getElementById('ls-form-valor-residual');
 
 
+}
+
+/********** Función: Obtener los valores por defecto de Contado **********/
+function getCashPaymentValues(idAuto) {
+
+    // Get all input element IDs
+    var totalPrice = getCarprice(idAuto);
+    var formattedPrice = convertPrice(totalPrice);
+    var totalPriceInput = document.getElementById('cp-form-subtotal');
+    totalPriceInput.value = formattedPrice;
+
+    var discountApplied = getDiscountValue(totalPrice);
+    var discountInput = document.getElementById('cp-form-discount');
+    discountInput.value = discountApplied + "%";
+
+    var totalAmount = getTotalAmount(totalPrice, discountApplied);
+    console.log(typeof(totalAmount));
+    var totalAmountInput = document.getElementById('cp-form-total-amount');
+    var formattedAmount = convertPrice(totalAmount);
+    totalAmountInput.value = formattedAmount;
+}
+
+/********** Función: Obtener el descuento de acuerdo al monto del auto **********/
+function getDiscountValue(subtotal) {
+
+    var discountValue;
+
+    if(subtotal >= 10000 && subtotal < 20000){
+        discountValue = 5;
+    } else if (subtotal >= 20000 && subtotal < 30000) {
+        discountValue = 7.5;
+    } else if (subtotal >= 30000) {
+        discountValue = 11;
+    }
+    return discountValue;
+}
+
+/********** Función: Obtener el monto total con descuento aplicado **********/
+function getTotalAmount(price, discount) {
+    var totalDiscounted = price - (price*(discount/100));
+
+    return totalDiscounted;
+}
+
+/********** Función: Verificar que los campos de leasing requeridos estén completos **********/
+export function validateCPInputs() {
+
+    var allValid = true; // Assume all fields are valid initially
+
+    // Get all input elements and the select element
+    var fields = [
+        { id: 'form-name', name: 'Nombre' },
+        { id: 'form-lastname1', name: 'Primer Apellido' },
+        { id: 'form-lastname2', name: 'Segundo Apellido' },
+        { id: 'form-email', name: 'Email' }
+    ];
+
+    fields.forEach(field => {
+        var input = document.getElementById(field.id);
+
+        // Check if the input was found
+        if (!input) {
+            console.error(`Element with ID '${field.id}' not found.`);
+            allValid = false;
+            return;
+        }
+
+        if (input.value.trim() === '') {
+            input.classList.add('missing-required');
+            allValid = false;
+        } else {
+            input.classList.remove('missing-required');
+        }
+    });
+
+    return allValid;
+}
+
+/********** Función: Send Cash payment form **********/
+export function sendCPFormData() {
+
+    var valid = validateCPInputs();
+
+    if (valid) {
+        // Get form data
+        var nombre = document.getElementById('form-name').value;
+        var apellido1 = document.getElementById('form-lastname1').value;
+        var apellido2 = document.getElementById('form-lastname2').value;
+        var email = document.getElementById('form-email').value;
+        var telefono = document.getElementById('form-tel').value;
+        var subtotal = document.getElementById('cp-form-subtotal').value;
+        var descuento = document.getElementById('cp-form-discount').value;
+        var total = document.getElementById('cp-form-total-amount').value;
+        
+        // Get additional car data
+        var carBrand = document.getElementById('quote-car-brand').innerText;
+        var carModel = document.getElementById('quote-car-model').innerText;
+        var carPrice = document.getElementById('quote-car-price').innerText;
+        var carYear = document.getElementById('quote-car-year').innerText;
+        var carMiles = document.getElementById('quote-car-miles').innerText;
+        var carType = document.getElementById('quote-car-type').innerText;
+        var carColor = document.getElementById('quote-car-color').innerText;
+        var carDrivetrain = document.getElementById('quote-car-drivetrain').innerText;
+        var carTransmission = document.getElementById('quote-car-transmision').innerText;
+
+        // Data parameters
+        var dataParameters = {
+            nombre: nombre,
+            apellido_1: apellido1,
+            apellido_2: apellido2,
+            email: email,
+            telefono: telefono,
+            subtotal: subtotal,
+            descuento: descuento,
+            monto_total: total,
+            car_brand: carBrand,
+            car_model: carModel,
+            car_price: carPrice,
+            car_year: carYear,
+            car_miles: carMiles,
+            car_type: carType,
+            car_color: carColor,
+            car_drivetrain: carDrivetrain,
+            car_transmission: carTransmission
+        }
+
+        emailjs.send('service_g9qtbu8', 'template_6ibnq1k', dataParameters, 'IWfVemPdMsYaXb9cz')
+        .then(function(response) {
+            console.log('Success:', response);
+            cleanInputs
+            Swal.fire({
+                icon: 'success',
+                title: 'Cotización enviada',
+                html: 'Se han enviado los detalles solicitados.<br>Verifique su correo electrónico.',
+                customClass: {
+                    confirmButton: 'custom-confirm-btn car-forms-btn car-actions-btn btn btn-outline-secondary'
+                }
+            }).then((result) => {
+                if(result.isConfirmed) {
+                    window.location.reload();
+                    cleanInputs();
+                }
+            })
+        }, function(error) {
+            console.log('Error:', error);
+        });
+    } else {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Información',
+            text: 'Debe llenar todos los campos requeridos',
+            customClass: {
+                confirmButton: 'custom-confirm-btn car-forms-btn car-actions-btn btn btn-outline-secondary'
+            }
+        });
+    }
+}
+
+/********** Función: Obtener los valores por defecto de Financing **********/
+export function getFinancingValues(idAuto) {
+
+    // Get all input element IDs
+    var totalPrice = getCarprice(idAuto);
+
+    var formattedPrice = convertPrice(totalPrice);
+    var totalPriceInput = document.getElementById('fn-form-precio');
+
+
+    totalPriceInput.value = formattedPrice;
+}
+
+/********** Función: Calcula la cuota mensual **********/
+export function calculateFnMonthlyRate() {
+    var precioTotal = document.getElementById('fn-form-precio').value;
+    var cuotaInicial = document.getElementById('fn-form-cuota-inicial').value;
+    var plazo = document.getElementById('fn-form-plazo').value;
+    var tasaInteres = document.getElementById('fn-form-tasa-interes').value;
+    var cuotaMensInput = document.getElementById('fn-form-cuota-mensual');
+
+    // Remove % sign from Tasa Interés
+    tasaInteres = tasaInteres.slice(0, -1);
+    var numTasaInt = parseFloat(tasaInteres) / 100;
+
+    // Remove unnecessary symbols
+    var strPrecioTotal = precioTotal.replace(/[$,]/g, "");
+    var numPrecioTotal = parseFloat(strPrecioTotal);
+    var numPlazo = parseFloat(plazo);
+    var numCuotaInicial = parseFloat(cuotaInicial);
+
+    var valid = validateLeasingInputs();
+
+    if (valid) {
+
+        // Cuota Mensual = (Monto del Préstamo x Tasa de Interés Anual) / (1 - (1 + Tasa de Interés Anual)^(-Plazo en Meses))
+        var cuotaMensual = ((numPrecioTotal - numCuotaInicial)*(numTasaInt))/(1-(1+numTasaInt)**(-numPlazo));
+
+        var usDollar = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+        
+        var monthlyPayment = usDollar.format(cuotaMensual);
+
+        var sendDataBtn = document.getElementById('send-data-fn-btn');
+        if (sendDataBtn) {
+            console.log('Si entró!')
+            sendDataBtn.removeAttribute('disabled');
+        } else {
+            console.log('No entró! Pellísquese!')
+        }
+
+        cuotaMensInput.value = monthlyPayment;
+
+        Swal.fire({
+            icon: 'success',
+            title: 'Cuota Mensual',
+            html: 'Se ha calculado la cuota mensual.<br>Puede solicitar la información por email.',
+            customClass: {
+                confirmButton: 'custom-confirm-btn car-forms-btn car-actions-btn btn btn-outline-secondary'
+            }
+        });
+
+    } else {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Información',
+            text: 'Debe llenar todos los campos requeridos',
+            customClass: {
+                confirmButton: 'custom-confirm-btn car-forms-btn car-actions-btn btn btn-outline-secondary'
+            }
+        });
+    }
+}
+
+/********** Función: Send Leasing form **********/
+export function sendFinancingFormData() {
+    // Get form data
+    var nombre = document.getElementById('form-name').value;
+    var apellido1 = document.getElementById('form-lastname1').value;
+    var apellido2 = document.getElementById('form-lastname2').value;
+    var email = document.getElementById('form-email').value;
+    var telefono = document.getElementById('form-tel').value;
+    var precioTotal = document.getElementById('fn-form-precio').value;
+    var cuotaMensual = document.getElementById('fn-form-cuota-mensual').value;
+    var plazo = document.getElementById('fn-form-plazo').value;
+    
+    // Get additional car data
+    var carBrand = document.getElementById('quote-car-brand').innerText;
+    var carModel = document.getElementById('quote-car-model').innerText;
+    var carPrice = document.getElementById('quote-car-price').innerText;
+    var carYear = document.getElementById('quote-car-year').innerText;
+    var carMiles = document.getElementById('quote-car-miles').innerText;
+    var carType = document.getElementById('quote-car-type').innerText;
+    var carColor = document.getElementById('quote-car-color').innerText;
+    var carDrivetrain = document.getElementById('quote-car-drivetrain').innerText;
+    var carTransmission = document.getElementById('quote-car-transmision').innerText;
+    
+    // Need conversions
+    var metodoCompra = document.getElementById('buying-option-select').value;
+    metodoCompra = metodoCompra.charAt(0).toUpperCase() + metodoCompra.slice(1);
+    
+    var cuotaInicial = document.getElementById('ls-form-cuota-inicial').value;
+    var formattedPrice = convertPrice(cuotaInicial);
+
+    // Data parameters
+    var dataParameters = {
+        nombre: nombre,
+        apellido_1: apellido1,
+        apellido_2: apellido2,
+        email: email,
+        telefono: telefono,
+        metodo_compra: metodoCompra,
+        precio_total: precioTotal,
+        cuota_inicial: formattedPrice,
+        plazo: plazo,
+        cuota_mensual: cuotaMensual,
+        car_brand: carBrand,
+        car_model: carModel,
+        car_price: carPrice,
+        car_year: carYear,
+        car_miles: carMiles,
+        car_type: carType,
+        car_color: carColor,
+        car_drivetrain: carDrivetrain,
+        car_transmission: carTransmission
+    }
+
+    emailjs.send('service_g9qtbu8', 'template_zd6ixz8', dataParameters, 'IWfVemPdMsYaXb9cz')
+    .then(function(response) {
+        console.log('Success:', response);
+        cleanInputs
+        Swal.fire({
+            icon: 'success',
+            title: 'Cotización enviada',
+            html: 'Se han enviado los detalles solicitados.<br>Verifique su correo electrónico.',
+            customClass: {
+                confirmButton: 'custom-confirm-btn car-forms-btn car-actions-btn btn btn-outline-secondary'
+            }
+        }).then((result) => {
+            if(result.isConfirmed) {
+                window.location.reload();
+                cleanInputs();
+            }
+        })
+    }, function(error) {
+        console.log('Error:', error);
+    });
 }
