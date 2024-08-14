@@ -87,11 +87,18 @@ inputCuotaInicial.addEventListener('change', function() {
     }
 })
 
-
 /********** Función: Obtener la imagen del auto seleccionado **********/
 var buyingOption = document.getElementById('buying-option-select');
 buyingOption.addEventListener('change', showBuyingOption);
 
+/********** Función: Ir a la página anterior  **********/
+var goBackBtn = document.getElementById('go-back-btn');
+goBackBtn.addEventListener('click', function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var idAutoValue = urlParams.get('page');
+
+    window.location.href = `car-view.html?page=${idAutoValue}`;
+});
 /********** Función: Obtener la imagen del auto seleccionado **********/
 export function getCarQuotationInfo(idAuto){
 
@@ -975,7 +982,7 @@ export function sendFinancingFormData() {
         }).then((result) => {
             if(result.isConfirmed) {
                 window.location.reload();
-                // cleanInputs();
+                cleanInputs();
             }
         })
     }, function(error) {
@@ -1025,3 +1032,4 @@ function cleanInputs () {
 
 
 }
+

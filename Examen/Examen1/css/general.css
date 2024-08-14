@@ -549,6 +549,17 @@ button.car-forms-btn:hover {
   color: #fefefe !important;
 }
 
+button.car-back-btn {
+  padding-right: 1.25rem !important;
+  border-color: #0281BA !important;
+  color: #186F8C !important;
+}
+
+button.car-back-btn:hover {
+  background-color: #0281BA !important;
+  color: #fefefe !important;
+}
+
 /* Add margin-right to the first button to create space between buttons */
 .d-flex .car-forms-btn {
   margin-right: 10px; /* Adjust the value as needed */
