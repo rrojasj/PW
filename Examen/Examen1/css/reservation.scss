@@ -67,9 +67,61 @@ span.required-info {
     width: 150px !important; /* Set your desired width */
 }
 
-// .error-message {
-//     color: $color-primary-red;
-//     font-weight: bold;
-//     margin-top: 5px;
-//     display: none; /* Initially hide the error message */
-// }
+
+/****************************** Accordion ******************************/
+
+.accordion {
+    width: 45%; /* Poco menos de la mitad del ancho */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+.accordion-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-title-rs {
+    background-color: $color-palette-1-2;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-title-rs:hover {
+    background-color: $color-palette-1-1;
+}
+
+.accordion-title-rs::after {
+    content: '+';
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+.accordion-content p {
+    // padding: 15px 0;
+    margin: 0;
+}
+
+.accordion-item.active .accordion-title-rs::after {
+    transform: rotate(45deg);
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 200px; /* Ajusta esta altura según tu contenido */
+}

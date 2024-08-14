@@ -12527,182 +12527,116 @@ button.car-forms-btn:hover {
   margin-right: 0;
 }
 
-/****************************** Variables globales ******************************/
-.clip-section-one h1, .clip-section-one .h1 {
-  padding-top: 0.938rem;
-  padding-left: 0.938rem;
+/****************************** Section: Form ******************************/
+body {
+  height: 100rem;
 }
 
-.clip-section-two h1, .clip-section-two .h1 {
-  padding-top: 0.938rem;
-  padding-right: 0.938rem;
+input:disabled {
+  background-color: #f8f9fc !important;
 }
 
-p {
-  font-family: "Roboto", sans-serif;
+span.required-info {
+  color: #ba0f0f !important;
 }
 
-/****************************** Banner ******************************/
-.about-us-banner {
+.input-group-text {
+  color: #818488 !important;
+}
+
+.form-label {
+  color: #818488;
+}
+
+#quotation-img {
+  width: 18.75rem;
+  height: 12.5rem;
+}
+
+.box-properties {
+  margin: 0 0.5rem 0 0.5rem; /* Add some spacing between the elements */
+}
+
+.box-properties i,
+.box-properties span {
+  margin-right: 0.5rem; /* Add some spacing between the icon and the text */
+}
+
+.accordion-properties {
   display: flex;
-  align-items: center;
-  background-size: cover;
-  background-position: center;
-  background-image: url("../imgs/pw_e1_about_banner2.webp");
-  /* color del modo */
-  /* modo de color */
-  background-blend-mode: luminosity;
-  /* profundidad */
-  box-shadow: inset 0 0 0 1000px rgba(226, 221, 221, 0.4);
-  padding: 6.25rem;
+  justify-content: center;
 }
 
-.about-us-banner strong {
-  color: #0F4557;
+.quote-info-separator {
+  border-top: 0.063rem solid #186F8C;
 }
 
-.about-us-banner p {
-  color: #4c4848 !important;
+.ls-info-text {
+  font-size: 0.875rem;
 }
 
-.espacio {
-  padding: 500px 0;
+/****************************** Estilos Validación input ******************************/
+.missing-required {
+  border-color: #ba0f0f !important;
+  background-color: #f1eaea !important;
 }
 
-/****************************** Section 1 - Clip-path ******************************/
-.clip-section-one {
-  -webkit-clip-path: polygon(0% 10%, 95.2% 10%, 0% 100%);
-          clip-path: polygon(0% 10%, 95.2% 10%, 0% 100%);
-  background-color: #E3FCE0; /* Replace $color-palette-6-1 with actual color */
-  min-height: 6.25rem; /* Replace $px-600 with actual pixel value */
-  z-index: 1; /* Ensure this is lower than the about-us-banner if necessary */
-  position: relative;
+.custom-confirm-btn {
+  width: 150px !important; /* Set your desired width */
 }
 
-/****************************** Section 2 - Clip-path ******************************/
-.clip-section-two {
-  -webkit-clip-path: polygon(100% 2.5%, 4.8% 2.5%, 100% 100%);
-          clip-path: polygon(100% 2.5%, 4.8% 2.5%, 100% 100%);
-  background-color: #E3FCE0; /* Replace $color-palette-6-1 with actual color */
-  min-height: 6.25rem; /* Replace $px-600 with actual pixel value */
-  z-index: 1; /* Ensure this is lower than the about-us-banner if necessary */
-  position: relative;
+/****************************** Accordion ******************************/
+.accordion {
+  width: 45%; /* Poco menos de la mitad del ancho */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/****************************** Video Lightbox ******************************/
-.cursor {
-  cursor: pointer;
+.accordion-item {
+  border-bottom: 1px solid #ddd;
 }
 
-/* botón ver video*/
-#boton {
-  background-color: purple;
-  font-weight: bolder;
-  border: #fff;
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-title-rs {
+  background-color: #186F8C;
   color: #fff;
-  padding: 7px 15px;
-  display: inline-block;
-  font-size: 30px;
-  letter-spacing: 3px;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-title-rs:hover {
+  background-color: #0F4557;
+}
+
+.accordion-title-rs::after {
+  content: "+";
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+.accordion-content p {
   margin: 0;
 }
 
-/* clases lightbox */
-.lightbox {
-  background-color: rgba(0, 0, 0, 0.8);
-  overflow: scroll;
-  position: fixed;
-  display: none;
-  z-index: 1;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  top: 0;
+.accordion-item.active .accordion-title-rs::after {
+  transform: rotate(45deg);
 }
 
-.lightbox-container {
-  position: relative;
-  max-width: 960px;
-  margin: 10% auto;
-  padding: 0 3%;
-  height: auto;
-  z-index: 10;
-}
-
-/*transparencia*/
-.lightbox-content {
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
-}
-
-.lightbox-close {
-  background: transparent;
-  background-color: purple;
-  position: absolute;
-  /* alinear al centro el boton cerrar:  */
-  /*left:40%; */
-  padding-right: 0.625rem;
-  right: 8%;
-  max-width: 960px;
-  font-weight: 300;
-  font-size: 20px;
-  border: none;
-  color: #fff;
-  /*altura del boton X*/
-  top: -40px;
-  /*display: block;*/
-}
-
-@media (max-width: 575px) {
-  .lightbox-container {
-    margin-top: 150px !important;
-  }
-}
-/* controla las clases responsivas del vídeo */
-.video-container {
-  padding-bottom: 56.25%;
-  position: relative;
-  padding-top: 30px;
-  overflow: hidden;
-  height: 0;
-}
-
-.video-container iframe,
-.video-container object,
-.video-container embed {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-}
-
-@media (max-width: 575px) {
-  .video-container {
-    width: 100% !important;
-    margin: 0 auto;
-  }
-}
-.titulajes {
-  color: #003c5e;
-  font-weight: bolder;
-  font-size: 40px;
-}
-
-/****************************** Section Visión ******************************/
-.vision-img img {
-  width: 100%;
-  height: 280px;
-}
-
-/****************************** Section Carrusel de servicios ******************************/
-.style-carousel p {
-  font-size: 20px;
-}
-
-.services-section {
-  background-color: #EAEAEA;
-}
-
-.services-img-style {
-  border-radius: 0.625rem !important;
-}/*# sourceMappingURL=about.css.map */
+.accordion-item.active .accordion-content {
+  max-height: 200px; /* Ajusta esta altura según tu contenido */
+}/*# sourceMappingURL=reservation.css.map */

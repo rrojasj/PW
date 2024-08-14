@@ -6,7 +6,7 @@
  * Copyright 2011-2024 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;
@@ -12185,6 +12185,16 @@ input:not(:placeholder-shown) {
   text-align: center;
 }
 
+select {
+  font-family: "Noto Sans", sans-serif;
+  color: #186F8C !important;
+  text-align: center;
+  background-color: #f8f9fa; /* Optional: Adjust background color */
+  border: 1px solid #ced4da; /* Optional: Adjust border color */
+  padding: 0.375rem 0.75rem; /* Optional: Adjust padding */
+  border-radius: 0.25rem; /* Optional: Adjust border radius */
+}
+
 /****************************** Estilos del Nav ******************************/
 .nav-style {
   background-color: #0F4557;
@@ -12319,6 +12329,202 @@ p.footer-text {
   font-family: "Noto Sans", sans-serif;
   font-size: 16px;
   color: #0F4557 !important;
+}
+
+/****************************** Estilos Car view ******************************/
+.car-view-container {
+  padding-left: 10%;
+}
+
+.car-view h1, .car-view .h1 {
+  font-family: "Montserrat", sans-serif !important;
+  color: #305873 !important;
+  font-weight: 600;
+  line-height: 35px;
+}
+
+.car-view h2, .car-view .h2 {
+  font-family: "Montserrat", sans-serif !important;
+  color: #42799E !important;
+  font-weight: 600;
+  line-height: 35px;
+}
+
+.car-view h4, .car-view .h4 {
+  font-family: "Montserrat", sans-serif !important;
+  color: #305873 !important;
+  font-weight: 500;
+  line-height: 0.938rem;
+}
+
+.car-view h5, .car-view .h5 {
+  font-family: "Montserrat", sans-serif !important;
+  color: #42799E !important;
+  font-weight: 500;
+  line-height: 0.625rem;
+}
+
+.car-view p {
+  font-family: "Montserrat", sans-serif !important;
+  color: #818488 !important;
+  font-weight: 600;
+}
+
+.car-view-info-price h2, .car-view-info-price .h2 {
+  font-size: larger;
+  font-weight: 600;
+  color: #4c4848 !important;
+}
+
+.car-view span {
+  font-family: "Montserrat", sans-serif !important;
+  color: #fefefe !important;
+  font-weight: 600;
+  padding-left: 15px !important;
+}
+
+.font-stretch-condensed {
+  transform: scaleY(0.8); /* Adjust the value to your liking */
+}
+
+.box-properties {
+  background-color: #186F8C;
+  border-radius: 4px;
+  color: #FFF;
+  padding: 5px 15px;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: inline-flex;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion {
+  width: 45%; /* Poco menos de la mitad del ancho */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-title {
+  background-color: #186F8C;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-title:hover {
+  background-color: #0F4557;
+}
+
+.accordion-title::after {
+  content: "+";
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+.accordion-content p {
+  margin: 0;
+}
+
+.accordion-item.active .accordion-title::after {
+  transform: rotate(45deg);
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 200px; /* Ajusta esta altura según tu contenido */
+}
+
+.list-group {
+  width: 100% !important;
+}
+
+.list-style:hover {
+  background-color: #EAEAEA;
+  color: #f9f9f9;
+  border-width: 1px;
+  transition: all 1s ease;
+}
+
+.accordion-title {
+  font-family: "Montserrat", sans-serif !important;
+  color: #fefefe !important;
+  font-weight: 600;
+}
+
+.car-info-share {
+  border-top: 1px solid #CCCCCC;
+  width: 45%;
+  padding: 0.938rem 0;
+}
+
+.car-info-share i {
+  padding-left: 1.25rem;
+  cursor: pointer;
+}
+
+.car-info-share i.fa-linkedin-in:hover {
+  color: #0AA9FF;
+}
+
+.car-info-share i.fa-instagram:hover {
+  color: #D61F5C;
+}
+
+.car-info-share i.fa-whatsapp:hover {
+  color: #22BF5B;
+}
+
+.car-actions-btn {
+  width: 22% !important;
+}
+
+.car-actions-btn i {
+  padding-right: 0.625rem;
+}
+
+/****************************** Section: Information Column ******************************/
+button.car-forms-btn {
+  padding-right: 1.25rem !important;
+  border-color: #186F8C !important;
+  color: #186F8C !important;
+}
+
+button.car-forms-btn:hover {
+  background-color: #186F8C !important;
+  color: #fefefe !important;
+}
+
+/* Add margin-right to the first button to create space between buttons */
+.d-flex .car-forms-btn {
+  margin-right: 10px; /* Adjust the value as needed */
+}
+
+/* Optional: Remove margin from the last button to avoid extra space at the end */
+.d-flex .car-forms-btn:last-child {
+  margin-right: 0;
 }
 
 /****************************** Estilo: Globales ******************************/

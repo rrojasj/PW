@@ -12185,6 +12185,16 @@ input:not(:placeholder-shown) {
   text-align: center;
 }
 
+select {
+  font-family: "Noto Sans", sans-serif;
+  color: #186F8C !important;
+  text-align: center;
+  background-color: #f8f9fa; /* Optional: Adjust background color */
+  border: 1px solid #ced4da; /* Optional: Adjust border color */
+  padding: 0.375rem 0.75rem; /* Optional: Adjust padding */
+  border-radius: 0.25rem; /* Optional: Adjust border radius */
+}
+
 /****************************** Estilos del Nav ******************************/
 .nav-style {
   background-color: #0F4557;
@@ -12303,11 +12313,6 @@ input:not(:placeholder-shown) {
   border-color: #fff;
   outline: 0;
   box-shadow: none;
-}
-
-/****************************** Estilos Validación input ******************************/
-input.validation-true {
-  border-color: #ba0f0f;
 }
 
 /****************************** Estilos Footer ******************************/
@@ -12498,6 +12503,28 @@ p.footer-text {
 
 .car-actions-btn i {
   padding-right: 0.625rem;
+}
+
+/****************************** Section: Information Column ******************************/
+button.car-forms-btn {
+  padding-right: 1.25rem !important;
+  border-color: #186F8C !important;
+  color: #186F8C !important;
+}
+
+button.car-forms-btn:hover {
+  background-color: #186F8C !important;
+  color: #fefefe !important;
+}
+
+/* Add margin-right to the first button to create space between buttons */
+.d-flex .car-forms-btn {
+  margin-right: 10px; /* Adjust the value as needed */
+}
+
+/* Optional: Remove margin from the last button to avoid extra space at the end */
+.d-flex .car-forms-btn:last-child {
+  margin-right: 0;
 }
 
 .separator-line {

@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-    <title>AutoSpot - Cotización</title>
+    <title>AutoSpot - Reservación</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="imgs/pw_e1_favicon_wb_transp_300x200.png" type="image/x-con">
         <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/quotation.css">
+        <link rel="stylesheet" href="css/reservation.css">
         <link rel="stylesheet" href="css/rules.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
@@ -97,12 +97,12 @@
     <div class="pt-5"></div>
 
     <section class="container car-view pt-5">
-        <h1 id="car-brand" class="text-uppercase font-stretch-condensed text-center">Solicitud de Cotización</h1>
+        <h1 id="car-brand" class="text-uppercase font-stretch-condensed text-center">Solicitud de Reservación</h1>
 
         <div class="pt-5">
-            <p class="text-center">¡Gracias por considerar AutoSpot para la compra de su próximo vehículo!
+            <p class="text-center">¡Gracias por considerar AutoSpot para reservar su próximo vehículo!
             </p>
-            <p class="text-center fw-light">Complete los campos a continuación con la información solicitada. Recibirá una cotización detallada en su correo electrónico según sus preferencias y necesidades.</p>
+            <p class="text-center fw-light">Complete los campos a continuación con la información solicitada. Recibirá información detallada en su correo electrónico.</p>
         </div>
 
         <!-- Información Personal -->
@@ -127,155 +127,70 @@
                             </div>
                         </div>
                         <div class="row pt-3">
-                            <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <label for="form-personal-id" class="form-label">Número de cédula<span class="required-info">*</span></label>
+                                <input type="text" name="cedula" class="form-control" id="form-personal-id" aria-describedby="email">
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4">
                                 <label for="form-email" class="form-label">Email address<span class="required-info">*</span></label>
                                 <input type="email" name="email" class="form-control" id="form-email" aria-describedby="email">
-                                <div id="email-error" style="color: #ba0f0f; font-size: smaller;"></div>
                             </div>
-                            <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="col-sm-12 col-md-6 col-lg-4">
                                 <label for="form-tel" class="form-label">Teléfono:</label>
-                                <input type="tel" maxlength="9" minlength="9" name="telefono" class="form-control" id="form-tel" aria-describedby="telephone">
-                                <div id="phone-number-error" style="color: #ba0f0f; font-size: smaller;"></div>
+                                <input type="text" name="telefono" class="form-control" id="form-tel" aria-describedby="telephone">
                             </div>
                         </div>
-                        <div class="pt-3"></div>
+                        <div class="pt-3 pb-3"></div>
                         <div class="quote-info-separator pb-3"></div>
 
-                        <p class="fs-3">Detalles de cotización:</p>
-
-                        <select id="buying-option-select" name="metodo_compra" class="form-select" aria-label="Default select example">
-                            <option selected>Método de compra:</option>
-                            <option value="leasing">Leasing</option>
-                            <option value="contado">Contado</option>
-                            <option value="financiamiento">Financiamento</option>
-                        </select>
-
-                        <!-- Sección: Leasing -->
-                        <div id="section-leasing" class="pt-5 d-none">
-                            <div class="row">
-                                <p class="fs-5">Cálculo aproximado:</p>
-                                <p class="fw-light ls-info-text">Llene los campos en blanco *</p>
-                                <div class="col-sm-12 col-md-4 col-lg-4">
-                                <label for="ls-form-precio" class="form-label">Precio</label>
-                                    <input type="text" name="precio_total" class="form-control" id="ls-form-precio" aria-describedby="precio" disabled>
-                                </div>
-                                <div class="col-sm-12 col-md-4 col-lg-4">
-                                    <label for="ls-form-cuota-inicial" class="form-label">Cuota inicial $<span class="required-info">*</span></label>
-                                    <input type="number" name="cuota_inicial" class="form-control" id="ls-form-cuota-inicial" aria-describedby="Cuota inicial">
-                                    <div id="number-error" style="color: #ba0f0f; font-size: smaller;"></div>
-                                </div>
-                                <div class="col-sm-12 col-md-4 col-lg-4">
-                                    <label for="ls-form-valor-residual" class="form-label">Valor residual</label>
-                                    <input type="text" name="valor_residual" class="form-control" id="ls-form-valor-residual" aria-describedby="Valor Residual" disabled>
-                                </div>
-                            </div>
-                            <div class="row pt-3">
-                                <h6 class="pt-3">Tasa de interés fijo</h6>
-                                <p class="fw-light ls-info-text">Entre 24 y 36 meses 11.8%. Entre 48 y 60 meses 13.2%</p>
-                                <div class="col-sm-12 col-md-6 col-lg-4">
-                                    <label for="ls-form-plazo" class="form-label">Plazo en meses<span class="required-info">*</span></label>
-                                    <select id="ls-form-plazo" name="plazo" class="form-select" aria-label="Default select example">
-                                        <option selected>Seleccione:</option>
-                                        <option value="24">24 meses</option>
-                                        <option value="36">36 meses</option>
-                                        <option value="48">48 meses</option>
-                                        <option value="60">60 meses</option>
-                                      </select>
-                                </div>
-                                <div class="col-sm-12 col-md-6 col-lg-4">
-                                    <label for="ls-form-tasa-interes" class="form-label">Tasa de interés</label>
-                                    <input type="text" name="tasa_interes" class="form-control" id="ls-form-tasa-interes" aria-describedby="Tasa de interés" disabled>
-                                </div>
-                                <div class="col-sm-12 col-md-6 col-lg-4">
-                                    <label for="ls-form-cuota-mensual" class="form-label">Cuota mensual</label>
-                                    <input type="text" name="cuota_mensual" class="form-control" id="ls-form-cuota-mensual" aria-describedby="Cuota mensual" disabled>
-                                </div>
-                            </div>
-                            <div class="pt-5"></div>
-                            <div class="d-flex justify-content-center align-items-center">
-                                <button id="quote-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" onclick="calculateLsMonthlyRate()">Calcular cuota</button>
-                                <button id="send-ls-data-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" onclick="sendLeasingFormData()" disabled>Enviar datos</button>
-                            </div>
-                        </div>
+                        <p class="fs-3">Información del auto</p>
 
                         <!-- Sección: Contado -->
-                        <div id="section-cash-payment" class="pt-5 d-none">
+                        <div id="section-cash-payment" class="pt-1">
                             <div class="row">
-                                <p class="fw-light ls-info-text">Las compras de contado tienen promociones con descuentos según el monto.</p>
+                                <p class="fw-light ls-info-text">De acuerdo al monto de abono al reservar cuentas con un descuento diferente:</p>
                                 <div class="row">
                                     <div class="col-lg-4">
-                                        <p class="fw-light ls-info-text">Mayor a $10,000 - 5%</p>
+                                        <p class="fw-light ls-info-text">Mayor a $5,000 - 2%</p>
                                     </div>
                                     <div class="col-lg-4">
-                                        <p class="fw-light ls-info-text">Mayor a $20,000 - 7.5%</p>
+                                        <p class="fw-light ls-info-text">Mayor a $8,000 - 3%</p>
                                     </div>
                                     <div class="col-lg-4">
-                                        <p class="fw-light ls-info-text">Mayor a $30,000 - 11%</p>
+                                        <p class="fw-light ls-info-text">Mayor a $11,000 - 5%</p>
                                     </div>
                                 </div>
                                 <p class="fs-5">Cálculo aproximado:</p>
-                                <div class="col-sm-12 col-md-4 col-lg-4">
-                                <label for="cp-form-subtotal" class="form-label">Subtotal</label>
-                                    <input type="text" name="subtotal" class="form-control" id="cp-form-subtotal" aria-describedby="subtotal">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-4 col-lg-6">
+                                        <label for="rs-form-subtotal" class="form-label">Subtotal</label>
+                                        <input type="text" name="subtotal" class="form-control" id="rs-form-subtotal" aria-describedby="subtotal" disabled>
+                                    </div>
+                                    
+                                    <div class="col-sm-12 col-md-4 col-lg-6">
+                                        <label for="rs-form-initial-payment" class="form-label">Cuota inicial</label>
+                                        <input type="number" name="monto_abono" class="form-control" id="rs-form-initial-payment" aria-describedby="Monto abono">
+                                    </div>
                                 </div>
-                                <div class="col-sm-12 col-md-4 col-lg-4">
-                                    <label for="cp-form-discount" class="form-label">Descuento aplicado<span class="required-info">*</span></label>
-                                    <input type="text" name="descuento" class="form-control" id="cp-form-discount" aria-describedby="Descuento" disabled>
-                                </div>
-                                <div class="col-sm-12 col-md-4 col-lg-4">
-                                    <label for="cp-form-total-amount" class="form-label">Monto total</label>
-                                    <input type="text" name="monto_total" class="form-control" id="cp-form-total-amount" aria-describedby="Monto total" disabled>
+                                <div class="row pt-3">
+                                    <div class="col-sm-12 col-md-4 col-lg-6">
+                                        <label for="rs-form-discount" class="form-label">Descuento aplicado<span class="required-info">*</span></label>
+                                        <input type="text" name="descuento" class="form-control" id="rs-form-discount" aria-describedby="Descuento" disabled>
+                                    </div>
+                                    <div class="col-sm-12 col-md-4 col-lg-6">
+                                        <label for="rs-form-total-amount" class="form-label">Monto total</label>
+                                        <input type="number" name="monto_total" class="form-control" id="rs-form-total-amount" aria-describedby="Monto total">
+                                    </div>
                                 </div>
                             </div>
                             <div class="pt-3"></div>
-                            <p class="fw-light ls-info-text text-center">Si deseas completar la compra solicita el formulario de negociación.</p>
+                            <p class="fw-light ls-info-text text-center">Si deseas completar la reserva solicita el formulario de negociación.</p>
                             <div class="d-flex justify-content-center align-items-center">
-                                <button id="quote-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" onclick="sendCPFormData()" disabled>Solicitar</button>
+                                <button id="reserve-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" onclick="calculateTotalAmount()">Calcular total</button>
+                                <button id="send-rs-data-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" disabled onclick="sendReservationFormData()">Enviar Form</button>
                             </div>
                         </div>
 
-                        <!-- Sección: Financiamiento -->
-                        <div id="section-financing" class="pt-5 d-none">
-                            <div class="row">
-                                <p class="fs-5">Cálculo aproximado:</p>
-                                <p class="fw-light ls-info-text">Llene los campos en blanco *</p>
-                                <div class="col-sm-12 col-md-6 col-lg-6">
-                                <label for="fn-form-precio" class="form-label">Precio</label>
-                                    <input type="text" name="precio_total" class="form-control" id="fn-form-precio" aria-describedby="precio" disabled>
-                                </div>
-                                <div class="col-sm-12 col-md-6 col-lg-6">
-                                    <label for="fn-form-cuota-inicial" class="form-label">Cuota inicial $<span class="required-info">*</span></label>
-                                    <input type="number" name="cuota_inicial" class="form-control" id="fn-form-cuota-inicial" aria-describedby="Cuota inicial">
-                                </div>
-                            </div>
-                            <div class="row pt-3">
-                                <h6 class="pt-3">Tasa de interés fijo</h6>
-                                <p class="fw-light ls-info-text">Entre 24 y 36 meses 11.8%. Entre 48 y 60 meses 13.2%</p>
-                                <div class="col-sm-12 col-md-6 col-lg-4">
-                                    <label for="ls-form-plazo" class="form-label">Plazo en meses<span class="required-info">*</span></label>
-                                    <select id="fn-form-plazo" name="plazo" class="form-select" aria-label="Default select example">
-                                        <option selected>Seleccione:</option>
-                                        <option value="24">24 meses</option>
-                                        <option value="36">36 meses</option>
-                                        <option value="48">48 meses</option>
-                                        <option value="60">60 meses</option>
-                                      </select>
-                                </div>
-                                <div class="col-sm-12 col-md-6 col-lg-4">
-                                    <label for="fn-form-tasa-interes" class="form-label">Tasa de interés</label>
-                                    <input type="text" name="tasa_interes" class="form-control" id="fn-form-tasa-interes" aria-describedby="Tasa de interés" disabled>
-                                </div>
-                                <div class="col-sm-12 col-md-6 col-lg-4">
-                                    <label for="fn-form-cuota-mensual" class="form-label">Cuota mensual</label>
-                                    <input type="text" name="cuota_mensual" class="form-control" id="fn-form-cuota-mensual" aria-describedby="Cuota mensual" disabled>
-                                </div>
-                            </div>
-                            <div class="pt-5"></div>
-                            <div class="d-flex justify-content-center align-items-center">
-                                <button id="quote-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" onclick="calculateFnMonthlyRate()">Calcular cuota</button>
-                                <button id="send-data-fn-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" disabled onclick="sendFinancingFormData()">Enviar datos</button>
-                            </div>
-                        </div>
                     </form>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-6">
@@ -310,7 +225,7 @@
                             <div class="accordion-properties d-flex justify-content-center">
                                 <div class="accordion">
                                     <div class="accordion-item">
-                                        <div class="accordion-title text-uppercase">Más Información</div>
+                                        <div class="accordion-title-rs text-uppercase">Más Información</div>
                                         <div class="accordion-content">
                                             <ul class="list-group">    
                                                 <li class="list-group-item list-style">
@@ -406,7 +321,7 @@
     <!-- libreria Lottie JS-->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@0.3.0/dist/lottie-player.js"></script>
 
-    <script type="module" src="js/quotation.js"></script>
+    <script type="module" src="js/reservation.js"></script>
 
 </body>
 

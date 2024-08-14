@@ -63,6 +63,7 @@ export function getInformation(idAuto){
     var transmisionContainer = document.getElementById('car-transmision');
 
     var quoteBtn = document.getElementById('quote-btn');
+    var reserveBtn = document.getElementById('reserve-btn');
     
     /********* Variables globales *********/
     var marca = document.getElementById('car-brand');
@@ -87,14 +88,20 @@ export function getInformation(idAuto){
             traccion= allCars[i].traccion;
             transmision= allCars[i].transmision;
             quoteBtn.id = allCars[i].idAuto;
+            reserveBtn.id = allCars[i].idAuto;
             
             quoteBtn.id = `${allCars[i].idAuto}`;
+            reserveBtn.id = `${allCars[i].idAuto}`;
 
-            // Add the click event listener to the button
+            // Add the click event listener to the Quote button
             quoteBtn.addEventListener('click', () => {
                 goToCarQuotation(allCars[i].idAuto);
             });
-
+            // Add the click event listener to the Reserve button
+            reserveBtn.addEventListener('click', () => {
+                goToCarReservation(allCars[i].idAuto);
+            });
+            
             break;
         }
     }
@@ -210,7 +217,12 @@ export function showUpcomingCars(){
     }
 }
 
-// Function to handle the redirection
+// Function to handle the redirection to Quotation
 function goToCarQuotation(idAuto) {
     window.location.href = `quotation.html?page=${idAuto}`;
+}
+
+// Function to handle the redirection to Reservation
+function goToCarReservation(idAuto) {
+    window.location.href = `reservation.html?page=${idAuto}`;
 }
