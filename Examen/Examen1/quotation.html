@@ -162,7 +162,7 @@
                                 <div class="col-sm-12 col-md-4 col-lg-4">
                                     <label for="ls-form-cuota-inicial" class="form-label">Cuota inicial $<span class="required-info">*</span></label>
                                     <input type="number" name="cuota_inicial" class="form-control" id="ls-form-cuota-inicial" aria-describedby="Cuota inicial">
-                                    <div id="number-error" style="color: #ba0f0f; font-size: smaller;"></div>
+                                    <div id="ls-number-error" style="color: #ba0f0f; font-size: smaller;"></div>
                                 </div>
                                 <div class="col-sm-12 col-md-4 col-lg-4">
                                     <label for="ls-form-valor-residual" class="form-label">Valor residual</label>
@@ -230,7 +230,7 @@
                             <div class="pt-3"></div>
                             <p class="fw-light ls-info-text text-center">Si deseas completar la compra solicita el formulario de negociación.</p>
                             <div class="d-flex justify-content-center align-items-center">
-                                <button id="quote-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" onclick="sendCPFormData()" disabled>Solicitar</button>
+                                <button id="quote-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" onclick="sendCPFormData()">Solicitar</button>
                             </div>
                         </div>
 
@@ -246,6 +246,7 @@
                                 <div class="col-sm-12 col-md-6 col-lg-6">
                                     <label for="fn-form-cuota-inicial" class="form-label">Cuota inicial $<span class="required-info">*</span></label>
                                     <input type="number" name="cuota_inicial" class="form-control" id="fn-form-cuota-inicial" aria-describedby="Cuota inicial">
+                                    <div id="fn-number-error" style="color: #ba0f0f; font-size: smaller;"></div>
                                 </div>
                             </div>
                             <div class="row pt-3">
@@ -273,7 +274,7 @@
                             <div class="pt-5"></div>
                             <div class="d-flex justify-content-center align-items-center">
                                 <button id="quote-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" onclick="calculateFnMonthlyRate()">Calcular cuota</button>
-                                <button id="send-data-fn-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" disabled onclick="sendFinancingFormData()">Enviar datos</button>
+                                <button id="send-data-fn-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" onclick="sendFinancingFormData()" disabled>Enviar datos</button>
                             </div>
                         </div>
                     </form>

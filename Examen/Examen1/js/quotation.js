@@ -18,6 +18,9 @@ window.addEventListener('load', () => {
     window.sendCPFormData = sendCPFormData;
     window.sendFinancingFormData = sendFinancingFormData;
 
+    const button = document.getElementById('send-data-fn-btn');
+    button.disabled = true;
+
 });
 
 // Select: ls-form-plazo
@@ -66,13 +69,24 @@ document.querySelectorAll('input, select').forEach(element => {
     });
 });
 
-/********** Función: Verifica cambios en el input - Input **********/
+/********** Función: Verifica cambios en el input de cuota inicial Ls **********/
 var inputCuotaInicial = document.getElementById('ls-form-cuota-inicial');
 inputCuotaInicial.addEventListener('change', function() {
     if (inputCuotaInicial.value == '') {
         document.getElementById('ls-form-cuota-mensual').value = '';
     }
 })
+
+/********** Función: Verifica cambios en el input de cuota inicial Fn **********/
+var inputCuotaInicial = document.getElementById('fn-form-cuota-inicial');
+var sendFnFormBtn = document.getElementById('send-data-fn-btn');
+inputCuotaInicial.addEventListener('change', function() {
+    if (inputCuotaInicial.value == '') {
+        document.getElementById('fn-form-cuota-mensual').value = '';
+        sendFnFormBtn.disabled = true;
+    }
+})
+
 
 /********** Función: Obtener la imagen del auto seleccionado **********/
 var buyingOption = document.getElementById('buying-option-select');
@@ -370,11 +384,10 @@ phoneNumberInput.addEventListener('blur', function() {
     }
 });
 
-/********** Función: Valida y notifica que el campo de cuota inicial solo números **********/
-const numberInput = document.getElementById('ls-form-cuota-inicial');
-const numberError = document.getElementById('number-error');
-
-numberInput.addEventListener('keypress', function(event) {
+/********** Función: Notifica que cuota inicial solo números - Leasing **********/
+const numberInputLs = document.getElementById('ls-form-cuota-inicial');
+const numberErrorLs = document.getElementById('ls-number-error');
+numberInputLs.addEventListener('keypress', function(event) {
     // Obtener el código de la tecla presionada
     const keyCode = event.keyCode || event.which;
 
@@ -384,10 +397,30 @@ numberInput.addEventListener('keypress', function(event) {
         event.preventDefault();
 
         // Mostrar el mensaje de error
-        numberError.textContent = 'Solo números.';
+        numberErrorLs.textContent = 'Solo números.';
     } else {
         // Ocultar el mensaje de error
-        numberError.textContent = '';
+        numberErrorLs.textContent = '';
+    }
+});
+
+/********** Función: Notifica que cuota inicial solo números - Financing **********/
+const numberInputFn = document.getElementById('fn-form-cuota-inicial');
+const numberErrorFn = document.getElementById('fn-number-error');
+numberInputFn.addEventListener('keypress', function(event) {
+    // Obtener el código de la tecla presionada
+    const keyCode = event.keyCode || event.which;
+
+    // Permitir solo dígitos
+    if (keyCode < 48 || keyCode > 57) {
+        // Prevenir que se muestre el carácter en el input
+        event.preventDefault();
+
+        // Mostrar el mensaje de error
+        numberErrorFn.textContent = 'Solo números.';
+    } else {
+        // Ocultar el mensaje de error
+        numberErrorFn.textContent = '';
     }
 });
 
@@ -554,16 +587,15 @@ export function calculateLsMonthlyRate() {
     // console.log('Precio del auto: ' + numPrecioTotal);
     // console.log('Tipo de dato del precio: ' + typeof(numPrecioTotal));
 
-    if(numPrecioTotal > numCuotaInicial) {
+    var valid = validateLeasingInputs();
 
-        var valid = validateLeasingInputs();
-
-        if (valid) {
-            // Monthly periodic rate
+    if (valid) {
+        
+        if(numPrecioTotal > numCuotaInicial) {
             var tasaPerMens = numTasaInt / 12;
-
+    
             var cuotaMensual = (numPrecioTotal - numCuotaInicial) / ((1 - (1 + tasaPerMens) ** -numPlazo) / tasaPerMens);
-
+    
             var usDollar = new Intl.NumberFormat('en-US', {
                 style: 'currency',
                 currency: 'USD',
@@ -572,7 +604,7 @@ export function calculateLsMonthlyRate() {
             });
             
             var monthlyPayment = usDollar.format(cuotaMensual);
-
+    
             var sendLsDataBtn = document.getElementById('send-ls-data-btn');
             if (sendLsDataBtn) {
                 console.log('Si entró!')
@@ -580,9 +612,9 @@ export function calculateLsMonthlyRate() {
             } else {
                 console.log('No entró! Pellísquese!')
             }
-
+    
             cuotaMensInput.value = monthlyPayment;
-
+    
             Swal.fire({
                 icon: 'success',
                 title: 'Cuota Mensual',
@@ -591,14 +623,18 @@ export function calculateLsMonthlyRate() {
                     confirmButton: 'custom-confirm-btn car-forms-btn car-actions-btn btn btn-outline-secondary'
                 }
             });
-
+    
         } else {
             Swal.fire({
                 icon: 'warning',
                 title: 'Información',
-                text: 'Debe llenar todos los campos requeridos',
+                text: 'La cuota inicial debe ser menor al precio total',
                 customClass: {
-                    confirmButton: 'custom-confirm-btn car-forms-btn car-actions-btn btn btn-outline-secondary'
+                  confirmButton: 'custom-confirm-btn car-forms-btn car-actions-btn btn btn-outline-secondary'
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('ls-form-cuota-inicial').value = '';
                 }
             });
         }
@@ -606,13 +642,9 @@ export function calculateLsMonthlyRate() {
         Swal.fire({
             icon: 'warning',
             title: 'Información',
-            text: 'La cuota inicial debe ser menor al precio total',
+            text: 'Debe llenar todos los campos requeridos',
             customClass: {
-              confirmButton: 'custom-confirm-btn car-forms-btn car-actions-btn btn btn-outline-secondary'
-            }
-        }).then((result) => {
-            if (result.isConfirmed) {
-                document.getElementById('ls-form-cuota-inicial').value = '';
+                confirmButton: 'custom-confirm-btn car-forms-btn car-actions-btn btn btn-outline-secondary'
             }
         });
     }
@@ -640,36 +672,53 @@ export function calculateFnMonthlyRate() {
 
     if (valid) {
 
-        // Cuota Mensual = (Monto del Préstamo x Tasa de Interés Anual) / (1 - (1 + Tasa de Interés Anual)^(-Plazo en Meses))
-        var cuotaMensual = ((numPrecioTotal - numCuotaInicial)*(numTasaInt))/(1-(1+numTasaInt)**(-numPlazo));
+        if(numPrecioTotal > numCuotaInicial) {
 
-        var usDollar = new Intl.NumberFormat('en-US', {
-            style: 'currency',
-            currency: 'USD',
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        });
-        
-        var monthlyPayment = usDollar.format(cuotaMensual);
+            // Cuota Mensual = (Monto del Préstamo x Tasa de Interés Anual) / (1 - (1 + Tasa de Interés Anual)^(-Plazo en Meses))
+            var cuotaMensual = ((numPrecioTotal - numCuotaInicial)*(numTasaInt))/(1-(1+numTasaInt)**(-numPlazo));
 
-        var sendDataBtn = document.getElementById('send-data-fn-btn');
-        if (sendDataBtn) {
-            console.log('Si entró!')
-            sendDataBtn.removeAttribute('disabled');
-        } else {
-            console.log('No entró! Pellísquese!')
-        }
+            var usDollar = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+            
+            var monthlyPayment = usDollar.format(cuotaMensual);
 
-        cuotaMensInput.value = monthlyPayment;
-
-        Swal.fire({
-            icon: 'success',
-            title: 'Cuota Mensual',
-            html: 'Se ha calculado la cuota mensual.<br>Puede solicitar la información por email.',
-            customClass: {
-                confirmButton: 'custom-confirm-btn car-forms-btn car-actions-btn btn btn-outline-secondary'
+            var sendDataBtn = document.getElementById('send-data-fn-btn');
+            if (sendDataBtn) {
+                console.log('Si entró!')
+                sendDataBtn.removeAttribute('disabled');
+            } else {
+                console.log('No entró! Pellísquese!')
             }
-        });
+
+            cuotaMensInput.value = monthlyPayment;
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Cuota Mensual',
+                html: 'Se ha calculado la cuota mensual.<br>Puede solicitar la información por email.',
+                customClass: {
+                    confirmButton: 'custom-confirm-btn car-forms-btn car-actions-btn btn btn-outline-secondary'
+                }
+            });
+        
+        } else {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Información',
+                text: 'La cuota inicial debe ser menor al precio total',
+                customClass: {
+                  confirmButton: 'custom-confirm-btn car-forms-btn car-actions-btn btn btn-outline-secondary'
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('ls-form-cuota-inicial').value = '';
+                }
+            });
+        }
 
     } else {
         Swal.fire({
@@ -887,7 +936,7 @@ export function sendFinancingFormData() {
     var metodoCompra = document.getElementById('buying-option-select').value;
     metodoCompra = metodoCompra.charAt(0).toUpperCase() + metodoCompra.slice(1);
     
-    var cuotaInicial = document.getElementById('ls-form-cuota-inicial').value;
+    var cuotaInicial = document.getElementById('fn-form-cuota-inicial').value;
     var formattedPrice = convertPrice(cuotaInicial);
 
     // Data parameters
@@ -913,7 +962,7 @@ export function sendFinancingFormData() {
         car_transmission: carTransmission
     }
 
-    emailjs.send('service_ycxgca3', 'template_6laresr', dataParameters, 'nNPY8_FeU2vhukBjB')
+    emailjs.send('service_ycxgca3', 'template_financing', dataParameters, 'nNPY8_FeU2vhukBjB')
     .then(function(response) {
         console.log('Success:', response);
         Swal.fire({
@@ -926,7 +975,7 @@ export function sendFinancingFormData() {
         }).then((result) => {
             if(result.isConfirmed) {
                 window.location.reload();
-                cleanInputs();
+                // cleanInputs();
             }
         })
     }, function(error) {
