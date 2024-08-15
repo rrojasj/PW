@@ -99,23 +99,39 @@ export function getCarprice(idAuto){
 }
 
 /********** Función: Obtener el descuento de acuerdo al monto del auto **********/
-export function getDiscountValue(subtotal) {
+export function getDiscountValue(subtotal, tipo) {
 
     var discountValue;
 
-    if(subtotal >= 10000 && subtotal < 20000){
-        discountValue = 5;
-    } else if (subtotal >= 20000 && subtotal < 30000) {
-        discountValue = 7.5;
-    } else if (subtotal >= 30000) {
-        discountValue = 11;
+    if(tipo === 'cp') {
+        if(subtotal >= 10000 && subtotal < 20000){
+            discountValue = 5;
+        } else if (subtotal >= 20000 && subtotal < 30000) {
+            discountValue = 7.5;
+        } else if (subtotal >= 30000) {
+            discountValue = 11;
+        }
+        return discountValue;
+    } 
+    else if (tipo === 'rs') {
+        if(subtotal >= 2000 && subtotal < 4000){
+            discountValue = 2;
+        } else if (subtotal >= 4000 && subtotal < 6000) {
+            discountValue = 3;
+        } else if (subtotal >= 6000) {
+            discountValue = 5;
+        } else {
+            discountValue = 0;
+        }
+        return discountValue;
     }
-    return discountValue;
 }
 
 /********** Función: Obtener el monto total con descuento aplicado **********/
 export function getTotalAmount(price, discount) {
-    var totalDiscounted = price - (price*(discount/100));
+    var numPrice = parseFloat(price);
+    console.log(typeof(numPrice));
+    var totalDiscounted = numPrice - (numPrice*(discount/100));
 
     return totalDiscounted;
 }
@@ -184,56 +200,28 @@ export function cleanInputs () {
 
 }
 
-/********** Section: Validar que el correo electrónico esté correcto **********/
-function validateEmail(email) {
-    // Expresión regular para validar el formato del email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  
-    // Verifica si el email coincide con la expresión regular
-    if (emailRegex.test(email)) {
-      return true; // El email es válido
-    } else {
-      return false; // El email no es válido
-    }
-}
-const emailInput = document.getElementById('form-email');
-const emailErrorMessage = document.getElementById('email-error');
-emailInput.addEventListener('blur', function() {
-    const email = emailInput.value.trim();
-    if (!validateEmail(email)) {
-        emailErrorMessage.textContent = 'Ingrese un correo válido.';
-        emailErrorMessage.style.display = 'block';
-    } else {
-        emailErrorMessage.style.display = 'none';
-    }
-});
+/********** Función: Acordeón **********/
+document.querySelectorAll('.accordion-title').forEach(item => {
+    item.addEventListener('click', () => {
+      const parent = item.parentElement;
+      const content = item.nextElementSibling;
 
-/********** Section: Validar que el formato del teléfono esté correcto **********/
-const phoneNumberInput = document.getElementById('form-tel');
-const phoneNumberErrorMessage = document.getElementById('phone-number-error');
+      parent.classList.toggle('active');
 
-/********** Función: Formatea el Número de teléfono **********/
-phoneNumberInput.addEventListener('input', function() {
-    let phoneNumber = this.value.replace(/\D/g, '');
+      // Cerrar otros elementos del acordeón
+      document.querySelectorAll('.accordion-item').forEach(otherItem => {
+        if (otherItem !== parent) {
+          otherItem.classList.remove('active');
+          otherItem.querySelector('.accordion-content').style.maxHeight = null;
+        }
+      });
 
-    // Add the hyphen after the 4th digit
-    if (phoneNumber.length > 4) {
-        phoneNumber = phoneNumber.slice(0, 4) + '-' + phoneNumber.slice(4);
-    }
-
-    // Update the input value with the formatted phone number
-    this.value = phoneNumber;
-});
-
-/********** Función: Valida y notifica si el campo está incorrecto **********/
-phoneNumberInput.addEventListener('blur', function() {
-    let phoneNumber = this.value.replace(/\D/g, '');
-
-    if (phoneNumber.length !== 8) {
-        phoneNumberErrorMessage.textContent = 'Número inválido. Debe ser de 8 dígitos.';
-    } else {
-        phoneNumberErrorMessage.textContent = '';
-    }
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
 });
 
 /********** Función: Verifica cambios en el input - Select **********/
@@ -251,5 +239,14 @@ document.querySelectorAll('input, select').forEach(element => {
             }
         }
     });
+});
+
+/********** Función: Ir a la página anterior  **********/
+var goBackBtn = document.getElementById('go-back-btn');
+goBackBtn.addEventListener('click', function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var idAutoValue = urlParams.get('page');
+
+    window.location.href = `car-view.html?page=${idAutoValue}`;
 });
 

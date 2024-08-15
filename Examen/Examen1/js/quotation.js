@@ -75,15 +75,6 @@ inputCuotaInicial.addEventListener('change', function() {
 var buyingOption = document.getElementById('buying-option-select');
 buyingOption.addEventListener('change', showBuyingOption);
 
-/********** Función: Ir a la página anterior  **********/
-var goBackBtn = document.getElementById('go-back-btn');
-goBackBtn.addEventListener('click', function() {
-    var urlParams = new URLSearchParams(window.location.search);
-    var idAutoValue = urlParams.get('page');
-
-    window.location.href = `car-view.html?page=${idAutoValue}`;
-});
-
 /********** Función: Obtener los valores por defecto de Leasing **********/
 export function showBuyingOption(idAuto){
     var option = buyingOption.value;
@@ -111,30 +102,6 @@ export function showBuyingOption(idAuto){
     }
 }
 
-/********** Función: Acordeón **********/
-document.querySelectorAll('.accordion-title').forEach(item => {
-    item.addEventListener('click', () => {
-      const parent = item.parentElement;
-      const content = item.nextElementSibling;
-
-      parent.classList.toggle('active');
-
-      // Cerrar otros elementos del acordeón
-      document.querySelectorAll('.accordion-item').forEach(otherItem => {
-        if (otherItem !== parent) {
-          otherItem.classList.remove('active');
-          otherItem.querySelector('.accordion-content').style.maxHeight = null;
-        }
-      });
-
-      if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-      }
-    });
-});
-
 /********** Función: Obtener los valores por defecto de Leasing **********/
 export function getLeasingValues(idAuto) {
 
@@ -160,7 +127,7 @@ function getCashPaymentValues(idAuto) {
     var totalPriceInput = document.getElementById('cp-form-subtotal');
     totalPriceInput.value = formattedPrice;
 
-    var discountApplied = generalFunctions.getDiscountValue(totalPrice);
+    var discountApplied = generalFunctions.getDiscountValue(totalPrice, 'cp');
     var discountInput = document.getElementById('cp-form-discount');
     discountInput.value = discountApplied + "%";
 
@@ -357,6 +324,58 @@ export function validateFnInputs() {
 
     return allValid;
 }
+
+/********** Section: Validar que el correo electrónico esté correcto **********/
+function validateEmail(email) {
+    // Expresión regular para validar el formato del email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+    // Verifica si el email coincide con la expresión regular
+    if (emailRegex.test(email)) {
+      return true; // El email es válido
+    } else {
+      return false; // El email no es válido
+    }
+}
+const emailInput = document.getElementById('form-email');
+const emailErrorMessage = document.getElementById('email-error');
+emailInput.addEventListener('blur', function() {
+    const email = emailInput.value.trim();
+    if (!validateEmail(email)) {
+        emailErrorMessage.textContent = 'Ingrese un correo válido.';
+        emailErrorMessage.style.display = 'block';
+    } else {
+        emailErrorMessage.style.display = 'none';
+    }
+});
+
+/********** Section: Validar que el formato del teléfono esté correcto **********/
+const phoneNumberInput = document.getElementById('form-tel');
+const phoneNumberErrorMessage = document.getElementById('phone-number-error');
+
+/********** Función: Formatea el Número de teléfono **********/
+phoneNumberInput.addEventListener('input', function() {
+    let phoneNumber = this.value.replace(/\D/g, '');
+
+    // Add the hyphen after the 4th digit
+    if (phoneNumber.length > 4) {
+        phoneNumber = phoneNumber.slice(0, 4) + '-' + phoneNumber.slice(4);
+    }
+
+    // Update the input value with the formatted phone number
+    this.value = phoneNumber;
+});
+
+/********** Función: Valida y notifica si el campo está incorrecto **********/
+phoneNumberInput.addEventListener('blur', function() {
+    let phoneNumber = this.value.replace(/\D/g, '');
+
+    if (phoneNumber.length !== 8) {
+        phoneNumberErrorMessage.textContent = 'Inválido! Debe ser de 8 dígitos.';
+    } else {
+        phoneNumberErrorMessage.textContent = '';
+    }
+});
 
 /********** Función: Calcula la cuota mensual **********/
 export function calculateLsMonthlyRate() {

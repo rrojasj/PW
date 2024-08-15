@@ -109,35 +109,30 @@
         <div class="pt-5">
             <div class="row">
                 <div class="col-sm-12 col-md-6 col-lg-6">
-                    <form id="quotation-form">
+                    <form id="reservation-form">
                         <div class="row">
                             <p class="fs-3">Información personal:</p>
                             <p class="fw-light ls-info-text">Llene los campos en blanco *</p>
-                            <div class="col-sm-12 col-md-4 col-lg-4">
-                                <label for="form-name" class="form-label">Nombre:<span class="required-info">*</span></label>
-                                <input type="text" name="nombre" class="form-control" id="form-name" aria-describedby="nombre">
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <label for="form-rs-id" class="form-label">Número de cédula<span class="required-info">*</span></label>
+                                <input type="text" maxlength="11" minlength="11" name="cedula" class="form-control" id="form-rs-id" aria-describedby="cedula">
+                                <div id="error-rs-id" style="color: #ba0f0f; font-size: smaller;"></div>
                             </div>
-                            <div class="col-sm-12 col-md-4 col-lg-4">
-                                <label for="form-lastname1" class="form-label">Primer Apellido<span class="required-info">*</span></label>
-                                <input type="text" name="apellido_1" class="form-control" id="form-lastname1" aria-describedby="first last name">
-                            </div>
-                            <div class="col-sm-12 col-md-4 col-lg-4">
-                                <label for="form-lastname2" class="form-label">Segundo Apellido<span class="required-info">*</span></label>
-                                <input type="text" name="apellido_2" class="form-control" id="form-lastname2" aria-describedby="second last name">
+                            <div class="col-sm-12 col-md-4 col-lg-8">
+                                <label for="form-rs-name" class="form-label">Nombre completo:<span class="required-info">*</span></label>
+                                <input type="text" name="nombre" class="form-control" id="form-rs-name" aria-describedby="nombre completo">
                             </div>
                         </div>
                         <div class="row pt-3">
                             <div class="col-sm-12 col-md-6 col-lg-4">
-                                <label for="form-personal-id" class="form-label">Número de cédula<span class="required-info">*</span></label>
-                                <input type="text" name="cedula" class="form-control" id="form-personal-id" aria-describedby="email">
+                                <label for="form-rs-phone" class="form-label">Teléfono:</label>
+                                <input type="tel" maxlength="9" minlength="9" name="telefono" class="form-control" id="form-rs-phone" aria-describedby="telephone">
+                                <div id="error-rs-phone" style="color: #ba0f0f; font-size: smaller;"></div>
                             </div>
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <label for="form-email" class="form-label">Email address<span class="required-info">*</span></label>
-                                <input type="email" name="email" class="form-control" id="form-email" aria-describedby="email">
-                            </div>
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <label for="form-tel" class="form-label">Teléfono:</label>
-                                <input type="text" name="telefono" class="form-control" id="form-tel" aria-describedby="telephone">
+                            <div class="col-sm-12 col-md-6 col-lg-8">
+                                <label for="form-rs-email" class="form-label">Email address<span class="required-info">*</span></label>
+                                <input type="email" name="email" class="form-control" id="form-rs-email" aria-describedby="email">
+                                <div id="error-rs-email" style="color: #ba0f0f; font-size: smaller;"></div>
                             </div>
                         </div>
                         <div class="pt-3 pb-3"></div>
@@ -151,13 +146,13 @@
                                 <p class="fw-light ls-info-text">De acuerdo al monto de abono al reservar cuentas con un descuento diferente:</p>
                                 <div class="row">
                                     <div class="col-lg-4">
-                                        <p class="fw-light ls-info-text">Mayor a $5,000 - 2%</p>
+                                        <p class="fw-light ls-info-text">Mayor a $2,000 - 2%</p>
                                     </div>
                                     <div class="col-lg-4">
-                                        <p class="fw-light ls-info-text">Mayor a $8,000 - 3%</p>
+                                        <p class="fw-light ls-info-text">Mayor a $4,000 - 3%</p>
                                     </div>
                                     <div class="col-lg-4">
-                                        <p class="fw-light ls-info-text">Mayor a $11,000 - 5%</p>
+                                        <p class="fw-light ls-info-text">Mayor a $6,000 - 5%</p>
                                     </div>
                                 </div>
                                 <p class="fs-5">Cálculo aproximado:</p>
@@ -168,34 +163,39 @@
                                     </div>
                                     
                                     <div class="col-sm-12 col-md-4 col-lg-6">
-                                        <label for="rs-form-initial-payment" class="form-label">Cuota inicial</label>
-                                        <input type="number" name="monto_abono" class="form-control" id="rs-form-initial-payment" aria-describedby="Monto abono">
+                                        <label for="form-rs-payment" class="form-label">Monto de reservación<span class="required-info">*</span></label>
+                                        <input type="number" name="monto_reserva" class="form-control" id="form-rs-payment" aria-describedby="Monto reserva">
                                     </div>
                                 </div>
                                 <div class="row pt-3">
                                     <div class="col-sm-12 col-md-4 col-lg-6">
-                                        <label for="rs-form-discount" class="form-label">Descuento aplicado<span class="required-info">*</span></label>
+                                        <label for="rs-form-discount" class="form-label">Descuento</label>
                                         <input type="text" name="descuento" class="form-control" id="rs-form-discount" aria-describedby="Descuento" disabled>
                                     </div>
                                     <div class="col-sm-12 col-md-4 col-lg-6">
-                                        <label for="rs-form-total-amount" class="form-label">Monto total</label>
-                                        <input type="number" name="monto_total" class="form-control" id="rs-form-total-amount" aria-describedby="Monto total">
+                                        <label for="rs-form-balance" class="form-label">Saldo</label>
+                                        <input type="text" name="saldo" class="form-control" id="rs-form-balance" aria-describedby="Monto total" disabled>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="form-check pt-3">
+                                <input class="form-check-input" name="Checkbox" type="checkbox" value="" id="acknowledge-checkbox">
+                                <label class="form-check-label" for="acknowledge-checkbox"><p class="fw-light ls-info-text text-center">Estoy de acuerdo que el pago de la reserva no es reembolsable.</p></label>
                             </div>
                             <div class="pt-3"></div>
                             <p class="fw-light ls-info-text text-center">Si deseas completar la reserva solicita el formulario de negociación.</p>
                             <div class="d-flex justify-content-center align-items-center">
-                                <button id="reserve-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" onclick="calculateTotalAmount()">Calcular total</button>
-                                <button id="send-rs-data-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" disabled onclick="sendReservationFormData()">Enviar Form</button>
-                                <button id="send-rs-data-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" disabled onclick="sendReservationFormData()">Enviar Form</button>
+                                <button id="calculate-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" onclick="calculateReservationBalance()">Calcular</button>
+                                <button id="reserve-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" onclick="confirmReservation()" disabled>Reservar</button>
+                                <button id="view-reserve-btn" type="button" class="car-actions-btn btn btn-outline-success" onclick="viewReservations()">Ver reservas</button>
                             </div>
                         </div>
 
                     </form>
                     <div class="pt-5 d-flex justify-content-center">
-                        <button id="go-back-btn" type="button" class="car-back-btn car-actions-btn btn btn-outline-warning">Volver</button>
+                        <button id="go-back-btn" type="button" class="car-actions-btn btn btn-outline-secondary">Volver</button>
                     </div>
+                    
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-6">
                     <div id="quotation-img-div" class="d-flex justify-content-center">
@@ -229,7 +229,7 @@
                             <div class="accordion-properties d-flex justify-content-center">
                                 <div class="accordion">
                                     <div class="accordion-item">
-                                        <div class="accordion-title-rs text-uppercase">Más Información</div>
+                                        <div class="accordion-title text-uppercase">Más Información</div>
                                         <div class="accordion-content">
                                             <ul class="list-group">    
                                                 <li class="list-group-item list-style">

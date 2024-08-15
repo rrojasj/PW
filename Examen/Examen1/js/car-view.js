@@ -10,6 +10,8 @@ window.addEventListener('load', () => {
     getImage(idAutoValue);
     getInformation(idAutoValue);
     showUpcomingCars();
+
+    window.showUpcomingReservationForm = showUpcomingReservationForm;
     
     window.changeMainImg = changeMainImg;
 
@@ -63,7 +65,8 @@ export function getInformation(idAuto){
     var transmisionContainer = document.getElementById('car-transmision');
 
     var quoteBtn = document.getElementById('quote-btn');
-    var reserveBtn = document.getElementById('reserve-btn');
+    var reserveNewUsedBtn = document.getElementById('reserve-used-new-car-btn');
+    var reserveUpcomingBtn = document.getElementById('reserve-upcoming-car-btn');
     
     /********* Variables globales *********/
     var marca = document.getElementById('car-brand');
@@ -88,17 +91,17 @@ export function getInformation(idAuto){
             traccion= allCars[i].traccion;
             transmision= allCars[i].transmision;
             quoteBtn.id = allCars[i].idAuto;
-            reserveBtn.id = allCars[i].idAuto;
+            reserveNewUsedBtn.id = allCars[i].idAuto;
             
             quoteBtn.id = `${allCars[i].idAuto}`;
-            reserveBtn.id = `${allCars[i].idAuto}`;
+            reserveNewUsedBtn.id = `${allCars[i].idAuto}`;
 
             // Add the click event listener to the Quote button
             quoteBtn.addEventListener('click', () => {
                 goToCarQuotation(allCars[i].idAuto);
             });
-            // Add the click event listener to the Reserve button
-            reserveBtn.addEventListener('click', () => {
+            // Add the click event listener to the Reserve new or used car button
+            reserveNewUsedBtn.addEventListener('click', () => {
                 goToCarReservation(allCars[i].idAuto);
             });
             
@@ -209,7 +212,7 @@ export function showUpcomingCars(){
                         <p class="col-6 fw-light text-center">${traccion}</p>
                         <p class="col-6 fw-light text-center">${transmision}</p>
                     </div>
-                    <a class="btn btn-outline-secondary" onclick="showReservationForm(${idAuto})"><i class="fa-solid fa-money-check-dollar"></i> Reservar</a>
+                    <button id="${idAuto}" type="button" class="car-forms-btn car-actions-upcoming-btn btn btn-outline-secondary" onclick="showUpcomingReservationForm(this.id)"><i class="fa-solid fa-money-check-dollar"></i> Reservar</button>
                 </div>
             </div>
         `
@@ -224,5 +227,10 @@ function goToCarQuotation(idAuto) {
 
 // Function to handle the redirection to Reservation
 function goToCarReservation(idAuto) {
+    window.location.href = `reservation.html?page=${idAuto}`;
+}
+
+// Function to handle the redirection to Reservation
+export function showUpcomingReservationForm(idAuto) {
     window.location.href = `reservation.html?page=${idAuto}`;
 }

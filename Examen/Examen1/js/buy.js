@@ -94,7 +94,6 @@ function showCars(carsArray) {
             currency: 'USD',
         });
         var formattedPrice = usDollar.format(precio);
-        console.log(carsArray[2].precio); //23844
 
         // Mileage format with comma
         var formattedMileage = (millas.toLocaleString());

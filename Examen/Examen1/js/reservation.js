@@ -1,4 +1,6 @@
 import { allCars, newCars, usedCars } from "./cars-data.js";
+import * as generalFunctions from './general-functions.js';
+
 
 /** 
  * @description Función que hace que al cargar la página se muestre el auto y su información requerida
@@ -11,8 +13,9 @@ window.addEventListener('load', () => {
     getCarReservationInfo(idAutoValue);
     getReservationValues(idAutoValue);
 
-    window.sendReservationFormData = sendReservationFormData;
-    window.calculateTotalAmount = calculateTotalAmount;
+    window.confirmReservation = confirmReservation;
+    window.calculateReservationBalance = calculateReservationBalance;
+    window.viewReservations = viewReservations;
 
 });
 
@@ -40,45 +43,16 @@ document.querySelectorAll('.accordion-title-rs').forEach(item => {
     });
 });
 
-/********** Función: Obtener los valores por defecto de Leasing **********/
-export function getReservationValues(idAuto) {
-
-    // Get all input element IDs
-    var totalPrice = getCarprice(idAuto);
-    var formattedPrice = convertPrice(totalPrice);
-    console.log(formattedPrice);
-    var totalPriceInput = document.getElementById('rs-form-subtotal');
-
-    totalPriceInput.value = formattedPrice;   
-}
-
-export function calculateTotalAmount(){
-
-    var subtotal = document.getElementById('rs-form-subtotal').value;
-    var cuotaInicial = document.getElementById('rs-form-initial-payment').value;
-
-    var discountApplied = getDiscountValue(cuotaInicial);
-    var discountInput = document.getElementById('rs-form-discount');
-    discountInput.value = discountApplied + "%";
-
-    var totalAmountInput = document.getElementById('rs-form-total-amount');
-    var totalAmount = getTotalAmount(subtotal, discountApplied);
-
-    var numTotal = parseFloat(totalAmount);
-    
-    var formattedAmount = convertPrice(numTotal);
-    totalAmountInput.value = formattedAmount.toString();
-}
-
-function convertPrice(amount) {
-    var usDollar = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-    });
-    var formattedPrice = usDollar.format(amount);
-
-    return formattedPrice
-}
+/********** Función: Verifica cambios en el input de cuota inicial Fn **********/
+var inputCuotaInicial = document.getElementById('form-rs-payment');
+var sendFnFormBtn = document.getElementById('reserve-btn');
+inputCuotaInicial.addEventListener('change', function() {
+    if (inputCuotaInicial.value == '') {
+        document.getElementById('rs-form-discount').value = '';
+        document.getElementById('rs-form-balance').value = '';
+        sendFnFormBtn.disabled = true;
+    }
+})
 
 /********** Función: Obtener la imagen del auto seleccionado **********/
 export function getCarReservationInfo(idAuto){
@@ -152,51 +126,138 @@ export function getCarReservationInfo(idAuto){
     transmisionContainer.textContent = transmision;
 }
 
-/********** Función: Obtener el precio del auto actual **********/
-function getCarprice(idAuto){
+/********** Función: Obtener los valores por defecto de Leasing **********/
+export function getReservationValues(idAuto) {
 
-    var totalPrice;
+    // Get all input element IDs
+    var totalPrice = generalFunctions.getCarprice(idAuto);
+    var formattedPrice = generalFunctions.convertPrice(totalPrice);
+    console.log(formattedPrice);
+    var totalPriceInput = document.getElementById('rs-form-subtotal');
 
-    // Get the price value
-    for (var i = 0; i < allCars.length; i++) {
-        if (allCars[i].idAuto === idAuto) {
-            totalPrice = allCars[i].precio;
-            break;
-        }
-    }
-    return totalPrice;
+    totalPriceInput.value = formattedPrice;   
 }
+
+/********** Section: Validar que el formato del cédula esté correcto **********/
+const cedulaInput = document.getElementById('form-rs-id');
+const cedulaErrorMessage = document.getElementById('error-rs-id');
+
+/********** Función: Formatea el Número de cédula **********/
+cedulaInput.addEventListener('input', function() {
+    var cedula = this.value.replace(/\D/g, '');
+
+    if (cedula.length > 1) {
+        cedula = cedula.slice(0, 1) + '-' + cedula.slice(1);
+    }
+    if (cedula.length > 6) {
+        cedula = cedula.slice(0, 6) + '-' + cedula.slice(6);
+    }
+    if (cedula.length > 11) {
+        cedula = cedula.slice(0, 11);
+    }
+    this.value = cedula;
+});
+
+/********** Función: Valida y notifica si el campo está incorrecto **********/
+cedulaInput.addEventListener('blur', function() {
+    var cedula = this.value.replace(/\D/g, '');
+
+    if (cedula.length !== 9) {
+        cedulaErrorMessage.textContent = 'ID inválido';
+    } else {
+        cedulaErrorMessage.textContent = '';
+    }
+});
+
+/********** Section: Validar que el formato del teléfono esté correcto **********/
+const phoneNumberInput = document.getElementById('form-rs-phone');
+const phoneNumberErrorMessage = document.getElementById('error-rs-phone');
+
+/********** Función: Formatea el Número de teléfono **********/
+phoneNumberInput.addEventListener('input', function() {
+    let phoneNumber = this.value.replace(/\D/g, '');
+
+    // Add the hyphen after the 4th digit
+    if (phoneNumber.length > 4) {
+        phoneNumber = phoneNumber.slice(0, 4) + '-' + phoneNumber.slice(4);
+    }
+
+    // Update the input value with the formatted phone number
+    this.value = phoneNumber;
+});
+
+/********** Función: Valida y notifica si el campo está incorrecto **********/
+phoneNumberInput.addEventListener('blur', function() {
+    let phoneNumber = this.value.replace(/\D/g, '');
+
+    if (phoneNumber.length !== 8) {
+        phoneNumberErrorMessage.textContent = 'Inválido! Debe ser de 8 dígitos.';
+    } else {
+        phoneNumberErrorMessage.textContent = '';
+    }
+});
+
+/********** Section: Validar que el correo electrónico esté correcto **********/
+function validateEmail(email) {
+    // Expresión regular para validar el formato del email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+    // Verifica si el email coincide con la expresión regular
+    if (emailRegex.test(email)) {
+      return true; // El email es válido
+    } else {
+      return false; // El email no es válido
+    }
+}
+const emailInput = document.getElementById('form-rs-email');
+const emailErrorMessage = document.getElementById('error-rs-email');
+emailInput.addEventListener('blur', function() {
+    const email = emailInput.value.trim();
+    if (!validateEmail(email)) {
+        emailErrorMessage.textContent = 'Ingrese un correo válido.';
+        emailErrorMessage.style.display = 'block';
+    } else {
+        emailErrorMessage.style.display = 'none';
+    }
+});
+
+/********** Section: Validar que el checkbox esté chequeado **********/
+const acknowledgeCheckbox = document.getElementById('acknowledge-checkbox');
+acknowledgeCheckbox.addEventListener('change', function() {
+    if (this.checked) {
+        this.classList.remove('missing-required');
+    } else {
+        this.classList.add('missing-required');
+    }
+});
 
 /********** Función: Verificar que los campos de leasing requeridos estén completos **********/
 export function validateReservationInputs() {
 
-    var allValid = true; // Assume all fields are valid initially
-
-    // Get all input elements and the select element
+    var allValid = true;
     var fields = [
-        { id: 'form-name', name: 'Nombre' },
-        { id: 'form-lastname1', name: 'Primer Apellido' },
-        { id: 'form-lastname2', name: 'Segundo Apellido' },
-        { id: 'form-email', name: 'Email' }, // updated ID
-        { id: 'ls-form-precio', name: 'Precio' },
-        { id: 'ls-form-cuota-inicial', name: 'Cuota Inicial' },
-        { id: 'buying-option-select', name: 'Método de compra' },
-        { id: 'ls-form-plazo', name: 'Plazo en meses' }
+        { id: 'form-rs-id', name: 'Número de cédula' },
+        { id: 'form-rs-name', name: 'Nombre completo' },
+        { id: 'form-rs-phone', name: 'Nombre completo' },
+        { id: 'form-rs-email', name: 'Email' },
+        { id: 'form-rs-payment', name: 'Monto de reservación' },
+        { id: 'acknowledge-checkbox', name: 'Checkbox', type: 'checkbox' }
     ];
-
     fields.forEach(field => {
         var input = document.getElementById(field.id);
-
-        // Check if the input was found
         if (!input) {
             console.error(`Element with ID '${field.id}' not found.`);
             allValid = false;
             return;
         }
-
-        // Check if the field is empty or has the default option selected
-        if (input.tagName === 'SELECT') {
-            // For select elements, check if the selected value is the default option
+        if (field.type === 'checkbox') {
+            if (!input.checked) {
+                input.classList.add('missing-required');
+                allValid = false;
+            } else {
+                input.classList.remove('missing-required');
+            }
+        } else if (input.tagName === 'SELECT') {
             if (input.value === 'Seleccione una opción:' || input.value === '') {
                 input.classList.add('missing-required');
                 allValid = false;
@@ -204,7 +265,6 @@ export function validateReservationInputs() {
                 input.classList.remove('missing-required');
             }
         } else {
-            // For other input elements, check if the value is empty
             if (input.value.trim() === '') {
                 input.classList.add('missing-required');
                 allValid = false;
@@ -213,151 +273,250 @@ export function validateReservationInputs() {
             }
         }
     });
-
     return allValid;
 }
 
-/********** Función: Obtener el descuento de acuerdo al monto del auto **********/
-function getDiscountValue(initialPayment) {
+export function calculateReservationBalance(){
 
-    var discountValue;
+    var valid = validateReservationInputs();
 
-    if(initialPayment >= 5000 && initialPayment < 8000){
-        discountValue = 2;
-    } else if (initialPayment >= 8000 && initialPayment < 11000) {
-        discountValue = 3;
-    } else if (initialPayment >= 11000) {
-        discountValue = 5;
+    if (valid){
+        var subtotal = document.getElementById('rs-form-subtotal').value;
+        const carTotalValue = parseFloat(subtotal.replace(/[^0-9.-]+/g, ""));
+    
+        var rsInitialPayment = document.getElementById('form-rs-payment').value;
+
+        if(carTotalValue > rsInitialPayment) {
+
+            console.log("Precio total del auto: " + carTotalValue);
+
+            var discountApplied = generalFunctions.getDiscountValue(rsInitialPayment, "rs");
+            console.log("Descuento que se aplica: " + discountApplied);
+
+            var discountInput = document.getElementById('rs-form-discount');
+            discountInput.value = discountApplied + "%";
+
+            var discountAppliedAmount = generalFunctions.getTotalAmount(carTotalValue, discountApplied);
+
+            var totalBalance = discountAppliedAmount - rsInitialPayment;
+        
+            var balanceInput = document.getElementById('rs-form-balance');
+            
+            var formattedAmount = generalFunctions.convertPrice(totalBalance);
+            balanceInput.value = formattedAmount.toString();       
+            
+            document.getElementById('reserve-btn').removeAttribute('disabled');
+            
+            Swal.fire({
+                icon: 'success',
+                title: 'Información',
+                html: 'Saldo calculado<br>Al reservar se enviará la información por email.',
+                customClass: {
+                    confirmButton: 'custom-confirm-btn car-forms-btn car-actions-btn btn btn-outline-secondary'
+                }
+            });
+        } else {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Información',
+                text: 'La cuota inicial debe ser menor al precio total',
+                customClass: {
+                  confirmButton: 'custom-confirm-btn car-forms-btn car-actions-btn btn btn-outline-secondary'
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('ls-form-cuota-inicial').value = '';
+                }
+            });
+        }
     } else {
-        discountValue = 0;
-    }
-    return discountValue;
-}
-
-/********** Función: Obtener el monto total con descuento aplicado **********/
-function getTotalAmount(price, discount) {
-    var totalDiscounted = price - (price*(discount/100));
-
-    return totalDiscounted;
-}
-
-/********** Función: Send Leasing form **********/
-// Cuenta: robjimn13@gmail.com
-export function sendReservationFormData() {
-    // Get form data
-    var nombre = document.getElementById('form-name').value;
-    var apellido1 = document.getElementById('form-lastname1').value;
-    var apellido2 = document.getElementById('form-lastname2').value;
-    var email = document.getElementById('form-email').value;
-    var telefono = document.getElementById('form-tel').value;
-    var precioTotal = document.getElementById('ls-form-precio').value;
-    var cuotaMensual = document.getElementById('ls-form-cuota-mensual').value;
-    var valorResidual = document.getElementById('ls-form-valor-residual').value;
-    var plazo = document.getElementById('ls-form-plazo').value;
-    
-    // Get additional car data
-    var carBrand = document.getElementById('quote-car-brand').innerText;
-    var carModel = document.getElementById('quote-car-model').innerText;
-    var carPrice = document.getElementById('quote-car-price').innerText;
-    var carYear = document.getElementById('quote-car-year').innerText;
-    var carMiles = document.getElementById('quote-car-miles').innerText;
-    var carType = document.getElementById('quote-car-type').innerText;
-    var carColor = document.getElementById('quote-car-color').innerText;
-    var carDrivetrain = document.getElementById('quote-car-drivetrain').innerText;
-    var carTransmission = document.getElementById('quote-car-transmision').innerText;
-    
-    // Need conversions
-    var metodoCompra = document.getElementById('buying-option-select').value;
-    metodoCompra = metodoCompra.charAt(0).toUpperCase() + metodoCompra.slice(1);
-    
-    var cuotaInicial = document.getElementById('ls-form-cuota-inicial').value;
-    var formattedPrice = convertPrice(cuotaInicial);
-
-    // Data parameters
-    var dataParameters = {
-        nombre: nombre,
-        apellido_1: apellido1,
-        apellido_2: apellido2,
-        email: email,
-        telefono: telefono,
-        metodo_compra: metodoCompra,
-        precio_total: precioTotal,
-        cuota_inicial: formattedPrice,
-        valor_residual: valorResidual,
-        plazo: plazo,
-        cuota_mensual: cuotaMensual,
-        car_brand: carBrand,
-        car_model: carModel,
-        car_price: carPrice,
-        car_year: carYear,
-        car_miles: carMiles,
-        car_type: carType,
-        car_color: carColor,
-        car_drivetrain: carDrivetrain,
-        car_transmission: carTransmission
-    }
-
-    emailjs.send('service_g9qtbu8', 'template_zd6ixz8', dataParameters, 'IWfVemPdMsYaXb9cz')
-    .then(function(response) {
-        console.log('Success:', response);
-        cleanInputs
         Swal.fire({
-            icon: 'success',
-            title: 'Cotización enviada',
-            html: 'Se han enviado los detalles solicitados.<br>Verifique su correo electrónico.',
+            icon: 'warning',
+            title: 'Información',
+            text: 'Debe llenar todos los campos requeridos',
             customClass: {
                 confirmButton: 'custom-confirm-btn car-forms-btn car-actions-btn btn btn-outline-secondary'
             }
-        }).then((result) => {
-            if(result.isConfirmed) {
-                window.location.reload();
-                cleanInputs();
-            }
-        })
-    }, function(error) {
-        console.log('Error:', error);
-    });
+        });
+    }
+
 }
 
 /********** Función: Limpiar los datos del formulario **********/
-function cleanInputs () {
-    var nombre = document.getElementById('form-name');
-    var apellido1 = document.getElementById('form-lastname1');
-    var apellido2 = document.getElementById('form-lastname2');
-    var email = document.getElementById('form-email');
-    var telefono = document.getElementById('form-tel');
-    var metodoCompra = document.getElementById('buying-option-select');
-
-    // Leasing
-    var lsPlazo = document.getElementById('ls-form-plazo');
-    var lsCuotaInicial = document.getElementById('ls-form-cuota-inicial');
-    var lsCuotaMensual = document.getElementById('ls-form-cuota-mensual');
-
-    // Financiamiento
-    var fnPlazo = document.getElementById('fn-form-plazo');
-    var fnCuotaInicial = document.getElementById('fn-form-cuota-inicial');
-    var fnCuotaMensual = document.getElementById('fn-form-cuota-mensual');
+function cleanRSInputs () {
+    var cedula = document.getElementById('form-rs-id');
+    var nombre = document.getElementById('form-rs-name');
+    var telefono = document.getElementById('form-rs-phone');
+    var email = document.getElementById('form-rs-email');
+    var montoReserva = document.getElementById('form-rs-payment');
+    var descuento = document.getElementById('rs-form-discount');
+    var saldo = document.getElementById('rs-form-balance');
 
     // General
+    cedula.value = "";
     nombre.value = "";
-    apellido1.value = "";
-    apellido2.value = "";
-    email.value = "";
     telefono.value = "";
-    metodoCompra.value = "Método de compra:"
-    
-    // Leasing
-    lsPlazo = "Seleccione:"
-    lsCuotaInicial.value = "";
-    lsCuotaMensual.value = "";
+    email.value = "";
+    montoReserva.value = "";
+    descuento.value = "";
+    saldo.value = "";
+}
 
-    // Financiamiento
-    fnPlazo = "Seleccione:"
-    fnCuotaInicial.value = "";
-    fnCuotaMensual.value = "";
+/********** Función: Send reservation form **********/
+// Cuenta: robjimn13@gmail.com
+export function confirmReservation() {
 
-    // var precioTotal = document.getElementById('ls-form-precio');
-    // var valorResidual = document.getElementById('ls-form-valor-residual');
+    var valid = validateReservationInputs();
 
+    if(valid){
+        // Get form data
+        var cedula = document.getElementById('form-rs-id').value;
+        var nombre = document.getElementById('form-rs-name').value;
+        var email = document.getElementById('form-rs-email').value;
+        var telefono = document.getElementById('form-rs-phone').value;
+        var subtotal = document.getElementById('rs-form-subtotal').value;
+        var montoReservacion = document.getElementById('form-rs-payment').value;
+        var descuento = document.getElementById('rs-form-discount').value;
+        var saldo = document.getElementById('rs-form-balance').value;
+
+        
+        // Get additional car data
+        var carBrand = document.getElementById('quote-car-brand').innerText;
+        var carModel = document.getElementById('quote-car-model').innerText;
+        var carPrice = document.getElementById('quote-car-price').innerText;
+        var carYear = document.getElementById('quote-car-year').innerText;
+        var carMiles = document.getElementById('quote-car-miles').innerText;
+        var carType = document.getElementById('quote-car-type').innerText;
+        var carColor = document.getElementById('quote-car-color').innerText;
+        var carDrivetrain = document.getElementById('quote-car-drivetrain').innerText;
+        var carTransmission = document.getElementById('quote-car-transmision').innerText;
+        
+        var formattedPrice = generalFunctions.convertPrice(montoReservacion);
+
+        var urlParams = new URLSearchParams(window.location.search);
+        var idAutoValue = urlParams.get('page');
+
+        var newReservationForm = {
+            cedula: cedula,
+            nombre: nombre,
+            email: email,
+            telefono: telefono,
+            subtotal: subtotal,
+            monto_reserva: formattedPrice,
+            descuento: descuento,
+            saldo: saldo,
+            car_brand: carBrand,
+            car_model: carModel,
+            car_year: carYear,
+            car_miles: carMiles,
+            car_type: carType,
+            car_color: carColor,
+            car_drivetrain: carDrivetrain,
+            car_transmission: carTransmission
+        }
+
+        var newReservationLS = {
+            cedula: cedula,
+            nombre: nombre,
+            email: email,
+            telefono: telefono,
+            car_brand: carBrand,
+            car_model: carModel,
+            subtotal: subtotal,
+            monto_reserva: formattedPrice,
+            descuento: descuento,
+            saldo: saldo,
+        }
+
+        pushReservationLS(newReservationLS);
+        cleanRSInputs();
+
+        emailjs.send('service_ycxgca3', 'template_reservation', newReservationForm, 'nNPY8_FeU2vhukBjB')
+        .then(function(response) {
+            console.log('Success:', response);
+            Swal.fire({
+                icon: 'success',
+                title: 'Cotización enviada',
+                html: 'Se ha completado la reserva.<br>Verifique su correo electrónico.',
+                customClass: {
+                    confirmButton: 'custom-confirm-btn car-forms-btn car-actions-btn btn btn-outline-secondary'
+                }
+            }).then((result) => {
+                if(result.isConfirmed) {
+                    window.location.reload();
+                }
+            })
+        }, function(error) {
+            console.log('Error:', error);
+        });
+    } else {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Información',
+            text: 'Debe llenar todos los campos requeridos',
+            customClass: {
+                confirmButton: 'custom-confirm-btn car-forms-btn car-actions-btn btn btn-outline-secondary'
+            }
+        });
+    }
+}
+
+/********** Función: Agregar la nueva reserva a LocalStorage **********/
+function pushReservationLS (newReservation) {
+
+    var reservationsInfoJSON = localStorage.getItem('reservationsDataLS');
+    var reservationsInfoJS = JSON.parse(reservationsInfoJSON);
+
+    reservationsInfoJS.push(newReservation);
+
+    var updatedReservationsJS = JSON.stringify(reservationsInfoJS);
+
+    localStorage.setItem('reservationsDataLS', updatedReservationsJS);
+
+    console.log(localStorage.getItem('reservationsDataLS'));
 
 }
+
+/********** Función: Redirecciona a la pégina de reservas **********/
+export function viewReservations() {
+    Swal.fire({
+      title: 'Redireccionando...',
+      html: `
+        <div class="loading-spinner">
+          <div class="spinner"></div>
+          <span>Cargando...</span>
+        </div>
+      `,
+      icon: 'info',
+      timer: 3000,
+      showConfirmButton: false
+    }).then(() => {
+      window.location.href = "reservations-current.html";
+    });
+}
+
+
+
+// New upcoming Feature
+// removeAutoDataCars(idAutoValue);
+// window.location.href = "buy.html";
+// function removeAutoDataCars (idAuto) {
+    
+//     var indexToRemove = newCars.findIndex(obj => obj.idAuto === idAuto);
+
+//     if (indexToRemove !== -1) {
+//         allCars.splice(indexToRemove, 1);
+//         console.log("Auto eliminado de la lista de todos los autos!")
+//     }
+
+//     if (indexToRemove !== -1) {
+//         newCars.splice(indexToRemove, 1);
+//         console.log("Auto eliminado de la lista de Autos nuevos!")
+//     } else {
+//         indexToRemove = usedCars.findIndex(obj => obj.idAuto === idAuto);
+//         if (indexToRemove !== -1) {
+//             usedCars.splice(indexToRemove, 1);
+//             console.log("Auto eliminado de la lista de Autos usados!")
+//         }   
+//     }
+// }

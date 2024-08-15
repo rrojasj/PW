@@ -57,19 +57,6 @@ span.required-info {
     font-size: $px-14;
 }
 
-/****************************** Estilos Validación input ******************************/
-.missing-required {
-    border-color: $color-primary-red !important;
-    background-color: #f1eaea !important;
-}
-
 .custom-confirm-btn {
     width: 150px !important; /* Set your desired width */
 }
-
-// .error-message {
-//     color: $color-primary-red;
-//     font-weight: bold;
-//     margin-top: 5px;
-//     display: none; /* Initially hide the error message */
-// }

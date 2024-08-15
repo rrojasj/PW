@@ -12501,6 +12501,10 @@ p.footer-text {
   width: 22% !important;
 }
 
+.car-actions-upcoming-btn {
+  width: 43% !important;
+}
+
 .car-actions-btn i {
   padding-right: 0.625rem;
 }
@@ -12538,54 +12542,48 @@ button.car-back-btn:hover {
   margin-right: 0;
 }
 
-/****************************** Section: Form ******************************/
+/****************************** Estilos Validación input ******************************/
+.missing-required {
+  border-color: #ba0f0f !important;
+  background-color: #f1eaea !important;
+}
+
 body {
-  height: 100rem;
+  background-color: #EAEAEA !important;
 }
 
-input:disabled {
-  background-color: #f8f9fc !important;
-}
-
-span.required-info {
-  color: #ba0f0f !important;
-}
-
-.input-group-text {
-  color: #818488 !important;
-}
-
-.form-label {
-  color: #818488;
-}
-
-#quotation-img {
-  width: 18.75rem;
-  height: 12.5rem;
-}
-
-.box-properties {
-  margin: 0 0.5rem 0 0.5rem; /* Add some spacing between the elements */
-}
-
-.box-properties i,
-.box-properties span {
-  margin-right: 0.5rem; /* Add some spacing between the icon and the text */
-}
-
-.accordion-properties {
+.loading-spinner {
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-.quote-info-separator {
-  border-top: 0.063rem solid #186F8C;
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+  margin-right: 10px;
 }
 
-.ls-info-text {
-  font-size: 0.875rem;
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.reservation-container {
+  width: 100%;
+  min-height: 80% !important;
+  margin-top: 6.25rem !important;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
-.custom-confirm-btn {
-  width: 150px !important; /* Set your desired width */
-}/*# sourceMappingURL=quotation.css.map */
+.go-back-btn {
+  width: 7%;
+}/*# sourceMappingURL=reservations-current.css.map */

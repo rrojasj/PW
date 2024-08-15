@@ -533,6 +533,10 @@ p.footer-text {
   width: 22% !important;
 }
 
+.car-actions-upcoming-btn {
+  width: 43% !important;
+}
+
 .car-actions-btn i {
   padding-right: 0.625rem;
 }
@@ -568,4 +572,10 @@ button.car-back-btn:hover {
 /* Optional: Remove margin from the last button to avoid extra space at the end */
 .d-flex .car-forms-btn:last-child {
   margin-right: 0;
+}
+
+/****************************** Estilos Validación input ******************************/
+.missing-required {
+  border-color: #ba0f0f !important;
+  background-color: #f1eaea !important;
 }/*# sourceMappingURL=general.css.map */
