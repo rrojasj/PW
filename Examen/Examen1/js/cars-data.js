@@ -50,3 +50,5 @@ export var upcomingCars = [
     },
 ]
 export var allCars = usedCars.concat(newCars, upcomingCars);
+
+// module.exports = { usedCars, newCars, upcomingCars, allCars };
