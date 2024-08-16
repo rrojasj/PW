@@ -189,6 +189,23 @@ p {
     color: $color-palette-6-1;
 }
 
+.secondary-btn {
+    @include base_button($color-palette-5-2);
+}
+
+.secondary-btn:hover {
+    @include base_button($color-palette-5-1);
+}
+
+.secondary-btn a {
+    text-decoration: none !important;
+    color: $color-palette-1-1;
+}
+
+.secondary-btn a:hover {
+    color: $color-palette-1-1;
+}
+
 /****************************** Estilos Switch de lenguaje ******************************/
 
 .language-switch {

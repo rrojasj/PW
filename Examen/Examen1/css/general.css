@@ -84,6 +84,41 @@ p {
   color: #EAEAEA;
 }
 
+.secondary-btn {
+  border-radius: 0.313rem;
+  background-color: #FFFFAD !important;
+  color: #CCCCCC;
+  cursor: pointer;
+  font-size: 1.5 rem;
+  padding: 0.2rem 1.3rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "Noto Sans", sans-serif;
+  transition: background-color 0.5s ease-in, color 0.5s ease-in;
+}
+
+.secondary-btn:hover {
+  border-radius: 0.313rem;
+  background-color: #FFFF63 !important;
+  color: #CCCCCC;
+  cursor: pointer;
+  font-size: 1.5 rem;
+  padding: 0.2rem 1.3rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "Noto Sans", sans-serif;
+  transition: background-color 0.5s ease-in, color 0.5s ease-in;
+}
+
+.secondary-btn a {
+  text-decoration: none !important;
+  color: #0F4557;
+}
+
+.secondary-btn a:hover {
+  color: #0F4557;
+}
+
 /****************************** Estilos Switch de lenguaje ******************************/
 .language-switch {
   position: relative;
