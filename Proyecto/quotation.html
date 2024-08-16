@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>AutoSpot - Cotización</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="imgs/pw_e1_favicon_wb_transp_300x200.png" type="image/x-con">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/quotation.css">
+        <link rel="stylesheet" href="css/rules.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body>
+
+    <!-- Sección: Header -->
+    <header>
+        <!-- sticky-top  aparece el menu al desplazarce -->
+        <nav class="navbar navbar-expand-lg nav-style fixed-top">
+            <!-- probar con container-fluid -->
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand logo" href="index.html">
+                    <!-- <h4 class="text-white">Empresa XYZ</h4> -->
+                    <img src="imgs/pw_e1_logo_db1_transp_200x40.png" alt="Logo AutoSpot" class="img-fluid">
+                </a>
+                <!-- Menú hamburguesa -->
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Contenido del menú -->
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <!-- estilos de menu: mx-auto ml-auto mr-auto-->
+                    <!-- centrar opciones: text-center -->
+                    <ul class="navbar-nav mx-auto mb-2 mb-md-0 text-center">
+                        <li class="nav-item">
+                            <a data-translate="optionMenu1" data-scroll class="nav-link text-white option-menu" aria-current="page" href="home.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-translate="optionMenu2" data-scroll class="nav-link text-white option-menu" aria-current="page" href="buy.html">Comprar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-translate="optionMenu3" data-scroll class="nav-link text-white option-menu" aria-current="page" href="#vender">Vender</a>
+                        </li>
+
+                        <!-- Submenu Autos -->
+                        <li class="nav-item dropdown">
+                            <a data-translate="optionMenu4" class="nav-link dropdown-toggle text-white option-menu" id="desplegable1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Autos</a>
+                            <div class="dropdown-menu text-left" aria-labelledby="desplegable1">
+                                <a data-translate="optionMenu4_1" class="dropdown-item option-menu" href="classics.html">Clásicos</a>
+                                <a data-translate="optionMenu4_2" class="dropdown-item option-menu" href="#">Nuevos</a>
+                                <a data-translate="optionMenu4_3" class="dropdown-item option-menu" href="#">Usados</a>
+                            </div>
+                        </li>
+                        
+                        <!-- Submenu Información -->
+                        <li class="nav-item dropdown">
+                            <a data-translate="optionMenu5" class="nav-link dropdown-toggle text-white option-menu" id="desplegable1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Información</a>
+                            <div class="dropdown-menu text-left" aria-labelledby="desplegable1">
+                                <a data-translate="optionMenu5_1" class="dropdown-item option-menu" href="credit.html">Crédito</a>
+                                <a data-translate="optionMenu5_2" class="dropdown-item option-menu" href="about.html">Nosotros</a>
+                                <a data-translate="optionMenu5_3" class="dropdown-item option-menu" href="/">Sucursales</a>
+                                <a data-translate="optionMenu5_4" class="dropdown-item option-menu" href="/">Contáctenos</a>
+                                <a data-translate="optionMenu5_5" class="dropdown-item option-menu" href="showroom.html">Showroom virtual</a>
+                            </div>
+                        </li>
+
+                        <!-- Submenu Galería -->
+                        <li class="nav-item dropdown">
+                            <a data-translate="optionMenu6" class="nav-link dropdown-toggle text-white option-menu" id="desplegable1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Galería</a>
+                            <div class="dropdown-menu text-left" aria-labelledby="desplegable1">
+                                <a data-translate="optionMenu6_1" class="dropdown-item option-menu" href="#">Autos Nuevos</a>
+                                <a data-translate="optionMenu6_2" class="dropdown-item option-menu" href="#">Autos Usados</a>
+                                <a data-translate="optionMenu6_3" class="dropdown-item option-menu" href="classics.html">Autos Clásicos</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+    </header>
+
+    <div class="pt-5"></div>
+
+    <!-- contenido principal -->
+    <div class="pt-5"></div>
+
+    <section class="container car-view pt-5">
+        <h1 id="car-brand" class="text-uppercase font-stretch-condensed text-center">Solicitud de Cotización</h1>
+
+        <div class="pt-5">
+            <p class="text-center">¡Gracias por considerar AutoSpot para la compra de su próximo vehículo!
+            </p>
+            <p class="text-center fw-light">Complete los campos a continuación con la información solicitada. Recibirá una cotización detallada en su correo electrónico según sus preferencias y necesidades.</p>
+        </div>
+
+        <!-- Información Personal -->
+        <div class="pt-5">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <form id="quotation-form">
+                        <div class="row">
+                            <p class="fs-3">Información personal:</p>
+                            <p class="fw-light ls-info-text">Llene los campos en blanco *</p>
+                            <div class="col-sm-12 col-md-4 col-lg-4">
+                                <label for="form-name" class="form-label">Nombre:<span class="required-info">*</span></label>
+                                <input type="text" name="nombre" class="form-control" id="form-name" aria-describedby="nombre">
+                            </div>
+                            <div class="col-sm-12 col-md-4 col-lg-4">
+                                <label for="form-lastname1" class="form-label">Primer Apellido<span class="required-info">*</span></label>
+                                <input type="text" name="apellido_1" class="form-control" id="form-lastname1" aria-describedby="first last name">
+                            </div>
+                            <div class="col-sm-12 col-md-4 col-lg-4">
+                                <label for="form-lastname2" class="form-label">Segundo Apellido<span class="required-info">*</span></label>
+                                <input type="text" name="apellido_2" class="form-control" id="form-lastname2" aria-describedby="second last name">
+                            </div>
+                        </div>
+                        <div class="row pt-3">
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                                <label for="form-email" class="form-label">Email address<span class="required-info">*</span></label>
+                                <input type="email" name="email" class="form-control" id="form-email" aria-describedby="email">
+                                <div id="email-error" style="color: #ba0f0f; font-size: smaller;"></div>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                                <label for="form-tel" class="form-label">Teléfono:</label>
+                                <input type="tel" maxlength="9" minlength="9" name="telefono" class="form-control" id="form-tel" aria-describedby="telephone">
+                                <div id="phone-number-error" style="color: #ba0f0f; font-size: smaller;"></div>
+                            </div>
+                        </div>
+                        <div class="pt-3"></div>
+                        <div class="quote-info-separator pb-3"></div>
+
+                        <p class="fs-3">Detalles de cotización:</p>
+
+                        <select id="buying-option-select" name="metodo_compra" class="form-select" aria-label="Default select example">
+                            <option selected>Método de compra:</option>
+                            <option value="leasing">Leasing</option>
+                            <option value="contado">Contado</option>
+                            <option value="financiamiento">Financiamento</option>
+                        </select>
+
+                        <!-- Sección: Leasing -->
+                        <div id="section-leasing" class="pt-5 d-none">
+                            <div class="row">
+                                <p class="fs-5">Cálculo aproximado:</p>
+                                <p class="fw-light ls-info-text">Llene los campos en blanco *</p>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                <label for="ls-form-precio" class="form-label">Precio</label>
+                                    <input type="text" name="precio_total" class="form-control" id="ls-form-precio" aria-describedby="precio" disabled>
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <label for="ls-form-cuota-inicial" class="form-label">Cuota inicial $<span class="required-info">*</span></label>
+                                    <input type="number" name="cuota_inicial" class="form-control" id="ls-form-cuota-inicial" aria-describedby="Cuota inicial">
+                                    <div id="ls-number-error" style="color: #ba0f0f; font-size: smaller;"></div>
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <label for="ls-form-valor-residual" class="form-label">Valor residual</label>
+                                    <input type="text" name="valor_residual" class="form-control" id="ls-form-valor-residual" aria-describedby="Valor Residual" disabled>
+                                </div>
+                            </div>
+                            <div class="row pt-3">
+                                <h6 class="pt-3">Tasa de interés fijo</h6>
+                                <p class="fw-light ls-info-text">Entre 24 y 36 meses 11.8%. Entre 48 y 60 meses 13.2%</p>
+                                <div class="col-sm-12 col-md-6 col-lg-4">
+                                    <label for="ls-form-plazo" class="form-label">Plazo en meses<span class="required-info">*</span></label>
+                                    <select id="ls-form-plazo" name="plazo" class="form-select" aria-label="Default select example">
+                                        <option selected>Seleccione:</option>
+                                        <option value="24">24 meses</option>
+                                        <option value="36">36 meses</option>
+                                        <option value="48">48 meses</option>
+                                        <option value="60">60 meses</option>
+                                      </select>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-4">
+                                    <label for="ls-form-tasa-interes" class="form-label">Tasa de interés</label>
+                                    <input type="text" name="tasa_interes" class="form-control" id="ls-form-tasa-interes" aria-describedby="Tasa de interés" disabled>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-4">
+                                    <label for="ls-form-cuota-mensual" class="form-label">Cuota mensual</label>
+                                    <input type="text" name="cuota_mensual" class="form-control" id="ls-form-cuota-mensual" aria-describedby="Cuota mensual" disabled>
+                                </div>
+                            </div>
+                            <div class="pt-5"></div>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <button id="quote-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" onclick="calculateLsMonthlyRate()">Calcular cuota</button>
+                                <button id="send-ls-data-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" onclick="sendLsFormData()" disabled>Enviar datos</button>
+                            </div>
+                        </div>
+
+                        <!-- Sección: Contado -->
+                        <div id="section-cash-payment" class="pt-5 d-none">
+                            <div class="row">
+                                <p class="fw-light ls-info-text">Las compras de contado tienen promociones con descuentos según el monto.</p>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <p class="fw-light ls-info-text">Mayor a $10,000 - 5%</p>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <p class="fw-light ls-info-text">Mayor a $20,000 - 7.5%</p>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <p class="fw-light ls-info-text">Mayor a $30,000 - 11%</p>
+                                    </div>
+                                </div>
+                                <p class="fs-5">Cálculo aproximado:</p>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                <label for="cp-form-subtotal" class="form-label">Subtotal</label>
+                                    <input type="text" name="subtotal" class="form-control" id="cp-form-subtotal" aria-describedby="subtotal">
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <label for="cp-form-discount" class="form-label">Descuento aplicado<span class="required-info">*</span></label>
+                                    <input type="text" name="descuento" class="form-control" id="cp-form-discount" aria-describedby="Descuento" disabled>
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <label for="cp-form-total-amount" class="form-label">Monto total</label>
+                                    <input type="text" name="monto_total" class="form-control" id="cp-form-total-amount" aria-describedby="Monto total" disabled>
+                                </div>
+                            </div>
+                            <div class="pt-3"></div>
+                            <p class="fw-light ls-info-text text-center">Si deseas completar la compra solicita el formulario de negociación.</p>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <button id="quote-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" onclick="sendCPFormData()">Solicitar</button>
+                            </div>
+                        </div>
+
+                        <!-- Sección: Financiamiento -->
+                        <div id="section-financing" class="pt-5 d-none">
+                            <div class="row">
+                                <p class="fs-5">Cálculo aproximado:</p>
+                                <p class="fw-light ls-info-text">Llene los campos en blanco *</p>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                <label for="fn-form-precio" class="form-label">Precio</label>
+                                    <input type="text" name="precio_total" class="form-control" id="fn-form-precio" aria-describedby="precio" disabled>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <label for="fn-form-cuota-inicial" class="form-label">Cuota inicial $<span class="required-info">*</span></label>
+                                    <input type="number" name="cuota_inicial" class="form-control" id="fn-form-cuota-inicial" aria-describedby="Cuota inicial">
+                                    <div id="fn-number-error" style="color: #ba0f0f; font-size: smaller;"></div>
+                                </div>
+                            </div>
+                            <div class="row pt-3">
+                                <h6 class="pt-3">Tasa de interés fijo</h6>
+                                <p class="fw-light ls-info-text">Entre 24 y 36 meses 11.8%. Entre 48 y 60 meses 13.2%</p>
+                                <div class="col-sm-12 col-md-6 col-lg-4">
+                                    <label for="ls-form-plazo" class="form-label">Plazo en meses<span class="required-info">*</span></label>
+                                    <select id="fn-form-plazo" name="plazo" class="form-select" aria-label="Default select example">
+                                        <option selected>Seleccione:</option>
+                                        <option value="24">24 meses</option>
+                                        <option value="36">36 meses</option>
+                                        <option value="48">48 meses</option>
+                                        <option value="60">60 meses</option>
+                                      </select>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-4">
+                                    <label for="fn-form-tasa-interes" class="form-label">Tasa de interés</label>
+                                    <input type="text" name="tasa_interes" class="form-control" id="fn-form-tasa-interes" aria-describedby="Tasa de interés" disabled>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-4">
+                                    <label for="fn-form-cuota-mensual" class="form-label">Cuota mensual</label>
+                                    <input type="text" name="cuota_mensual" class="form-control" id="fn-form-cuota-mensual" aria-describedby="Cuota mensual" disabled>
+                                </div>
+                            </div>
+                            <div class="pt-5"></div>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <button id="quote-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" onclick="calculateFnMonthlyRate()">Calcular cuota</button>
+                                <button id="send-data-fn-btn" type="button" class="car-forms-btn car-actions-btn btn btn-outline-secondary" onclick="sendFnFormData()" disabled>Enviar datos</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="pt-5 d-flex justify-content-center">
+                        <button id="go-back-btn" type="button" class="car-back-btn car-actions-btn btn btn-outline-warning">Volver</button>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <div id="quotation-img-div" class="d-flex justify-content-center">
+                        <!-- Image section -->
+                    </div>
+                    <div>
+                        <div class="car-view-container">
+                            <div>
+                                <h1 id="quote-car-brand" class="text-uppercase font-stretch-condensed text-center"></h1>
+                            </div>
+                            <div>
+                                <h2 id="quote-car-model" class="text-uppercase font-stretch-condensed text-center"></h2>
+                            </div>
+                            <div class="pt-3">
+                                <p class="text-uppercase text-center">Precio</p>
+                            </div>
+                            <div class="car-view-price pb-3">
+                                <h2 id="quote-car-price" class="text-uppercase text-center"></h2>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="box-properties d-flex align-items-center">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <span id="quote-car-year"></span>
+                                </div>
+                                <div class="box-properties d-flex align-items-center">
+                                    <i class="fa-solid fa-dharmachakra"></i>
+                                    <span id="quote-car-miles"></span>
+                                </div>
+                            </div>
+                            <div class="pb-3"></div>
+                            <div class="accordion-properties d-flex justify-content-center">
+                                <div class="accordion">
+                                    <div class="accordion-item">
+                                        <div class="accordion-title text-uppercase">Más Información</div>
+                                        <div class="accordion-content">
+                                            <ul class="list-group">    
+                                                <li class="list-group-item list-style">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <p>Tipo</p>
+                                                        </div>
+                                                        <div id="quote-car-type" class="col-6 d-flex align-items-center">
+                                                            <!-- Tipo de auto -->
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item list-style">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <p>Color</p>
+                                                        </div>
+                                                        <div id="quote-car-color" class="col-6 d-flex align-items-center">
+                                                            <!-- Color de auto -->
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item list-style">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <p>Tracción</p>
+                                                        </div>
+                                                        <div id="quote-car-drivetrain" class="col-6 d-flex align-items-center">
+                                                            <!-- Traccion de auto -->
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item list-style">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <p>Transmision</p>
+                                                        </div>
+                                                        <div id="quote-car-transmision" class="col-6 d-flex align-items-center">
+                                                            <!-- Transmisión de auto -->
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-3">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+         
+    </section>
+
+    <!-- Sección: Footer -->
+    <footer class="footer-style d-flex flex-wrap justify-content-between align-items-center fixed-bottom">
+        <div class="col-sm-12 col-md-4 col-lg-3 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                <img class="ps-5" src="imgs/pw_e1_logo_wb1_transp.png" height="40px" alt="">
+            </a>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 text-center">
+            <p class="footer-text mb-3 mb-md-0 text-center">© 2024 AutoSpot S.A.</>
+        </div>
+        <ul class="nav pe-5 col-md-3 justify-content-end list-unstyled d-flex">
+            <li class="ms-3">
+                <a href="" class="text-muted">
+                    <i class="fa-brands fa-linkedin fa-xl lk-contact-icon"></i>
+                </a>
+            </li>
+            <li class="ms-3">
+                <a href="" class="text-muted">
+                    <i class="fa-brands fa-square-whatsapp fa-xl wa-contact-icon"></i>
+                </a>
+            </li>
+            <li class="ms-3">
+                <a href="" class="text-muted">
+                    <i class="fa-brands fa-square-instagram fa-xl ig-contact-icon"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.13/lottie.min.js"></script>
+    <!-- libreria Lottie JS-->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@0.3.0/dist/lottie-player.js"></script>
+
+    <script type="module" src="js/quotation.js"></script>
+
+</body>
+
+</html>

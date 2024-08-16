@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>AutoSpot - Tour virtual</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="imgs/pw_e1_favicon_wb_transp_300x200.png" type="image/x-con">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/gallery-general.css">
+        <link rel="stylesheet" href="css/rules.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <!-- Sección: Header -->
+    <header>
+        <!-- sticky-top  aparece el menu al desplazarce -->
+        <nav class="navbar navbar-expand-lg nav-style fixed-top">
+            <!-- probar con container-fluid -->
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand logo" href="index.html">
+                    <!-- <h4 class="text-white">Empresa XYZ</h4> -->
+                    <img src="imgs/pw_e1_logo_db1_transp_200x40.png" alt="Logo AutoSpot" class="img-fluid">
+                </a>
+                <!-- Menú hamburguesa -->
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Contenido del menú -->
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <!-- estilos de menu: mx-auto ml-auto mr-auto-->
+                    <!-- centrar opciones: text-center -->
+                    <ul class="navbar-nav mx-auto mb-2 mb-md-0 text-center">
+                        <li class="nav-item">
+                            <a data-scroll class="nav-link text-white option-menu" aria-current="page" href="home.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-scroll class="nav-link text-white option-menu" aria-current="page" href="#comprar">Comprar</a>
+                        </li>
+
+                        <!-- Submenu Autos -->
+                        <li class="nav-item dropdown">
+                            <a data-translate="optionMenu4" class="nav-link dropdown-toggle text-white option-menu" id="desplegable1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Autos</a>
+                            <div class="dropdown-menu text-left" aria-labelledby="desplegable1">
+                                <a data-translate="optionMenu4_1" class="dropdown-item option-menu" href="classics.html">Clásicos</a>
+                                <a data-translate="optionMenu4_2" class="dropdown-item option-menu" href="#">Nuevos</a>
+                                <a data-translate="optionMenu4_3" class="dropdown-item option-menu" href="#">Usados</a>
+                            </div>
+                        </li>
+                        
+                        <!-- Submenu Información -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white option-menu" id="desplegable1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Información</a>
+                            <div class="dropdown-menu text-left" aria-labelledby="desplegable1">
+                                <a class="dropdown-item option-menu" href="credit.html">Crédito</a>
+                                <a class="dropdown-item option-menu" href="about.html">Nosotros</a>
+                                <a class="dropdown-item option-menu" href="offices.html">Sucursales</a>
+                                <a class="dropdown-item option-menu" href="contact-us.html">Contáctenos</a>
+                                <a class="dropdown-item option-menu" href="model-3d.html">Escenario 3D</a>
+                                <a class="dropdown-item option-menu" href="showroom.html">Showroom virtual</a>
+                            </div>
+                        </li>
+
+                        <!-- Submenu Galería -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white option-menu" id="desplegable1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Galería</a>
+                            <div class="dropdown-menu text-left" aria-labelledby="desplegable1">
+                                <a class="dropdown-item option-menu" href="gallery-new.html">Autos Nuevos</a>
+                                <a class="dropdown-item option-menu" href="gallery-used.html">Autos Usados</a>
+                                <a class="dropdown-item option-menu" href="gallery-classics.html">Autos Clásicos</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+    </header>
+
+    <div class="pt-5"></div>
+
+    <section class="container-fluid galeria pt-5">
+        <div class="container">
+            <div class="row pb-5 pt-5">
+                <div class="col-12 text-center">
+                    <h1 class="">Galería general de autos</h1>
+                </div>
+                <p class="text-left pt-5">Utilice el menú desplegable para explorar nuestra colección de vehículos: clásicos, nuevos o usados. Cada categoría cuenta con una galería exclusiva.</p>
+                <div class="col-12">
+                    <!-- COMBO DINAMICO --->
+                    <select name="brand-gallery-select" id="brand-gallery-select" class="form-select form-select-sm">
+                        <option value="" class="opcion0">Seleccionar un tipo de auto:</option>
+                        <option value="new" class="opcion1">Autos Nuevos</option>
+                        <option value="used" class="opcion2">Autos Usados</option>
+                        <option value="classic" class="opcion3">Autos Clásicos</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="pt-5"></div>
+            <!-- Galería Nuevos --->
+            <div class="new-gallery galeriaFotos fondo mb-5">
+                <div class="tz-gallery">
+                    <div class="row text-center">
+                        <div class="col-sm-4 col-md-6 col-lg-4 ">
+                            <div class="">
+                                <a class="" href="imgs/pw_e1_new_gallery_1.webp">
+                                    <img src="imgs/pw_e1_new_gallery_1.webp" alt="Auto Nuevo #1" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Nuevo #1</h3>
+                                    <br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4 ">
+                            <div class="">
+                                <a class="" href="imgs/pw_e1_new_gallery_2.webp">
+                                    <img src="imgs/pw_e1_new_gallery_2.webp" alt="Auto Nuevo #2" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Nuevo #2</h3>
+                                    <br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4">
+                            <div class="">
+                                <a class="" href="imgs/pw_e1_new_gallery_3.webp">
+                                    <img src="imgs/pw_e1_new_gallery_3.webp" alt="Auto Nuevo #2" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Nuevo #3</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4">
+                            <div class="">
+                                <a class="" href="imgs/pw_e1_new_gallery_4.webp">
+                                    <img src="imgs/pw_e1_new_gallery_4.webp" alt="Auto Nuevo #1" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Nuevo #4</h3>
+                                    <br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4">
+                            <div class="">
+                                <a class="" href="imgs/pw_e1_new_gallery_5.webp">
+                                    <img src="imgs/pw_e1_new_gallery_5.webp" alt="Auto Nuevo #2" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Nuevo #5</h3>
+                                    <br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4">
+                            <div class="">
+                                <a class="" href="imgs/pw_e1_new_gallery_6.webp">
+                                    <img src="imgs/pw_e1_new_gallery_6.webp" alt="Auto Nuevo #2" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Nuevo #6</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4 ">
+                            <div class="">
+                                <a class="" href="imgs/pw_e1_new_gallery_7.webp">
+                                    <img src="imgs/pw_e1_new_gallery_7.webp" alt="Auto Nuevo #1" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Nuevo #7</h3>
+                                    <br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4 ">
+                            <div class="">
+                                <a class="" href="imgs/pw_e1_new_gallery_8.webp">
+                                    <img src="imgs/pw_e1_new_gallery_8.webp" alt="Auto Nuevo #2" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Nuevo #8</h3>
+                                    <br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4">
+                            <div class="">
+                                <a class="" href="imgs/pw_e1_new_gallery_9.webp">
+                                    <img src="imgs/pw_e1_new_gallery_9.webp" alt="Auto Nuevo #2" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Nuevo #9</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Galería Usados --->
+            <div class="used-gallery galeriaFotos fondo mb-5">
+                <div class="tz-gallery">
+                    <div class="row text-center">
+                        <div class="col-sm-4 col-md-6 col-lg-4 ">
+                            <div class="">
+                                <a class="" href="imgs/pw_e1_used_gallery_1.webp">
+                                    <img src="imgs/pw_e1_used_gallery_1.webp" alt="Auto Usado #1" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Usado #1</h3>
+                                    <br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4 ">
+                            <div class="">
+                                <a class="" href="imgs/pw_e1_used_gallery_2.webp">
+                                    <img src="imgs/pw_e1_used_gallery_2.webp" alt="Auto Usado #2" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Usado #2</h3>
+                                    <br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4">
+                            <div class="">
+                                <a class="" href="imgs/pw_e1_used_gallery_3.webp">
+                                    <img src="imgs/pw_e1_used_gallery_3.webp" alt="Auto Usado #2" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Usado #3</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4">
+                            <div class="">
+                                <a class="" href="imgs/pw_e1_used_gallery_4.webp">
+                                    <img src="imgs/pw_e1_used_gallery_4.webp" alt="Auto Usado #1" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Usado #4</h3>
+                                    <br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4">
+                            <div class="">
+                                <a class="" href="imgs/pw_e1_used_gallery_5.webp">
+                                    <img src="imgs/pw_e1_used_gallery_5.webp" alt="Auto Usado #2" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Usado #5</h3>
+                                    <br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4">
+                            <div class="">
+                                <a class="" href="imgs/pw_e1_used_gallery_6.webp">
+                                    <img src="imgs/pw_e1_used_gallery_6.webp" alt="Auto Usado #2" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Usado #6</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4 ">
+                            <div class="">
+                                <a class="" href="imgs/pw_e1_used_gallery_7.webp">
+                                    <img src="imgs/pw_e1_used_gallery_7.webp" alt="Auto Usado #1" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Usado #7</h3>
+                                    <br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4 ">
+                            <div class="">
+                                <a class="" href="imgs/pw_e1_used_gallery_8.webp">
+                                    <img src="imgs/pw_e1_used_gallery_8.webp" alt="Auto Usado #2" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Usado #8</h3>
+                                    <br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4">
+                            <div class="">
+                                <a class="" href="imgs/pw_e1_used_gallery_9.webp">
+                                    <img src="imgs/pw_e1_used_gallery_9.webp" alt="Auto Usado #2" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Usado #9</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Galería Clásicos --->
+            <div class="classic-gallery galeriaFotos fondo mb-5">
+                <div class="tz-gallery">
+                    <div class="row text-center">
+                        <div class="col-sm-4 col-md-6 col-lg-4 ">
+                            <div class="cadillac-gallery">
+                                <a class="" href="imgs/pw_e1_classics_gallery_1.webp">
+                                    <img src="imgs/pw_e1_classics_gallery_1.webp" alt="Clásico #1" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Clásico #1</h3>
+                                    <br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4 ">
+                            <div class="mb-gallery">
+                                <a class="" href="imgs/pw_e1_classics_gallery_2.webp">
+                                    <img src="imgs/pw_e1_classics_gallery_2.webp" alt="Clásico #2" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Clásico #2</h3>
+                                    <br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4">
+                            <div class="jaguar-gallery">
+                                <a class="" href="imgs/pw_e1_classics_gallery_3.webp">
+                                    <img src="imgs/pw_e1_classics_gallery_3.webp" alt="Clásico #3" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Clásico #3</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4">
+                            <div class="cadillac-gallery">
+                                <a class="" href="imgs/pw_e1_classics_gallery_4.webp">
+                                    <img src="imgs/pw_e1_classics_gallery_4.webp" alt="Clásico #4" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Clásico #4</h3>
+                                    <br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4">
+                            <div class="mb-gallery">
+                                <a class="" href="imgs/pw_e1_classics_gallery_5.webp">
+                                    <img src="imgs/pw_e1_classics_gallery_5.webp" alt="Clásico #5" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Clásico #5</h3>
+                                    <br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4">
+                            <div class="porsche-gallery">
+                                <a class="" href="imgs/pw_e1_classics_gallery_6.webp">
+                                    <img src="imgs/pw_e1_classics_gallery_6.webp" alt="Clásico #6" class="img-fluid">
+                                </a>
+                                <div class="">
+                                    <h3 class="pt-3">Auto Clásico #6</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4 ">
+                            <div class="vw-gallery">
+                                <a class="" href="imgs/pw_e1_classics_gallery_7.webp">
+                                    <img src="imgs/pw_e1_classics_gallery_7.webp" alt="Clásico #7" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Clásico #7</h3>
+                                    <br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4 ">
+                            <div class="cadillac-gallery">
+                                <a class="" href="imgs/pw_e1_classics_gallery_8.webp">
+                                    <img src="imgs/pw_e1_classics_gallery_8.webp" alt="Clásico #8" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Clásico #8</h3>
+                                    <br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-4">
+                            <div class="ford-gallery">
+                                <a class="" href="imgs/pw_e1_classics_gallery_9.webp">
+                                    <img src="imgs/pw_e1_classics_gallery_9.webp" alt="Clásico #9" class="img-fluid">
+                                </a>
+                                <div class=" ">
+                                    <h3 class="pt-3">Auto Clásico #9</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pb-5"></div>
+        </div>
+    </section>
+    
+
+    <!-- Sección: Footer -->
+    <footer class="footer-style d-flex flex-wrap justify-content-between align-items-center fixed-bottom">
+        <div class="col-sm-12 col-md-4 col-lg-3 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                <img class="ps-5" src="imgs/pw_e1_logo_wb1_transp.png" height="40px" alt="">
+            </a>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 text-center">
+            <p class="footer-text mb-3 mb-md-0 text-center">© 2024 AutoSpot S.A.</>
+        </div>
+        <ul class="nav pe-5 col-md-3 justify-content-end list-unstyled d-flex">
+            <li class="ms-3">
+                <a href="" class="text-muted">
+                    <i class="fa-brands fa-linkedin fa-xl lk-contact-icon"></i>
+                </a>
+            </li>
+            <li class="ms-3">
+                <a href="" class="text-muted">
+                    <i class="fa-brands fa-square-whatsapp fa-xl wa-contact-icon"></i>
+                </a>
+            </li>
+            <li class="ms-3">
+                <a href="" class="text-muted">
+                    <i class="fa-brands fa-square-instagram fa-xl ig-contact-icon"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js "></script>
+    <script>
+        baguetteBox.run('.tz-gallery');
+    </script>
+
+    <script src="js/gallery-all.js"></script>
+
+</body>
+
+</html>
+

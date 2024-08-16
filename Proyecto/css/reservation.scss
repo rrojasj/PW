@@ -1,0 +1,127 @@
+@charset "UTF-8";
+/****************************** Importación de Fuentes Web ******************************/
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "general.scss";
+
+/****************************** Section: Form ******************************/
+
+body {
+    height: 100rem;
+}
+
+input:disabled {
+    background-color: $color-palette-2-2 !important;
+}
+
+span.required-info {
+    color: $color-primary-red !important;
+}
+
+.input-group-text {
+    color: $color-primary-grey !important;
+}
+
+.form-label {
+    color: $color-primary-grey;
+}
+
+
+#quotation-img {
+    width: $px-300;
+    height: $px-200;
+}
+
+.box-properties {
+    margin: 0 0.5rem 0 0.5rem; /* Add some spacing between the elements */
+}
+  
+.box-properties i,
+.box-properties span {
+    margin-right: 0.5rem; /* Add some spacing between the icon and the text */
+}
+
+
+.accordion-properties {
+    display: flex;
+    justify-content: center;
+}
+
+.quote-info-separator {
+    border-top: $px-1 solid $color-palette-1-2;
+}
+
+// Leasing information
+
+.ls-info-text {
+    font-size: $px-14;
+}
+
+/****************************** Estilos Validación input ******************************/
+.missing-required {
+    border-color: $color-primary-red !important;
+    background-color: #f1eaea !important;
+}
+
+.custom-confirm-btn {
+    width: 150px !important; /* Set your desired width */
+}
+
+
+/****************************** Accordion ******************************/
+
+.accordion {
+    width: 45%; /* Poco menos de la mitad del ancho */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+.accordion-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-title-rs {
+    background-color: $color-palette-1-2;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-title-rs:hover {
+    background-color: $color-palette-1-1;
+}
+
+.accordion-title-rs::after {
+    content: '+';
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+.accordion-content p {
+    // padding: 15px 0;
+    margin: 0;
+}
+
+.accordion-item.active .accordion-title-rs::after {
+    transform: rotate(45deg);
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 200px; /* Ajusta esta altura según tu contenido */
+}

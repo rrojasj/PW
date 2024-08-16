@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/****************************** Importación de Fuentes Web ******************************/
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "general.scss";
+
+
+.about-us-banner strong {
+    color: $color-palette-1-1;
+}
+
+.about-us-banner p {
+    // font-weight: lighter;
+    color: $color-secondary-black !important;
+}
+
+#canvas {
+    width: 100%;
+}
+
+.resultado {
+    color: #fff;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.card-title {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.card-text {
+    color: #555;
+}

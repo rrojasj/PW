@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/****************************** Importación de Fuentes Web ******************************/
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+/****************************** Variables ******************************/
+$login-banner-bg-img-url: "../imgs/pw_e1_landing_1.png";
+$login-banner-window-height: 100vh; /* Covers 100% of window's height */
+$login-banner-box-shadow: inset 0 0 0 1000px rgba(0, 0, 0 , 0.4);
+
+$color-primary-white: #fefefe;
+$color-primary-black: #121212;
+$color-primary-red: #f61515;
+$color-primary-green: #088408;
+$color-primary-blue: #0707f1;
+$color-palette-1-1: #0F4557;
+$color-palette-1-2: #186F8C;
+$color-palette-2-1: #FAFAFA;
+$color-palette-2-2: #E0E0E0;
+$color-palette-3-1: #E4FDE1;
+$color-palette-3-2: #B9FAB2;
+$color-palette-4-1: #103194;
+$color-palette-4-2: #1643CA;
+$color-palette-5-1: #FFFF63;
+$color-palette-5-2: #FFFFAD;
+$color-palette-6-1: #EAEAEA;
+$color-palette-6-2: #CCCCCC;
+
+.banner-landing {
+    background-image: url(#{$login-banner-bg-img-url});
+    height: $login-banner-window-height;
+    box-shadow: $login-banner-box-shadow;
+}
+
+h1 {
+    color: $color-palette-2-2 !important;
+}
+
+h3 {
+    color: $color-palette-2-1 !important;
+}

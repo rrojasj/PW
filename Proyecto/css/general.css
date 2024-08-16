@@ -1,0 +1,616 @@
+@charset "UTF-8";
+/****************************** Importación de Fuentes Web ******************************/
+@import url("https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+/****************************** Variables ******************************/
+/****************************** Mixins ******************************/
+/****************************** Estilos Globales ******************************/
+html {
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 3.125rem !important;
+  font-family: "Playfair Display", serif;
+  color: #0F4557 !important;
+}
+
+h2 {
+  font-size: 2.5rem !important;
+  font-family: "Playfair Display", serif;
+  color: #4c4848 !important;
+}
+
+h3 {
+  font-size: 1.875rem !important;
+  font-family: "Playfair Display", serif !important;
+  color: #42799E !important;
+}
+
+h4 {
+  font-size: 1.25rem !important;
+  font-family: "Noto Sans", sans-serif;
+}
+
+li {
+  font-family: "Noto Sans", sans-serif;
+  color: #42799E !important;
+}
+
+p {
+  color: #4c4848;
+}
+
+/****************************** Animation ******************************/
+.custom-animation-duration {
+  animation-duration: 2s !important;
+}
+
+/****************************** Base banner ******************************/
+.main-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-color: aliceblue;
+  background-blend-mode: luminosity;
+}
+
+/****************************** Base button ******************************/
+.primary-btn {
+  border-radius: 0.313rem;
+  background-color: #186F8C !important;
+  color: #CCCCCC;
+  cursor: pointer;
+  font-size: 1.5 rem;
+  padding: 0.2rem 1.3rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "Noto Sans", sans-serif;
+  transition: background-color 0.5s ease-in, color 0.5s ease-in;
+}
+
+.primary-btn:hover {
+  border-radius: 0.313rem;
+  background-color: #0F4557 !important;
+  color: #CCCCCC;
+  cursor: pointer;
+  font-size: 1.5 rem;
+  padding: 0.2rem 1.3rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "Noto Sans", sans-serif;
+  transition: background-color 0.5s ease-in, color 0.5s ease-in;
+  color: #EAEAEA;
+}
+
+.secondary-btn {
+  border-radius: 0.313rem;
+  background-color: #FFFFAD !important;
+  color: #CCCCCC;
+  cursor: pointer;
+  font-size: 1.5 rem;
+  padding: 0.2rem 1.3rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "Noto Sans", sans-serif;
+  transition: background-color 0.5s ease-in, color 0.5s ease-in;
+}
+
+.secondary-btn:hover {
+  border-radius: 0.313rem;
+  background-color: #FFFF63 !important;
+  color: #CCCCCC;
+  cursor: pointer;
+  font-size: 1.5 rem;
+  padding: 0.2rem 1.3rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "Noto Sans", sans-serif;
+  transition: background-color 0.5s ease-in, color 0.5s ease-in;
+}
+
+.secondary-btn a {
+  text-decoration: none !important;
+  color: #0F4557;
+}
+
+.secondary-btn a:hover {
+  color: #0F4557;
+}
+
+/****************************** Estilos Switch de lenguaje ******************************/
+.language-switch {
+  position: relative;
+  display: inline-block;
+  width: 2.5rem; /* Ajusta el ancho */
+  height: 1.25rem; /* Ajusta la altura */
+}
+
+.language-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #186F8C;
+  transition: 0.4s;
+  border-radius: 1.25rem; /* Ajusta el radio de borde */
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px; /* Ajusta la altura */
+  width: 16px; /* Ajusta el ancho */
+  left: 0.125rem;
+  bottom: 0.125rem;
+  background-color: #E3FCE0;
+  transition: 0.4s;
+  border-radius: 50%; /* Ajusta el radio de borde */
+}
+
+input:checked + .slider {
+  background-color: #42799E;
+}
+
+input:checked + .slider:before {
+  transform: translateX(1.25rem); /* Ajusta la traducción */
+}
+
+/* Texto de idioma */
+.language-text {
+  position: relative;
+  top: -0.25rem; /* Ajusta la posición */
+  display: inline-block;
+  margin-left: 0.313rem;
+  font-size: 0.688rem;
+  color: #f8f9fc;
+}
+
+/****************************** Línea separadora ******************************/
+.separator-line {
+  padding-top: 0.313rem;
+  padding-bottom: 0.313rem;
+  background-color: #0F4557;
+}
+
+/****************************** Estilos carrusel ******************************/
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 3.125rem;
+  height: 3.125rem;
+  background-size: 100%, 100%;
+  background-color: #0F4557;
+  border-radius: 0.313rem;
+}
+
+.carousel-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centra el contenido verticalmente */
+  background-size: cover;
+  background-position: center;
+  background-color: aliceblue !important;
+  background-blend-mode: luminosity !important;
+}
+
+.carousel-item img {
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-indicators button {
+  background-color: #EAEAEA !important;
+}
+
+/****************************** Forms ******************************/
+label {
+  font-size: 0.938rem;
+  font-weight: bolder;
+  font-family: "Noto Sans", sans-serif;
+  color: #EAEAEA;
+}
+
+/****************************** Estilos de Input ******************************/
+input {
+  width: 300px;
+}
+
+/* Placeholder */
+input::-moz-placeholder {
+  text-align: center;
+  color: #0F4557;
+}
+input::placeholder {
+  text-align: center;
+  color: #0F4557;
+}
+
+/* Added text */
+input:focus {
+  border-color: #B9FAB2;
+  outline: none;
+}
+
+input:not(:-moz-placeholder-shown) {
+  font-family: "Noto Sans", sans-serif;
+  color: #186F8C;
+  text-align: center;
+}
+
+input:valid,
+input:not(:placeholder-shown) {
+  font-family: "Noto Sans", sans-serif;
+  color: #186F8C;
+  text-align: center;
+}
+
+select {
+  font-family: "Noto Sans", sans-serif;
+  color: #186F8C !important;
+  text-align: center;
+  background-color: #f8f9fa; /* Optional: Adjust background color */
+  border: 1px solid #ced4da; /* Optional: Adjust border color */
+  padding: 0.375rem 0.75rem; /* Optional: Adjust padding */
+  border-radius: 0.25rem; /* Optional: Adjust border radius */
+}
+
+/****************************** Estilos del Nav ******************************/
+.nav-style {
+  background-color: #0F4557;
+  box-shadow: 0 0 0.625rem #FFFFAD;
+}
+
+.navbar {
+  padding: 0.625rem;
+  letter-spacing: 0.125rem;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 16px;
+}
+
+.option-menu {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 16px;
+  transition: all 1s ease;
+}
+
+.option-menu:hover {
+  color: #FFFF63;
+  border-radius: 0.313rem;
+  background-color: #186F8C;
+  transition: all 1s ease;
+}
+
+.option-menu:active {
+  background-color: #42799E;
+}
+
+.dropdown-menu a {
+  color: #0F4557;
+}
+
+.dropdown-menu a:hover {
+  background-color: #E3FCE0;
+}
+
+/****************************** Menu Hamburguesa ******************************/
+.navbar-toggler {
+  background-color: #E3FCE0;
+  border: 0.063rem solid #186F8C;
+}
+
+.navbar-toggler:hover {
+  background-color: #186F8C;
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: #E3FCE0;
+  border-width: 0.063rem;
+}
+
+/* Líneas */
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(156, 160, 187, 0.866)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler .navbar-toggler-icon:hover {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(228, 253, 225)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+/****************************** Estilos Íconos RRSS ******************************/
+.lk-contact-icon {
+  color: #818488;
+}
+
+.wa-contact-icon {
+  color: #818488;
+}
+
+.ig-contact-icon {
+  color: #818488;
+}
+
+.lk-contact-icon:hover {
+  color: #0077B5;
+  transition: all 1s ease;
+}
+
+.wa-contact-icon:hover {
+  color: #15793A;
+  transition: all 1s ease;
+}
+
+.ig-contact-icon:hover {
+  color: #8F143D;
+  transition: all 1s ease;
+}
+
+/****************************** Estilos Search input ******************************/
+.searchIcon {
+  border-radius: 0 5px 5px 0;
+  border-left: none;
+  border-top: 2px solid #CCCCCC;
+  border-right: 2px solid #CCCCCC;
+  border-bottom: 2px solid #CCCCCC;
+  background-color: #CCCCCC;
+}
+
+.searchIcon i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.form-control:focus {
+  color: #fff;
+  background-color: transparent;
+  border-color: #fff;
+  outline: 0;
+  box-shadow: none;
+}
+
+/****************************** Estilos Footer ******************************/
+.footer-style {
+  height: 6.25rem;
+  padding: 0.625rem;
+  letter-spacing: 0.125rem;
+  transition: all 1s ease;
+  background-color: #f8f9fc !important;
+  box-shadow: 0 -2px 4px #FFFFAD;
+}
+
+p.footer-text {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 16px;
+  color: #0F4557 !important;
+}
+
+/****************************** Estilos Car view ******************************/
+.car-view-container {
+  padding-left: 10%;
+}
+
+.car-view h1 {
+  font-family: "Montserrat", sans-serif !important;
+  color: #305873 !important;
+  font-weight: 600;
+  line-height: 35px;
+}
+
+.car-view h2 {
+  font-family: "Montserrat", sans-serif !important;
+  color: #42799E !important;
+  font-weight: 600;
+  line-height: 35px;
+}
+
+.car-view h4 {
+  font-family: "Montserrat", sans-serif !important;
+  color: #305873 !important;
+  font-weight: 500;
+  line-height: 0.938rem;
+}
+
+.car-view h5 {
+  font-family: "Montserrat", sans-serif !important;
+  color: #42799E !important;
+  font-weight: 500;
+  line-height: 0.625rem;
+}
+
+.car-view p {
+  font-family: "Montserrat", sans-serif !important;
+  color: #818488 !important;
+  font-weight: 600;
+}
+
+.car-view-info-price h2 {
+  font-size: larger;
+  font-weight: 600;
+  color: #4c4848 !important;
+}
+
+.car-view span {
+  font-family: "Montserrat", sans-serif !important;
+  color: #fefefe !important;
+  font-weight: 600;
+  padding-left: 15px !important;
+}
+
+.font-stretch-condensed {
+  transform: scaleY(0.8); /* Adjust the value to your liking */
+}
+
+.box-properties {
+  background-color: #186F8C;
+  border-radius: 4px;
+  color: #FFF;
+  padding: 5px 15px;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: inline-flex;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion {
+  width: 45%; /* Poco menos de la mitad del ancho */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-title {
+  background-color: #186F8C;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-title:hover {
+  background-color: #0F4557;
+}
+
+.accordion-title::after {
+  content: "+";
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+.accordion-content p {
+  margin: 0;
+}
+
+.accordion-item.active .accordion-title::after {
+  transform: rotate(45deg);
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 200px; /* Ajusta esta altura según tu contenido */
+}
+
+.list-group {
+  width: 100% !important;
+}
+
+.list-style:hover {
+  background-color: #EAEAEA;
+  color: #f9f9f9;
+  border-width: 1px;
+  transition: all 1s ease;
+}
+
+.accordion-title {
+  font-family: "Montserrat", sans-serif !important;
+  color: #fefefe !important;
+  font-weight: 600;
+}
+
+.car-info-share {
+  border-top: 1px solid #CCCCCC;
+  width: 45%;
+  padding: 0.938rem 0;
+}
+
+.car-info-share i {
+  padding-left: 1.25rem;
+  cursor: pointer;
+}
+
+.car-info-share i.fa-linkedin-in:hover {
+  color: #0AA9FF;
+}
+
+.car-info-share i.fa-instagram:hover {
+  color: #D61F5C;
+}
+
+.car-info-share i.fa-whatsapp:hover {
+  color: #22BF5B;
+}
+
+.car-actions-btn {
+  width: 22% !important;
+}
+
+.car-actions-upcoming-btn {
+  width: 43% !important;
+}
+
+.car-actions-btn i {
+  padding-right: 0.625rem;
+}
+
+/****************************** Section: Information Column ******************************/
+button.car-forms-btn {
+  padding-right: 1.25rem !important;
+  border-color: #186F8C !important;
+  color: #186F8C !important;
+}
+
+button.car-forms-btn:hover {
+  background-color: #186F8C !important;
+  color: #fefefe !important;
+}
+
+button.car-back-btn {
+  padding-right: 1.25rem !important;
+  border-color: #0281BA !important;
+  color: #186F8C !important;
+}
+
+button.car-back-btn:hover {
+  background-color: #0281BA !important;
+  color: #fefefe !important;
+}
+
+/* Add margin-right to the first button to create space between buttons */
+.d-flex .car-forms-btn {
+  margin-right: 10px; /* Adjust the value as needed */
+}
+
+/* Optional: Remove margin from the last button to avoid extra space at the end */
+.d-flex .car-forms-btn:last-child {
+  margin-right: 0;
+}
+
+/****************************** Estilos Validación input ******************************/
+.missing-required {
+  border-color: #ba0f0f !important;
+  background-color: #f1eaea !important;
+}/*# sourceMappingURL=general.css.map */
